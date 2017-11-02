@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77AFD3FDF9CD0DB865705F7E /* libPods-Digi Card.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDDFC02CC4AFA08F86A74618 /* libPods-Digi Card.a */; };
 		A53F99761FAAEF58000B54BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99751FAAEF58000B54BB /* main.m */; };
 		A53F997F1FAAEF58000B54BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53F997D1FAAEF58000B54BB /* Main.storyboard */; };
 		A53F99811FAAEF58000B54BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53F99801FAAEF58000B54BB /* Assets.xcassets */; };
@@ -25,9 +26,33 @@
 		A53F99B41FAAF0E2000B54BB /* ScannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99B31FAAF0E2000B54BB /* ScannerVC.m */; };
 		A53F99B71FAAF0F4000B54BB /* MyProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99B61FAAF0F4000B54BB /* MyProfileVC.m */; };
 		A53F99BA1FAAF113000B54BB /* CardDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99B91FAAF113000B54BB /* CardDetailsVC.m */; };
+		A53F99E41FAAF3B2000B54BB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99BD1FAAF3B2000B54BB /* MBProgressHUD.m */; };
+		A53F99E51FAAF3B2000B54BB /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99BF1FAAF3B2000B54BB /* NSObject+JSON.m */; };
+		A53F99E61FAAF3B2000B54BB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99C11FAAF3B2000B54BB /* Reachability.m */; };
+		A53F99E71FAAF3B2000B54BB /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99C41FAAF3B2000B54BB /* MKAnnotationView+WebCache.m */; };
+		A53F99E81FAAF3B2000B54BB /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99C61FAAF3B2000B54BB /* NSData+ImageContentType.m */; };
+		A53F99E91FAAF3B2000B54BB /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99C81FAAF3B2000B54BB /* SDImageCache.m */; };
+		A53F99EA1FAAF3B2000B54BB /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99CA1FAAF3B2000B54BB /* SDWebImageCompat.m */; };
+		A53F99EB1FAAF3B2000B54BB /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99CC1FAAF3B2000B54BB /* SDWebImageDecoder.m */; };
+		A53F99EC1FAAF3B2000B54BB /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99CE1FAAF3B2000B54BB /* SDWebImageDownloader.m */; };
+		A53F99ED1FAAF3B2000B54BB /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99D01FAAF3B2000B54BB /* SDWebImageDownloaderOperation.m */; };
+		A53F99EE1FAAF3B2000B54BB /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99D21FAAF3B2000B54BB /* SDWebImageManager.m */; };
+		A53F99EF1FAAF3B2000B54BB /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99D51FAAF3B2000B54BB /* SDWebImagePrefetcher.m */; };
+		A53F99F01FAAF3B2000B54BB /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99D71FAAF3B2000B54BB /* UIButton+WebCache.m */; };
+		A53F99F11FAAF3B2000B54BB /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99D91FAAF3B2000B54BB /* UIImage+GIF.m */; };
+		A53F99F21FAAF3B2000B54BB /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99DB1FAAF3B2000B54BB /* UIImage+MultiFormat.m */; };
+		A53F99F31FAAF3B2000B54BB /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99DD1FAAF3B2000B54BB /* UIImage+WebP.m */; };
+		A53F99F41FAAF3B2000B54BB /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99DF1FAAF3B2000B54BB /* UIImageView+HighlightedWebCache.m */; };
+		A53F99F51FAAF3B2000B54BB /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99E11FAAF3B2000B54BB /* UIImageView+WebCache.m */; };
+		A53F99F61FAAF3B2000B54BB /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99E31FAAF3B2000B54BB /* UIView+WebCacheOperation.m */; };
+		A53F99F91FAAF489000B54BB /* BaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99F81FAAF489000B54BB /* BaseManager.m */; };
+		A53F9ABD1FAB282A000B54BB /* Sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A53F9ABC1FAB282A000B54BB /* Sample.jpg */; };
+		A53F9C9D1FAB2AF0000B54BB /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A53F9B5A1FAB2946000B54BB /* libstdc++.6.0.9.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33655FE92BF8C31A960F6996 /* Pods-Digi Card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digi Card.release.xcconfig"; path = "Pods/Target Support Files/Pods-Digi Card/Pods-Digi Card.release.xcconfig"; sourceTree = "<group>"; };
+		6F63DB2ED1E319D22C83B177 /* Pods-Digi Card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digi Card.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Digi Card/Pods-Digi Card.debug.xcconfig"; sourceTree = "<group>"; };
 		A53F99711FAAEF58000B54BB /* Digi Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Digi Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53F99751FAAEF58000B54BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A53F997E1FAAEF58000B54BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +84,201 @@
 		A53F99B61FAAF0F4000B54BB /* MyProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileVC.m; sourceTree = "<group>"; };
 		A53F99B81FAAF113000B54BB /* CardDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailsVC.h; sourceTree = "<group>"; };
 		A53F99B91FAAF113000B54BB /* CardDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailsVC.m; sourceTree = "<group>"; };
+		A53F99BC1FAAF3B2000B54BB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		A53F99BD1FAAF3B2000B54BB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		A53F99BE1FAAF3B2000B54BB /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
+		A53F99BF1FAAF3B2000B54BB /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSON.m"; sourceTree = "<group>"; };
+		A53F99C01FAAF3B2000B54BB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A53F99C11FAAF3B2000B54BB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A53F99C31FAAF3B2000B54BB /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
+		A53F99C41FAAF3B2000B54BB /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
+		A53F99C51FAAF3B2000B54BB /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		A53F99C61FAAF3B2000B54BB /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		A53F99C71FAAF3B2000B54BB /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		A53F99C81FAAF3B2000B54BB /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		A53F99C91FAAF3B2000B54BB /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		A53F99CA1FAAF3B2000B54BB /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCompat.m; sourceTree = "<group>"; };
+		A53F99CB1FAAF3B2000B54BB /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		A53F99CC1FAAF3B2000B54BB /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		A53F99CD1FAAF3B2000B54BB /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		A53F99CE1FAAF3B2000B54BB /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		A53F99CF1FAAF3B2000B54BB /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		A53F99D01FAAF3B2000B54BB /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		A53F99D11FAAF3B2000B54BB /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		A53F99D21FAAF3B2000B54BB /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		A53F99D31FAAF3B2000B54BB /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
+		A53F99D41FAAF3B2000B54BB /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		A53F99D51FAAF3B2000B54BB /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		A53F99D61FAAF3B2000B54BB /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
+		A53F99D71FAAF3B2000B54BB /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
+		A53F99D81FAAF3B2000B54BB /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		A53F99D91FAAF3B2000B54BB /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
+		A53F99DA1FAAF3B2000B54BB /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		A53F99DB1FAAF3B2000B54BB /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		A53F99DC1FAAF3B2000B54BB /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
+		A53F99DD1FAAF3B2000B54BB /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
+		A53F99DE1FAAF3B2000B54BB /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		A53F99DF1FAAF3B2000B54BB /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		A53F99E01FAAF3B2000B54BB /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		A53F99E11FAAF3B2000B54BB /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		A53F99E21FAAF3B2000B54BB /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		A53F99E31FAAF3B2000B54BB /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		A53F99F71FAAF489000B54BB /* BaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseManager.h; sourceTree = "<group>"; };
+		A53F99F81FAAF489000B54BB /* BaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseManager.m; sourceTree = "<group>"; };
+		A53F99FB1FAAF492000B54BB /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		A53F99FC1FAAF866000B54BB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A53F9ABC1FAB282A000B54BB /* Sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sample.jpg; sourceTree = "<group>"; };
+		A53F9AC31FAB2926000B54BB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A53F9AC61FAB2926000B54BB /* allheaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = allheaders.h; sourceTree = "<group>"; };
+		A53F9AC71FAB2926000B54BB /* alltypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = alltypes.h; sourceTree = "<group>"; };
+		A53F9AC81FAB2926000B54BB /* array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
+		A53F9AC91FAB2926000B54BB /* arrayaccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrayaccess.h; sourceTree = "<group>"; };
+		A53F9ACA1FAB2926000B54BB /* bbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bbuffer.h; sourceTree = "<group>"; };
+		A53F9ACB1FAB2926000B54BB /* bmf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bmf.h; sourceTree = "<group>"; };
+		A53F9ACC1FAB2926000B54BB /* bmp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bmp.h; sourceTree = "<group>"; };
+		A53F9ACD1FAB2926000B54BB /* ccbord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ccbord.h; sourceTree = "<group>"; };
+		A53F9ACE1FAB2926000B54BB /* dewarp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dewarp.h; sourceTree = "<group>"; };
+		A53F9ACF1FAB2926000B54BB /* endianness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = endianness.h; sourceTree = "<group>"; };
+		A53F9AD01FAB2926000B54BB /* environ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = environ.h; sourceTree = "<group>"; };
+		A53F9AD11FAB2926000B54BB /* freetype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = freetype.h; sourceTree = "<group>"; };
+		A53F9AD21FAB2926000B54BB /* gplot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gplot.h; sourceTree = "<group>"; };
+		A53F9AD31FAB2926000B54BB /* heap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = heap.h; sourceTree = "<group>"; };
+		A53F9AD41FAB2926000B54BB /* imageio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imageio.h; sourceTree = "<group>"; };
+		A53F9AD51FAB2926000B54BB /* jbclass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jbclass.h; sourceTree = "<group>"; };
+		A53F9AD61FAB2926000B54BB /* leptwin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leptwin.h; sourceTree = "<group>"; };
+		A53F9AD71FAB2926000B54BB /* list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
+		A53F9AD81FAB2926000B54BB /* morph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = morph.h; sourceTree = "<group>"; };
+		A53F9AD91FAB2926000B54BB /* pix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pix.h; sourceTree = "<group>"; };
+		A53F9ADA1FAB2926000B54BB /* ptra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ptra.h; sourceTree = "<group>"; };
+		A53F9ADB1FAB2926000B54BB /* queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
+		A53F9ADC1FAB2926000B54BB /* readbarcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = readbarcode.h; sourceTree = "<group>"; };
+		A53F9ADD1FAB2926000B54BB /* regutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = regutils.h; sourceTree = "<group>"; };
+		A53F9ADE1FAB2926000B54BB /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
+		A53F9ADF1FAB2926000B54BB /* sudoku.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sudoku.h; sourceTree = "<group>"; };
+		A53F9AE01FAB2926000B54BB /* watershed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = watershed.h; sourceTree = "<group>"; };
+		A53F9AE21FAB2926000B54BB /* ambigs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ambigs.h; sourceTree = "<group>"; };
+		A53F9AE31FAB2926000B54BB /* apitypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = apitypes.h; sourceTree = "<group>"; };
+		A53F9AE41FAB2926000B54BB /* baseapi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = baseapi.h; sourceTree = "<group>"; };
+		A53F9AE51FAB2926000B54BB /* basedir.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = basedir.h; sourceTree = "<group>"; };
+		A53F9AE61FAB2926000B54BB /* bits16.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bits16.h; sourceTree = "<group>"; };
+		A53F9AE71FAB2926000B54BB /* bitvector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bitvector.h; sourceTree = "<group>"; };
+		A53F9AE81FAB2926000B54BB /* blckerr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blckerr.h; sourceTree = "<group>"; };
+		A53F9AE91FAB2926000B54BB /* blobbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blobbox.h; sourceTree = "<group>"; };
+		A53F9AEA1FAB2926000B54BB /* blobs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blobs.h; sourceTree = "<group>"; };
+		A53F9AEB1FAB2926000B54BB /* blread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blread.h; sourceTree = "<group>"; };
+		A53F9AEC1FAB2926000B54BB /* boxread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = boxread.h; sourceTree = "<group>"; };
+		A53F9AED1FAB2926000B54BB /* boxword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = boxword.h; sourceTree = "<group>"; };
+		A53F9AEE1FAB2926000B54BB /* capi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = capi.h; sourceTree = "<group>"; };
+		A53F9AEF1FAB2926000B54BB /* ccstruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ccstruct.h; sourceTree = "<group>"; };
+		A53F9AF01FAB2926000B54BB /* ccutil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ccutil.h; sourceTree = "<group>"; };
+		A53F9AF11FAB2926000B54BB /* clst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clst.h; sourceTree = "<group>"; };
+		A53F9AF21FAB2926000B54BB /* control.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = control.h; sourceTree = "<group>"; };
+		A53F9AF31FAB2926000B54BB /* coutln.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = coutln.h; sourceTree = "<group>"; };
+		A53F9AF41FAB2926000B54BB /* crakedge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crakedge.h; sourceTree = "<group>"; };
+		A53F9AF51FAB2926000B54BB /* cube_reco_context.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cube_reco_context.h; sourceTree = "<group>"; };
+		A53F9AF61FAB2926000B54BB /* cubeclassifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cubeclassifier.h; sourceTree = "<group>"; };
+		A53F9AF71FAB2926000B54BB /* detlinefit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = detlinefit.h; sourceTree = "<group>"; };
+		A53F9AF81FAB2926000B54BB /* docqual.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = docqual.h; sourceTree = "<group>"; };
+		A53F9AF91FAB2926000B54BB /* dppoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dppoint.h; sourceTree = "<group>"; };
+		A53F9AFA1FAB2926000B54BB /* elst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = elst.h; sourceTree = "<group>"; };
+		A53F9AFB1FAB2926000B54BB /* elst2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = elst2.h; sourceTree = "<group>"; };
+		A53F9AFC1FAB2926000B54BB /* equationdetect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = equationdetect.h; sourceTree = "<group>"; };
+		A53F9AFD1FAB2926000B54BB /* errcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = errcode.h; sourceTree = "<group>"; };
+		A53F9AFE1FAB2926000B54BB /* fileerr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fileerr.h; sourceTree = "<group>"; };
+		A53F9AFF1FAB2926000B54BB /* fixspace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fixspace.h; sourceTree = "<group>"; };
+		A53F9B001FAB2926000B54BB /* fontinfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fontinfo.h; sourceTree = "<group>"; };
+		A53F9B011FAB2926000B54BB /* genblob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = genblob.h; sourceTree = "<group>"; };
+		A53F9B021FAB2926000B54BB /* genericvector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = genericvector.h; sourceTree = "<group>"; };
+		A53F9B031FAB2926000B54BB /* globaloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globaloc.h; sourceTree = "<group>"; };
+		A53F9B041FAB2926000B54BB /* hashfn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hashfn.h; sourceTree = "<group>"; };
+		A53F9B051FAB2926000B54BB /* helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
+		A53F9B061FAB2926000B54BB /* host.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = host.h; sourceTree = "<group>"; };
+		A53F9B071FAB2926000B54BB /* hosthplb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hosthplb.h; sourceTree = "<group>"; };
+		A53F9B081FAB2926000B54BB /* hpddef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hpddef.h; sourceTree = "<group>"; };
+		A53F9B091FAB2926000B54BB /* hpdsizes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hpdsizes.h; sourceTree = "<group>"; };
+		A53F9B0A1FAB2926000B54BB /* imgscale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imgscale.h; sourceTree = "<group>"; };
+		A53F9B0B1FAB2926000B54BB /* indexmapbidi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = indexmapbidi.h; sourceTree = "<group>"; };
+		A53F9B0C1FAB2926000B54BB /* ipoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ipoints.h; sourceTree = "<group>"; };
+		A53F9B0D1FAB2926000B54BB /* linlsq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = linlsq.h; sourceTree = "<group>"; };
+		A53F9B0E1FAB2926000B54BB /* lsterr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lsterr.h; sourceTree = "<group>"; };
+		A53F9B0F1FAB2926000B54BB /* ltrresultiterator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ltrresultiterator.h; sourceTree = "<group>"; };
+		A53F9B101FAB2926000B54BB /* matrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
+		A53F9B111FAB2926000B54BB /* memry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memry.h; sourceTree = "<group>"; };
+		A53F9B121FAB2926000B54BB /* mfcpch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mfcpch.h; sourceTree = "<group>"; };
+		A53F9B131FAB2926000B54BB /* mod128.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mod128.h; sourceTree = "<group>"; };
+		A53F9B141FAB2926000B54BB /* mutableiterator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mutableiterator.h; sourceTree = "<group>"; };
+		A53F9B151FAB2926000B54BB /* ndminx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ndminx.h; sourceTree = "<group>"; };
+		A53F9B161FAB2926000B54BB /* normalis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = normalis.h; sourceTree = "<group>"; };
+		A53F9B171FAB2926000B54BB /* notdll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = notdll.h; sourceTree = "<group>"; };
+		A53F9B181FAB2926000B54BB /* nwmain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nwmain.h; sourceTree = "<group>"; };
+		A53F9B191FAB2926000B54BB /* ocrblock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ocrblock.h; sourceTree = "<group>"; };
+		A53F9B1A1FAB2926000B54BB /* ocrclass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ocrclass.h; sourceTree = "<group>"; };
+		A53F9B1B1FAB2926000B54BB /* ocrpara.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ocrpara.h; sourceTree = "<group>"; };
+		A53F9B1C1FAB2926000B54BB /* ocrrow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ocrrow.h; sourceTree = "<group>"; };
+		A53F9B1D1FAB2926000B54BB /* osdetect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = osdetect.h; sourceTree = "<group>"; };
+		A53F9B1E1FAB2926000B54BB /* otsuthr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = otsuthr.h; sourceTree = "<group>"; };
+		A53F9B1F1FAB2926000B54BB /* output.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = output.h; sourceTree = "<group>"; };
+		A53F9B201FAB2926000B54BB /* pageiterator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pageiterator.h; sourceTree = "<group>"; };
+		A53F9B211FAB2926000B54BB /* pageres.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pageres.h; sourceTree = "<group>"; };
+		A53F9B221FAB2926000B54BB /* paragraphs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = paragraphs.h; sourceTree = "<group>"; };
+		A53F9B231FAB2926000B54BB /* paragraphs_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = paragraphs_internal.h; sourceTree = "<group>"; };
+		A53F9B241FAB2926000B54BB /* params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = params.h; sourceTree = "<group>"; };
+		A53F9B251FAB2926000B54BB /* params_training_featdef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = params_training_featdef.h; sourceTree = "<group>"; };
+		A53F9B261FAB2926000B54BB /* paramsd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = paramsd.h; sourceTree = "<group>"; };
+		A53F9B271FAB2926000B54BB /* pdblock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pdblock.h; sourceTree = "<group>"; };
+		A53F9B281FAB2926000B54BB /* pgedit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pgedit.h; sourceTree = "<group>"; };
+		A53F9B291FAB2926000B54BB /* platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
+		A53F9B2A1FAB2926000B54BB /* points.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = points.h; sourceTree = "<group>"; };
+		A53F9B2B1FAB2926000B54BB /* polyaprx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = polyaprx.h; sourceTree = "<group>"; };
+		A53F9B2C1FAB2926000B54BB /* polyblk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = polyblk.h; sourceTree = "<group>"; };
+		A53F9B2D1FAB2926000B54BB /* publictypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = publictypes.h; sourceTree = "<group>"; };
+		A53F9B2E1FAB2926000B54BB /* qrsequence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qrsequence.h; sourceTree = "<group>"; };
+		A53F9B2F1FAB2926000B54BB /* quadlsq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = quadlsq.h; sourceTree = "<group>"; };
+		A53F9B301FAB2926000B54BB /* quadratc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = quadratc.h; sourceTree = "<group>"; };
+		A53F9B311FAB2926000B54BB /* quspline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = quspline.h; sourceTree = "<group>"; };
+		A53F9B321FAB2926000B54BB /* ratngs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ratngs.h; sourceTree = "<group>"; };
+		A53F9B331FAB2926000B54BB /* rect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rect.h; sourceTree = "<group>"; };
+		A53F9B341FAB2926000B54BB /* rejctmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rejctmap.h; sourceTree = "<group>"; };
+		A53F9B351FAB2926000B54BB /* reject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = reject.h; sourceTree = "<group>"; };
+		A53F9B361FAB2926000B54BB /* resultiterator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = resultiterator.h; sourceTree = "<group>"; };
+		A53F9B371FAB2926000B54BB /* scaleimg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scaleimg.h; sourceTree = "<group>"; };
+		A53F9B381FAB2926000B54BB /* scanutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scanutils.h; sourceTree = "<group>"; };
+		A53F9B391FAB2926000B54BB /* seam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = seam.h; sourceTree = "<group>"; };
+		A53F9B3A1FAB2926000B54BB /* secname.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = secname.h; sourceTree = "<group>"; };
+		A53F9B3B1FAB2926000B54BB /* serialis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = serialis.h; sourceTree = "<group>"; };
+		A53F9B3C1FAB2926000B54BB /* sorthelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sorthelper.h; sourceTree = "<group>"; };
+		A53F9B3D1FAB2926000B54BB /* split.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
+		A53F9B3E1FAB2926000B54BB /* statistc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = statistc.h; sourceTree = "<group>"; };
+		A53F9B3F1FAB2926000B54BB /* stderr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stderr.h; sourceTree = "<group>"; };
+		A53F9B401FAB2926000B54BB /* stepblob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stepblob.h; sourceTree = "<group>"; };
+		A53F9B411FAB2926000B54BB /* strngs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strngs.h; sourceTree = "<group>"; };
+		A53F9B421FAB2926000B54BB /* tessbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tessbox.h; sourceTree = "<group>"; };
+		A53F9B431FAB2926000B54BB /* tesscallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tesscallback.h; sourceTree = "<group>"; };
+		A53F9B441FAB2926000B54BB /* tessdatamanager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tessdatamanager.h; sourceTree = "<group>"; };
+		A53F9B451FAB2926000B54BB /* tessedit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tessedit.h; sourceTree = "<group>"; };
+		A53F9B461FAB2926000B54BB /* tesseract_cube_combiner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tesseract_cube_combiner.h; sourceTree = "<group>"; };
+		A53F9B471FAB2926000B54BB /* tesseractclass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tesseractclass.h; sourceTree = "<group>"; };
+		A53F9B481FAB2926000B54BB /* tesseractmain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tesseractmain.h; sourceTree = "<group>"; };
+		A53F9B491FAB2926000B54BB /* tessvars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tessvars.h; sourceTree = "<group>"; };
+		A53F9B4A1FAB2926000B54BB /* tfacep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tfacep.h; sourceTree = "<group>"; };
+		A53F9B4B1FAB2926000B54BB /* tfacepp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tfacepp.h; sourceTree = "<group>"; };
+		A53F9B4C1FAB2926000B54BB /* thresholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = thresholder.h; sourceTree = "<group>"; };
+		A53F9B4D1FAB2926000B54BB /* tprintf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tprintf.h; sourceTree = "<group>"; };
+		A53F9B4E1FAB2926000B54BB /* unichar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unichar.h; sourceTree = "<group>"; };
+		A53F9B4F1FAB2926000B54BB /* unicharmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unicharmap.h; sourceTree = "<group>"; };
+		A53F9B501FAB2926000B54BB /* unicharset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unicharset.h; sourceTree = "<group>"; };
+		A53F9B511FAB2926000B54BB /* unicity_table.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unicity_table.h; sourceTree = "<group>"; };
+		A53F9B521FAB2926000B54BB /* unicodes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unicodes.h; sourceTree = "<group>"; };
+		A53F9B531FAB2926000B54BB /* vecfuncs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vecfuncs.h; sourceTree = "<group>"; };
+		A53F9B541FAB2926000B54BB /* werd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = werd.h; sourceTree = "<group>"; };
+		A53F9B551FAB2926000B54BB /* werdit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = werdit.h; sourceTree = "<group>"; };
+		A53F9B571FAB2926000B54BB /* liblept.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblept.a; sourceTree = "<group>"; };
+		A53F9B581FAB2926000B54BB /* libtesseract_all.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtesseract_all.a; sourceTree = "<group>"; };
+		A53F9B591FAB2926000B54BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A53F9B5A1FAB2946000B54BB /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		A53F9C9E1FAB2AF0000B54BB /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		A53F9C9F1FAB2AF0000B54BB /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		FDDFC02CC4AFA08F86A74618 /* libPods-Digi Card.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Digi Card.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,17 +286,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53F9C9D1FAB2AF0000B54BB /* libstdc++.6.0.9.tbd in Frameworks */,
+				77AFD3FDF9CD0DB865705F7E /* libPods-Digi Card.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5707B9DC38E3868B9DB22CFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F63DB2ED1E319D22C83B177 /* Pods-Digi Card.debug.xcconfig */,
+				33655FE92BF8C31A960F6996 /* Pods-Digi Card.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A53F99681FAAEF58000B54BB = {
 			isa = PBXGroup;
 			children = (
 				A53F99731FAAEF58000B54BB /* Digi Card */,
 				A53F99721FAAEF58000B54BB /* Products */,
+				5707B9DC38E3868B9DB22CFE /* Pods */,
+				B34D2ECB24948FA894717811 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +349,8 @@
 		A53F998B1FAAF008000B54BB /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				A53F99FB1FAAF492000B54BB /* Macro.h */,
+				A53F99FC1FAAF866000B54BB /* PrefixHeader.pch */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -146,6 +381,8 @@
 		A53F99911FAAF008000B54BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A53F99F71FAAF489000B54BB /* BaseManager.h */,
+				A53F99F81FAAF489000B54BB /* BaseManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +390,7 @@
 		A53F99921FAAF008000B54BB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A53F9ABC1FAB282A000B54BB /* Sample.jpg */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -160,6 +398,7 @@
 		A53F99931FAAF008000B54BB /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				A53F99BB1FAAF3B2000B54BB /* lib */,
 				A53F99941FAAF008000B54BB /* HHAlertView */,
 				A53F999B1FAAF008000B54BB /* NotificationView */,
 				A53F999E1FAAF008000B54BB /* UIFloatLabelTextField */,
@@ -205,6 +444,259 @@
 			path = UIFloatLabelTextField;
 			sourceTree = "<group>";
 		};
+		A53F99BB1FAAF3B2000B54BB /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				A53F99BC1FAAF3B2000B54BB /* MBProgressHUD.h */,
+				A53F99BD1FAAF3B2000B54BB /* MBProgressHUD.m */,
+				A53F99BE1FAAF3B2000B54BB /* NSObject+JSON.h */,
+				A53F99BF1FAAF3B2000B54BB /* NSObject+JSON.m */,
+				A53F99C01FAAF3B2000B54BB /* Reachability.h */,
+				A53F99C11FAAF3B2000B54BB /* Reachability.m */,
+				A53F99C21FAAF3B2000B54BB /* SDWebImage */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		A53F99C21FAAF3B2000B54BB /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				A53F99C31FAAF3B2000B54BB /* MKAnnotationView+WebCache.h */,
+				A53F99C41FAAF3B2000B54BB /* MKAnnotationView+WebCache.m */,
+				A53F99C51FAAF3B2000B54BB /* NSData+ImageContentType.h */,
+				A53F99C61FAAF3B2000B54BB /* NSData+ImageContentType.m */,
+				A53F99C71FAAF3B2000B54BB /* SDImageCache.h */,
+				A53F99C81FAAF3B2000B54BB /* SDImageCache.m */,
+				A53F99C91FAAF3B2000B54BB /* SDWebImageCompat.h */,
+				A53F99CA1FAAF3B2000B54BB /* SDWebImageCompat.m */,
+				A53F99CB1FAAF3B2000B54BB /* SDWebImageDecoder.h */,
+				A53F99CC1FAAF3B2000B54BB /* SDWebImageDecoder.m */,
+				A53F99CD1FAAF3B2000B54BB /* SDWebImageDownloader.h */,
+				A53F99CE1FAAF3B2000B54BB /* SDWebImageDownloader.m */,
+				A53F99CF1FAAF3B2000B54BB /* SDWebImageDownloaderOperation.h */,
+				A53F99D01FAAF3B2000B54BB /* SDWebImageDownloaderOperation.m */,
+				A53F99D11FAAF3B2000B54BB /* SDWebImageManager.h */,
+				A53F99D21FAAF3B2000B54BB /* SDWebImageManager.m */,
+				A53F99D31FAAF3B2000B54BB /* SDWebImageOperation.h */,
+				A53F99D41FAAF3B2000B54BB /* SDWebImagePrefetcher.h */,
+				A53F99D51FAAF3B2000B54BB /* SDWebImagePrefetcher.m */,
+				A53F99D61FAAF3B2000B54BB /* UIButton+WebCache.h */,
+				A53F99D71FAAF3B2000B54BB /* UIButton+WebCache.m */,
+				A53F99D81FAAF3B2000B54BB /* UIImage+GIF.h */,
+				A53F99D91FAAF3B2000B54BB /* UIImage+GIF.m */,
+				A53F99DA1FAAF3B2000B54BB /* UIImage+MultiFormat.h */,
+				A53F99DB1FAAF3B2000B54BB /* UIImage+MultiFormat.m */,
+				A53F99DC1FAAF3B2000B54BB /* UIImage+WebP.h */,
+				A53F99DD1FAAF3B2000B54BB /* UIImage+WebP.m */,
+				A53F99DE1FAAF3B2000B54BB /* UIImageView+HighlightedWebCache.h */,
+				A53F99DF1FAAF3B2000B54BB /* UIImageView+HighlightedWebCache.m */,
+				A53F99E01FAAF3B2000B54BB /* UIImageView+WebCache.h */,
+				A53F99E11FAAF3B2000B54BB /* UIImageView+WebCache.m */,
+				A53F99E21FAAF3B2000B54BB /* UIView+WebCacheOperation.h */,
+				A53F99E31FAAF3B2000B54BB /* UIView+WebCacheOperation.m */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		A53F9AC21FAB2926000B54BB /* tesseract-ios-lib */ = {
+			isa = PBXGroup;
+			children = (
+				A53F9AC31FAB2926000B54BB /* .gitignore */,
+				A53F9AC41FAB2926000B54BB /* include */,
+				A53F9B561FAB2926000B54BB /* lib */,
+				A53F9B591FAB2926000B54BB /* README.md */,
+			);
+			name = "tesseract-ios-lib";
+			path = "Digi Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib";
+			sourceTree = "<group>";
+		};
+		A53F9AC41FAB2926000B54BB /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A53F9AC51FAB2926000B54BB /* leptonica */,
+				A53F9AE11FAB2926000B54BB /* tesseract */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A53F9AC51FAB2926000B54BB /* leptonica */ = {
+			isa = PBXGroup;
+			children = (
+				A53F9AC61FAB2926000B54BB /* allheaders.h */,
+				A53F9AC71FAB2926000B54BB /* alltypes.h */,
+				A53F9AC81FAB2926000B54BB /* array.h */,
+				A53F9AC91FAB2926000B54BB /* arrayaccess.h */,
+				A53F9ACA1FAB2926000B54BB /* bbuffer.h */,
+				A53F9ACB1FAB2926000B54BB /* bmf.h */,
+				A53F9ACC1FAB2926000B54BB /* bmp.h */,
+				A53F9ACD1FAB2926000B54BB /* ccbord.h */,
+				A53F9ACE1FAB2926000B54BB /* dewarp.h */,
+				A53F9ACF1FAB2926000B54BB /* endianness.h */,
+				A53F9AD01FAB2926000B54BB /* environ.h */,
+				A53F9AD11FAB2926000B54BB /* freetype.h */,
+				A53F9AD21FAB2926000B54BB /* gplot.h */,
+				A53F9AD31FAB2926000B54BB /* heap.h */,
+				A53F9AD41FAB2926000B54BB /* imageio.h */,
+				A53F9AD51FAB2926000B54BB /* jbclass.h */,
+				A53F9AD61FAB2926000B54BB /* leptwin.h */,
+				A53F9AD71FAB2926000B54BB /* list.h */,
+				A53F9AD81FAB2926000B54BB /* morph.h */,
+				A53F9AD91FAB2926000B54BB /* pix.h */,
+				A53F9ADA1FAB2926000B54BB /* ptra.h */,
+				A53F9ADB1FAB2926000B54BB /* queue.h */,
+				A53F9ADC1FAB2926000B54BB /* readbarcode.h */,
+				A53F9ADD1FAB2926000B54BB /* regutils.h */,
+				A53F9ADE1FAB2926000B54BB /* stack.h */,
+				A53F9ADF1FAB2926000B54BB /* sudoku.h */,
+				A53F9AE01FAB2926000B54BB /* watershed.h */,
+			);
+			path = leptonica;
+			sourceTree = "<group>";
+		};
+		A53F9AE11FAB2926000B54BB /* tesseract */ = {
+			isa = PBXGroup;
+			children = (
+				A53F9AE21FAB2926000B54BB /* ambigs.h */,
+				A53F9AE31FAB2926000B54BB /* apitypes.h */,
+				A53F9AE41FAB2926000B54BB /* baseapi.h */,
+				A53F9AE51FAB2926000B54BB /* basedir.h */,
+				A53F9AE61FAB2926000B54BB /* bits16.h */,
+				A53F9AE71FAB2926000B54BB /* bitvector.h */,
+				A53F9AE81FAB2926000B54BB /* blckerr.h */,
+				A53F9AE91FAB2926000B54BB /* blobbox.h */,
+				A53F9AEA1FAB2926000B54BB /* blobs.h */,
+				A53F9AEB1FAB2926000B54BB /* blread.h */,
+				A53F9AEC1FAB2926000B54BB /* boxread.h */,
+				A53F9AED1FAB2926000B54BB /* boxword.h */,
+				A53F9AEE1FAB2926000B54BB /* capi.h */,
+				A53F9AEF1FAB2926000B54BB /* ccstruct.h */,
+				A53F9AF01FAB2926000B54BB /* ccutil.h */,
+				A53F9AF11FAB2926000B54BB /* clst.h */,
+				A53F9AF21FAB2926000B54BB /* control.h */,
+				A53F9AF31FAB2926000B54BB /* coutln.h */,
+				A53F9AF41FAB2926000B54BB /* crakedge.h */,
+				A53F9AF51FAB2926000B54BB /* cube_reco_context.h */,
+				A53F9AF61FAB2926000B54BB /* cubeclassifier.h */,
+				A53F9AF71FAB2926000B54BB /* detlinefit.h */,
+				A53F9AF81FAB2926000B54BB /* docqual.h */,
+				A53F9AF91FAB2926000B54BB /* dppoint.h */,
+				A53F9AFA1FAB2926000B54BB /* elst.h */,
+				A53F9AFB1FAB2926000B54BB /* elst2.h */,
+				A53F9AFC1FAB2926000B54BB /* equationdetect.h */,
+				A53F9AFD1FAB2926000B54BB /* errcode.h */,
+				A53F9AFE1FAB2926000B54BB /* fileerr.h */,
+				A53F9AFF1FAB2926000B54BB /* fixspace.h */,
+				A53F9B001FAB2926000B54BB /* fontinfo.h */,
+				A53F9B011FAB2926000B54BB /* genblob.h */,
+				A53F9B021FAB2926000B54BB /* genericvector.h */,
+				A53F9B031FAB2926000B54BB /* globaloc.h */,
+				A53F9B041FAB2926000B54BB /* hashfn.h */,
+				A53F9B051FAB2926000B54BB /* helpers.h */,
+				A53F9B061FAB2926000B54BB /* host.h */,
+				A53F9B071FAB2926000B54BB /* hosthplb.h */,
+				A53F9B081FAB2926000B54BB /* hpddef.h */,
+				A53F9B091FAB2926000B54BB /* hpdsizes.h */,
+				A53F9B0A1FAB2926000B54BB /* imgscale.h */,
+				A53F9B0B1FAB2926000B54BB /* indexmapbidi.h */,
+				A53F9B0C1FAB2926000B54BB /* ipoints.h */,
+				A53F9B0D1FAB2926000B54BB /* linlsq.h */,
+				A53F9B0E1FAB2926000B54BB /* lsterr.h */,
+				A53F9B0F1FAB2926000B54BB /* ltrresultiterator.h */,
+				A53F9B101FAB2926000B54BB /* matrix.h */,
+				A53F9B111FAB2926000B54BB /* memry.h */,
+				A53F9B121FAB2926000B54BB /* mfcpch.h */,
+				A53F9B131FAB2926000B54BB /* mod128.h */,
+				A53F9B141FAB2926000B54BB /* mutableiterator.h */,
+				A53F9B151FAB2926000B54BB /* ndminx.h */,
+				A53F9B161FAB2926000B54BB /* normalis.h */,
+				A53F9B171FAB2926000B54BB /* notdll.h */,
+				A53F9B181FAB2926000B54BB /* nwmain.h */,
+				A53F9B191FAB2926000B54BB /* ocrblock.h */,
+				A53F9B1A1FAB2926000B54BB /* ocrclass.h */,
+				A53F9B1B1FAB2926000B54BB /* ocrpara.h */,
+				A53F9B1C1FAB2926000B54BB /* ocrrow.h */,
+				A53F9B1D1FAB2926000B54BB /* osdetect.h */,
+				A53F9B1E1FAB2926000B54BB /* otsuthr.h */,
+				A53F9B1F1FAB2926000B54BB /* output.h */,
+				A53F9B201FAB2926000B54BB /* pageiterator.h */,
+				A53F9B211FAB2926000B54BB /* pageres.h */,
+				A53F9B221FAB2926000B54BB /* paragraphs.h */,
+				A53F9B231FAB2926000B54BB /* paragraphs_internal.h */,
+				A53F9B241FAB2926000B54BB /* params.h */,
+				A53F9B251FAB2926000B54BB /* params_training_featdef.h */,
+				A53F9B261FAB2926000B54BB /* paramsd.h */,
+				A53F9B271FAB2926000B54BB /* pdblock.h */,
+				A53F9B281FAB2926000B54BB /* pgedit.h */,
+				A53F9B291FAB2926000B54BB /* platform.h */,
+				A53F9B2A1FAB2926000B54BB /* points.h */,
+				A53F9B2B1FAB2926000B54BB /* polyaprx.h */,
+				A53F9B2C1FAB2926000B54BB /* polyblk.h */,
+				A53F9B2D1FAB2926000B54BB /* publictypes.h */,
+				A53F9B2E1FAB2926000B54BB /* qrsequence.h */,
+				A53F9B2F1FAB2926000B54BB /* quadlsq.h */,
+				A53F9B301FAB2926000B54BB /* quadratc.h */,
+				A53F9B311FAB2926000B54BB /* quspline.h */,
+				A53F9B321FAB2926000B54BB /* ratngs.h */,
+				A53F9B331FAB2926000B54BB /* rect.h */,
+				A53F9B341FAB2926000B54BB /* rejctmap.h */,
+				A53F9B351FAB2926000B54BB /* reject.h */,
+				A53F9B361FAB2926000B54BB /* resultiterator.h */,
+				A53F9B371FAB2926000B54BB /* scaleimg.h */,
+				A53F9B381FAB2926000B54BB /* scanutils.h */,
+				A53F9B391FAB2926000B54BB /* seam.h */,
+				A53F9B3A1FAB2926000B54BB /* secname.h */,
+				A53F9B3B1FAB2926000B54BB /* serialis.h */,
+				A53F9B3C1FAB2926000B54BB /* sorthelper.h */,
+				A53F9B3D1FAB2926000B54BB /* split.h */,
+				A53F9B3E1FAB2926000B54BB /* statistc.h */,
+				A53F9B3F1FAB2926000B54BB /* stderr.h */,
+				A53F9B401FAB2926000B54BB /* stepblob.h */,
+				A53F9B411FAB2926000B54BB /* strngs.h */,
+				A53F9B421FAB2926000B54BB /* tessbox.h */,
+				A53F9B431FAB2926000B54BB /* tesscallback.h */,
+				A53F9B441FAB2926000B54BB /* tessdatamanager.h */,
+				A53F9B451FAB2926000B54BB /* tessedit.h */,
+				A53F9B461FAB2926000B54BB /* tesseract_cube_combiner.h */,
+				A53F9B471FAB2926000B54BB /* tesseractclass.h */,
+				A53F9B481FAB2926000B54BB /* tesseractmain.h */,
+				A53F9B491FAB2926000B54BB /* tessvars.h */,
+				A53F9B4A1FAB2926000B54BB /* tfacep.h */,
+				A53F9B4B1FAB2926000B54BB /* tfacepp.h */,
+				A53F9B4C1FAB2926000B54BB /* thresholder.h */,
+				A53F9B4D1FAB2926000B54BB /* tprintf.h */,
+				A53F9B4E1FAB2926000B54BB /* unichar.h */,
+				A53F9B4F1FAB2926000B54BB /* unicharmap.h */,
+				A53F9B501FAB2926000B54BB /* unicharset.h */,
+				A53F9B511FAB2926000B54BB /* unicity_table.h */,
+				A53F9B521FAB2926000B54BB /* unicodes.h */,
+				A53F9B531FAB2926000B54BB /* vecfuncs.h */,
+				A53F9B541FAB2926000B54BB /* werd.h */,
+				A53F9B551FAB2926000B54BB /* werdit.h */,
+			);
+			path = tesseract;
+			sourceTree = "<group>";
+		};
+		A53F9B561FAB2926000B54BB /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				A53F9B571FAB2926000B54BB /* liblept.a */,
+				A53F9B581FAB2926000B54BB /* libtesseract_all.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		B34D2ECB24948FA894717811 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A53F9C9E1FAB2AF0000B54BB /* libstdc++.6.tbd */,
+				A53F9C9F1FAB2AF0000B54BB /* libstdc++.tbd */,
+				A53F9B5A1FAB2946000B54BB /* libstdc++.6.0.9.tbd */,
+				A53F9AC21FAB2926000B54BB /* tesseract-ios-lib */,
+				FDDFC02CC4AFA08F86A74618 /* libPods-Digi Card.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,9 +704,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A53F99881FAAEF58000B54BB /* Build configuration list for PBXNativeTarget "Digi Card" */;
 			buildPhases = (
+				D7F49D3AFE21B3AF91D6122C /* [CP] Check Pods Manifest.lock */,
 				A53F996D1FAAEF58000B54BB /* Sources */,
 				A53F996E1FAAEF58000B54BB /* Frameworks */,
 				A53F996F1FAAEF58000B54BB /* Resources */,
+				442E154CEEC148CBC491A9AB /* [CP] Embed Pods Frameworks */,
+				CB36BE74D46CAE9E4D154E60 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,6 +761,7 @@
 				A53F99A51FAAF008000B54BB /* wraing.gif in Resources */,
 				A53F99841FAAEF58000B54BB /* LaunchScreen.storyboard in Resources */,
 				A53F99811FAAEF58000B54BB /* Assets.xcassets in Resources */,
+				A53F9ABD1FAB282A000B54BB /* Sample.jpg in Resources */,
 				A53F997F1FAAEF58000B54BB /* Main.storyboard in Resources */,
 				A53F99A31FAAF008000B54BB /* error.gif in Resources */,
 				A53F99A41FAAF008000B54BB /* success.gif in Resources */,
@@ -274,23 +770,94 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		442E154CEEC148CBC491A9AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Digi Card/Pods-Digi Card-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB36BE74D46CAE9E4D154E60 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Digi Card/Pods-Digi Card-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7F49D3AFE21B3AF91D6122C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Digi Card-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A53F996D1FAAEF58000B54BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53F99F11FAAF3B2000B54BB /* UIImage+GIF.m in Sources */,
+				A53F99EE1FAAF3B2000B54BB /* SDWebImageManager.m in Sources */,
+				A53F99F51FAAF3B2000B54BB /* UIImageView+WebCache.m in Sources */,
+				A53F99ED1FAAF3B2000B54BB /* SDWebImageDownloaderOperation.m in Sources */,
 				A53F99A71FAAF008000B54BB /* HDNotificationView.m in Sources */,
+				A53F99E91FAAF3B2000B54BB /* SDImageCache.m in Sources */,
+				A53F99E71FAAF3B2000B54BB /* MKAnnotationView+WebCache.m in Sources */,
 				A53F99A11FAAF008000B54BB /* AppDelegate.m in Sources */,
+				A53F99F21FAAF3B2000B54BB /* UIImage+MultiFormat.m in Sources */,
 				A53F99A61FAAF008000B54BB /* HHAlertView.m in Sources */,
 				A53F99AB1FAAF06A000B54BB /* ForgotPasswordVC.m in Sources */,
+				A53F99F61FAAF3B2000B54BB /* UIView+WebCacheOperation.m in Sources */,
+				A53F99E61FAAF3B2000B54BB /* Reachability.m in Sources */,
+				A53F99F31FAAF3B2000B54BB /* UIImage+WebP.m in Sources */,
+				A53F99EF1FAAF3B2000B54BB /* SDWebImagePrefetcher.m in Sources */,
 				A53F99761FAAEF58000B54BB /* main.m in Sources */,
 				A53F99A21FAAF008000B54BB /* ViewController.m in Sources */,
 				A53F99A81FAAF008000B54BB /* UIFloatLabelTextField.m in Sources */,
+				A53F99EA1FAAF3B2000B54BB /* SDWebImageCompat.m in Sources */,
+				A53F99E81FAAF3B2000B54BB /* NSData+ImageContentType.m in Sources */,
+				A53F99EB1FAAF3B2000B54BB /* SDWebImageDecoder.m in Sources */,
 				A53F99B41FAAF0E2000B54BB /* ScannerVC.m in Sources */,
+				A53F99F41FAAF3B2000B54BB /* UIImageView+HighlightedWebCache.m in Sources */,
+				A53F99F01FAAF3B2000B54BB /* UIButton+WebCache.m in Sources */,
 				A53F99B71FAAF0F4000B54BB /* MyProfileVC.m in Sources */,
+				A53F99E41FAAF3B2000B54BB /* MBProgressHUD.m in Sources */,
 				A53F99B11FAAF0C4000B54BB /* CardListVC.m in Sources */,
 				A53F99AE1FAAF079000B54BB /* ChangePasswordVC.m in Sources */,
 				A53F99BA1FAAF113000B54BB /* CardDetailsVC.m in Sources */,
+				A53F99EC1FAAF3B2000B54BB /* SDWebImageDownloader.m in Sources */,
+				A53F99F91FAAF489000B54BB /* BaseManager.m in Sources */,
+				A53F99E51FAAF3B2000B54BB /* NSObject+JSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,11 +975,34 @@
 		};
 		A53F99891FAAEF58000B54BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F63DB2ED1E319D22C83B177 /* Pods-Digi Card.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CBZE86VY6D;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Constant/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)/**",
+					"\"${PODS_ROOT}/Headers/Public\"/**",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"/**",
+					"\"${PODS_ROOT}/Headers/Public/ISO8601DateFormatterValueTransformer\"/**",
+					"\"${PODS_ROOT}/Headers/Public/RKValueTransformers\"/**",
+					"\"${PODS_ROOT}/Headers/Public/RestKit\"/**",
+					"\"${PODS_ROOT}/Headers/Public/SOCKit\"/**",
+					"\"${PODS_ROOT}/Headers/Public/TransitionKit\"/**",
+				);
 				INFOPLIST_FILE = "Digi Card/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Digi\\ Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib/lib",
+					"$(PROJECT_DIR)/Digi\\ Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib/lib",
+					"$(PROJECT_DIR)/Digi\\ Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib/lib",
+					"$(PROJECT_DIR)/Digi\\ Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib/lib",
+					"$(PROJECT_DIR)/Digi\\ Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib/lib",
+					"$(PROJECT_DIR)/Digi\\ Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.digicard.com.Digi-Card";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -421,11 +1011,34 @@
 		};
 		A53F998A1FAAEF58000B54BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33655FE92BF8C31A960F6996 /* Pods-Digi Card.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CBZE86VY6D;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Constant/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)/**",
+					"\"${PODS_ROOT}/Headers/Public\"/**",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"/**",
+					"\"${PODS_ROOT}/Headers/Public/ISO8601DateFormatterValueTransformer\"/**",
+					"\"${PODS_ROOT}/Headers/Public/RKValueTransformers\"/**",
+					"\"${PODS_ROOT}/Headers/Public/RestKit\"/**",
+					"\"${PODS_ROOT}/Headers/Public/SOCKit\"/**",
+					"\"${PODS_ROOT}/Headers/Public/TransitionKit\"/**",
+				);
 				INFOPLIST_FILE = "Digi Card/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Digi\\ Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib/lib",
+					"$(PROJECT_DIR)/Digi\\ Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib/lib",
+					"$(PROJECT_DIR)/Digi\\ Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib/lib",
+					"$(PROJECT_DIR)/Digi\\ Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib/lib",
+					"$(PROJECT_DIR)/Digi\\ Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib/lib",
+					"$(PROJECT_DIR)/Digi\\ Card/ThirdParty/tesseract-ios-master/tesseract-ios-lib/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.digicard.com.Digi-Card";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -451,6 +1064,7 @@
 				A53F998A1FAAEF58000B54BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
