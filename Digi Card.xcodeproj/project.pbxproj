@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77AFD3FDF9CD0DB865705F7E /* libPods-Digi Card.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDDFC02CC4AFA08F86A74618 /* libPods-Digi Card.a */; };
 		A53F99761FAAEF58000B54BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99751FAAEF58000B54BB /* main.m */; };
 		A53F997F1FAAEF58000B54BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53F997D1FAAEF58000B54BB /* Main.storyboard */; };
 		A53F99811FAAEF58000B54BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53F99801FAAEF58000B54BB /* Assets.xcassets */; };
@@ -48,11 +47,13 @@
 		A53F99F91FAAF489000B54BB /* BaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99F81FAAF489000B54BB /* BaseManager.m */; };
 		A53F9ABD1FAB282A000B54BB /* Sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A53F9ABC1FAB282A000B54BB /* Sample.jpg */; };
 		A53F9C9D1FAB2AF0000B54BB /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A53F9B5A1FAB2946000B54BB /* libstdc++.6.0.9.tbd */; };
+		A57E7CEC1FADBC4100D43232 /* DigiCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E7CEB1FADBC4100D43232 /* DigiCardModel.m */; };
+		A57E7CEF1FADC25700D43232 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E7CEE1FADC25700D43232 /* LoginVC.m */; };
+		A57E7CF21FADE6DF00D43232 /* moreBlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A57E7CF01FADE6DF00D43232 /* moreBlock@2x.png */; };
+		A57E7CF31FADE6DF00D43232 /* moreBlock@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A57E7CF11FADE6DF00D43232 /* moreBlock@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		33655FE92BF8C31A960F6996 /* Pods-Digi Card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digi Card.release.xcconfig"; path = "Pods/Target Support Files/Pods-Digi Card/Pods-Digi Card.release.xcconfig"; sourceTree = "<group>"; };
-		6F63DB2ED1E319D22C83B177 /* Pods-Digi Card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digi Card.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Digi Card/Pods-Digi Card.debug.xcconfig"; sourceTree = "<group>"; };
 		A53F99711FAAEF58000B54BB /* Digi Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Digi Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53F99751FAAEF58000B54BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A53F997E1FAAEF58000B54BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -278,7 +279,12 @@
 		A53F9B5A1FAB2946000B54BB /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		A53F9C9E1FAB2AF0000B54BB /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
 		A53F9C9F1FAB2AF0000B54BB /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
-		FDDFC02CC4AFA08F86A74618 /* libPods-Digi Card.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Digi Card.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57E7CEA1FADBC4100D43232 /* DigiCardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigiCardModel.h; sourceTree = "<group>"; };
+		A57E7CEB1FADBC4100D43232 /* DigiCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigiCardModel.m; sourceTree = "<group>"; };
+		A57E7CED1FADC25700D43232 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		A57E7CEE1FADC25700D43232 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		A57E7CF01FADE6DF00D43232 /* moreBlock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreBlock@2x.png"; sourceTree = "<group>"; };
+		A57E7CF11FADE6DF00D43232 /* moreBlock@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreBlock@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,28 +293,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A53F9C9D1FAB2AF0000B54BB /* libstdc++.6.0.9.tbd in Frameworks */,
-				77AFD3FDF9CD0DB865705F7E /* libPods-Digi Card.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5707B9DC38E3868B9DB22CFE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6F63DB2ED1E319D22C83B177 /* Pods-Digi Card.debug.xcconfig */,
-				33655FE92BF8C31A960F6996 /* Pods-Digi Card.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		A53F99681FAAEF58000B54BB = {
 			isa = PBXGroup;
 			children = (
 				A53F99731FAAEF58000B54BB /* Digi Card */,
 				A53F99721FAAEF58000B54BB /* Products */,
-				5707B9DC38E3868B9DB22CFE /* Pods */,
 				B34D2ECB24948FA894717811 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -362,6 +357,8 @@
 				A53F998E1FAAF008000B54BB /* AppDelegate.m */,
 				A53F998F1FAAF008000B54BB /* ViewController.h */,
 				A53F99901FAAF008000B54BB /* ViewController.m */,
+				A57E7CED1FADC25700D43232 /* LoginVC.h */,
+				A57E7CEE1FADC25700D43232 /* LoginVC.m */,
 				A53F99A91FAAF06A000B54BB /* ForgotPasswordVC.h */,
 				A53F99AA1FAAF06A000B54BB /* ForgotPasswordVC.m */,
 				A53F99AC1FAAF078000B54BB /* ChangePasswordVC.h */,
@@ -383,6 +380,8 @@
 			children = (
 				A53F99F71FAAF489000B54BB /* BaseManager.h */,
 				A53F99F81FAAF489000B54BB /* BaseManager.m */,
+				A57E7CEA1FADBC4100D43232 /* DigiCardModel.h */,
+				A57E7CEB1FADBC4100D43232 /* DigiCardModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +389,8 @@
 		A53F99921FAAF008000B54BB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A57E7CF01FADE6DF00D43232 /* moreBlock@2x.png */,
+				A57E7CF11FADE6DF00D43232 /* moreBlock@3x.png */,
 				A53F9ABC1FAB282A000B54BB /* Sample.jpg */,
 			);
 			path = Resource;
@@ -692,7 +693,6 @@
 				A53F9C9F1FAB2AF0000B54BB /* libstdc++.tbd */,
 				A53F9B5A1FAB2946000B54BB /* libstdc++.6.0.9.tbd */,
 				A53F9AC21FAB2926000B54BB /* tesseract-ios-lib */,
-				FDDFC02CC4AFA08F86A74618 /* libPods-Digi Card.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -704,12 +704,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A53F99881FAAEF58000B54BB /* Build configuration list for PBXNativeTarget "Digi Card" */;
 			buildPhases = (
-				D7F49D3AFE21B3AF91D6122C /* [CP] Check Pods Manifest.lock */,
 				A53F996D1FAAEF58000B54BB /* Sources */,
 				A53F996E1FAAEF58000B54BB /* Frameworks */,
 				A53F996F1FAAEF58000B54BB /* Resources */,
-				442E154CEEC148CBC491A9AB /* [CP] Embed Pods Frameworks */,
-				CB36BE74D46CAE9E4D154E60 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -761,6 +758,8 @@
 				A53F99A51FAAF008000B54BB /* wraing.gif in Resources */,
 				A53F99841FAAEF58000B54BB /* LaunchScreen.storyboard in Resources */,
 				A53F99811FAAEF58000B54BB /* Assets.xcassets in Resources */,
+				A57E7CF21FADE6DF00D43232 /* moreBlock@2x.png in Resources */,
+				A57E7CF31FADE6DF00D43232 /* moreBlock@3x.png in Resources */,
 				A53F9ABD1FAB282A000B54BB /* Sample.jpg in Resources */,
 				A53F997F1FAAEF58000B54BB /* Main.storyboard in Resources */,
 				A53F99A31FAAF008000B54BB /* error.gif in Resources */,
@@ -769,57 +768,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		442E154CEEC148CBC491A9AB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Digi Card/Pods-Digi Card-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CB36BE74D46CAE9E4D154E60 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Digi Card/Pods-Digi Card-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D7F49D3AFE21B3AF91D6122C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Digi Card-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A53F996D1FAAEF58000B54BB /* Sources */ = {
@@ -836,6 +784,7 @@
 				A53F99A11FAAF008000B54BB /* AppDelegate.m in Sources */,
 				A53F99F21FAAF3B2000B54BB /* UIImage+MultiFormat.m in Sources */,
 				A53F99A61FAAF008000B54BB /* HHAlertView.m in Sources */,
+				A57E7CEC1FADBC4100D43232 /* DigiCardModel.m in Sources */,
 				A53F99AB1FAAF06A000B54BB /* ForgotPasswordVC.m in Sources */,
 				A53F99F61FAAF3B2000B54BB /* UIView+WebCacheOperation.m in Sources */,
 				A53F99E61FAAF3B2000B54BB /* Reachability.m in Sources */,
@@ -847,6 +796,7 @@
 				A53F99EA1FAAF3B2000B54BB /* SDWebImageCompat.m in Sources */,
 				A53F99E81FAAF3B2000B54BB /* NSData+ImageContentType.m in Sources */,
 				A53F99EB1FAAF3B2000B54BB /* SDWebImageDecoder.m in Sources */,
+				A57E7CEF1FADC25700D43232 /* LoginVC.m in Sources */,
 				A53F99B41FAAF0E2000B54BB /* ScannerVC.m in Sources */,
 				A53F99F41FAAF3B2000B54BB /* UIImageView+HighlightedWebCache.m in Sources */,
 				A53F99F01FAAF3B2000B54BB /* UIButton+WebCache.m in Sources */,
@@ -975,7 +925,6 @@
 		};
 		A53F99891FAAEF58000B54BB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F63DB2ED1E319D22C83B177 /* Pods-Digi Card.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CBZE86VY6D;
@@ -1011,7 +960,6 @@
 		};
 		A53F998A1FAAEF58000B54BB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33655FE92BF8C31A960F6996 /* Pods-Digi Card.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CBZE86VY6D;

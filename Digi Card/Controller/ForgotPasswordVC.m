@@ -9,6 +9,8 @@
 #import "ForgotPasswordVC.h"
 
 @interface ForgotPasswordVC ()
+@property (strong, nonatomic) IBOutlet UITextField *userNameTxt;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -17,11 +19,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setNeedsStatusBarAppearanceUpdate];
+    
 }
-
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [self.navigationController setNavigationBarHidden:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)forgotAction:(id)sender {
+}
+- (IBAction)backToLogin:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

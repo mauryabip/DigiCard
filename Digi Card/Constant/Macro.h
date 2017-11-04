@@ -18,7 +18,7 @@
 //Live Key: @"AIzaSyANQIQGZMGmYWQ4Wt6h49ll_vuSEh3l0YM"
 #define NAVCOLR [UIColor  colorWithRed:255.0f/255.0f green:90.0f/255.0f blue:95.0f/255.0f alpha:1.0f]//[UIColor  colorWithRed:230.0f/255.0f green:230.0f/255.0f blue:230.0f/255.0f alpha:1.0f]
 #define NAVCOLBASE [UIColor whiteColor]
-#define FONT [UIFont fontWithName:@"HelveticaNeue-Medium" size:16.0f]
+#define FONT [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f]
 #define STORYBOARD @"Main"
 
 

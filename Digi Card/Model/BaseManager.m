@@ -7,15 +7,10 @@
 //
 
 #import "BaseManager.h"
-@interface BaseManager () {
-
-        RKObjectMapping*    _LoginOM;
- 
-}
+@interface BaseManager ()
 @end
 @implementation BaseManager
 
-@synthesize MANAGERBASEURL;
 + (BaseManager *)sharedInstance {
     static BaseManager *__instance;
     static dispatch_once_t onceToken;
@@ -23,18 +18,6 @@
         __instance = [[BaseManager alloc] init];
     });
     return __instance;
-}
--(void)BaseManager{
-    NSURL *baseURL = [NSURL URLWithString:BASEURL];
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
-    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
-    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"text/html"];
-    [RKObjectManager setSharedManager:objectManager];
-    MANAGERBASEURL=objectManager;
-}
-- (void)ResponseObjectMappingConfiguration
-{
-    
 }
 
 

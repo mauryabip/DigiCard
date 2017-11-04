@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UITabBarDelegate,UITabBarControllerDelegate>{
+    NSArray *tabbarray;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
+
+
+-(void)SetNavigationBar;
+@property (strong, nonatomic) UITabBarController *maintab;
 
 @end
 

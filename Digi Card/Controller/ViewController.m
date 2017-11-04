@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-//#import "Tesseract.h"
+#import "LoginVC.h"
 
 @interface ViewController ()
 
@@ -18,21 +18,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-//    Tesseract* tesseract = [[Tesseract alloc] initWithDataPath:@"tessdata" language:@"eng"];
-//    [tesseract setVariableValue:@"0123456789" forKey:@"tessedit_char_whitelist"];
-//    [tesseract setImage:[UIImage imageNamed:@"Sample.jpg"]];
-//    [tesseract recognize];
-//    
-//    NSLog(@"%@", [tesseract recognizedText]);
-//    [tesseract clear];
-}
 
+    [self setNeedsStatusBarAppearanceUpdate];
+    
+}
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [self.navigationController setNavigationBarHidden:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)btnAction:(id)sender {
+    LoginVC *LoginVC=[self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+    [self.navigationController pushViewController:LoginVC animated:YES];
+
 }
 
 

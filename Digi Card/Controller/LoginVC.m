@@ -1,23 +1,29 @@
 //
-//  ScannerVC.m
+//  LoginVC.m
 //  Digi Card
 //
-//  Created by umenit on 11/2/17.
+//  Created by umenit on 11/4/17.
 //
 //
 
-#import "ScannerVC.h"
+#import "LoginVC.h"
+#import "AppDelegate.h"
+#import "ForgotPasswordVC.h"
 
-@interface ScannerVC ()
+@interface LoginVC ()
+@property (strong, nonatomic) IBOutlet UITextField *userNameTxt;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTxt;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
-@implementation ScannerVC
+@implementation LoginVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setNeedsStatusBarAppearanceUpdate];
+
     
 }
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -31,6 +37,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)loginAction:(id)sender {
+    [APPDELEGATE SetNavigationBar];
+    [APPDELEGATE.maintab setSelectedIndex:1];
+    [[APPDELEGATE.maintab.viewControllers objectAtIndex:1] popToRootViewControllerAnimated:YES];
+}
+- (IBAction)forgotPassAction:(id)sender {
+    ForgotPasswordVC *ForgotPasswordVC=[self.storyboard instantiateViewControllerWithIdentifier:@"ForgotPasswordVC"];
+    [self.navigationController pushViewController:ForgotPasswordVC animated:YES];
 }
 
 /*

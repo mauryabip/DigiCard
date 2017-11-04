@@ -47,5 +47,53 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(void)SetNavigationBar
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance] setBarTintColor:NAVCOLR];
+    [[UINavigationBar appearance] setTintColor:NAVCOLBASE];
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:NAVCOLBASE,NSFontAttributeName:FONT }];
+    _maintab=[[UITabBarController alloc]init];
+    _maintab.delegate=self;
+    [[UITabBar appearance] setTintColor:[UIColor redColor]];
+    
+    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController: [[DigiCardModel sharedInstance]Storyboard:@"CardListVC"]];
+    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController: [[DigiCardModel sharedInstance]Storyboard:@"ScannerVC"]];
+    UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController: [[DigiCardModel sharedInstance]Storyboard:@"MyProfileVC"]];
+    
+    tabbarray=[[NSArray alloc]initWithObjects:nav1,nav2,nav3,nil];
+    
+    _maintab.viewControllers=tabbarray;
+    self.window.rootViewController = _maintab;
+
+    [[_maintab.tabBar.items objectAtIndex:0] setTitle:@"Card"];
+    [[_maintab.tabBar.items objectAtIndex:1] setTitle:@"Scanner"];
+    [[_maintab.tabBar.items objectAtIndex:2] setTitle:@"Profile"];
+    
+    
+    [[_maintab.tabBar.items objectAtIndex:0] setImage:[UIImage imageNamed:@"q&a.png"]];
+    [[_maintab.tabBar.items objectAtIndex:1] setImage:[UIImage imageNamed:@"messages.png"]];
+    [[_maintab.tabBar.items objectAtIndex:2] setImage:[UIImage imageNamed:@"askTab.png"]];
+
+
+    [[_maintab.tabBar.items objectAtIndex:0] setTitlePositionAdjustment:UIOffsetMake(0, -5)];
+    [[_maintab.tabBar.items objectAtIndex:1] setTitlePositionAdjustment:UIOffsetMake(0, -5)];
+    [[_maintab.tabBar.items objectAtIndex:2] setTitlePositionAdjustment:UIOffsetMake(0, -5)];
+
+    
+    self.window.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:234.0/255.0f blue:234.0/255.0f alpha:1.0f];
+    [self.window makeKeyAndVisible];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    
+    
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    NSUInteger indexOfTab = [_maintab.viewControllers indexOfObject:viewController];
+    [[_maintab.viewControllers objectAtIndex:indexOfTab] popToRootViewControllerAnimated:YES];
+    
+    
+}
 
 @end
