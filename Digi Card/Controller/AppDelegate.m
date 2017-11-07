@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    [NSThread sleepForTimeInterval:2.0];
     
     reachability = [Reachability reachabilityForInternetConnection];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNetworkChange:) name:kReachabilityChangedNotification object:nil];
@@ -52,6 +52,13 @@
     else{
         [self performSelector:@selector(handle) withObject:nil afterDelay:2.000];
         
+    }
+    
+    NSString *Status=[NSUSERDEFAULTS objectForKey:@"Status"];
+    if ([Status isEqualToString:@"1"]) {
+        [APPDELEGATE SetNavigationBar];
+        [APPDELEGATE.maintab setSelectedIndex:1];
+        [[APPDELEGATE.maintab.viewControllers objectAtIndex:1] popToRootViewControllerAnimated:YES];
     }
     
     return YES;

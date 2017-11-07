@@ -11,7 +11,9 @@
 #import "CardListFilterVC.h"
 
 
-@interface CardListVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface CardListVC ()<UITableViewDelegate,UITableViewDataSource>{
+    NSArray *cardListArray;
+}
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -22,6 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setNeedsStatusBarAppearanceUpdate];
+    cardListArray=[[NSArray alloc]init];
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 120.0;
@@ -34,6 +37,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     [self.navigationController setNavigationBarHidden:YES];
+    [self AppCustomerList];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -153,6 +157,26 @@
 - (IBAction)filterAction:(id)sender {
     CardListFilterVC *CardListFilterVC=[self.storyboard instantiateViewControllerWithIdentifier:@"CardListFilterVC"];
     [self.navigationController presentViewController:CardListFilterVC animated:YES completion:nil];
+}
+
+-(void)AppCustomerList{
+    [[DigiCardModel sharedInstance]ShowWaitingLongtime:@""];
+    NSString *UserName=[NSUSERDEFAULTS objectForKey:@"UserName"];
+    NSString *UserUserID=[NSUSERDEFAULTS objectForKey:@"UserUserID"];
+    NSString *AuthCode=[NSUSERDEFAULTS objectForKey:@"AuthCode"];
+
+
+    [[BaseManager sharedInstance]AppCustomerList:AuthCode UserID:UserUserID CustomerName:@"" PrincipleID:@"0" BusinessVerticalID:@"0" IndustrySegmentID:@"0" IndustryTypeID:@"0" ZoneID:@"0" withCallback:^(NSDictionary *response) {
+        [[DigiCardModel sharedInstance]HideWaiting];
+        NSString *statusValue=[[response objectForKey:@"status"] objectAtIndex:0];
+        if ([statusValue isEqualToString:@"failed"]) {
+            [[DigiCardModel sharedInstance]errorWithTitle:APPNAME detailMessage:[response objectForKey:@"MsgNotification"] view:self.view];
+        }
+        else{
+            //cardListArray=[response objectAtIndex:0];
+        }
+        
+    }];
 }
 
 /*

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A523ACA71FB17B4A00A97CAE /* bglogo.png in Resources */ = {isa = PBXBuildFile; fileRef = A523ACA61FB17B4A00A97CAE /* bglogo.png */; };
 		A53F99761FAAEF58000B54BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99751FAAEF58000B54BB /* main.m */; };
 		A53F997F1FAAEF58000B54BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53F997D1FAAEF58000B54BB /* Main.storyboard */; };
 		A53F99811FAAEF58000B54BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53F99801FAAEF58000B54BB /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A523ACA61FB17B4A00A97CAE /* bglogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bglogo.png; sourceTree = "<group>"; };
 		A53F99711FAAEF58000B54BB /* Digi Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Digi Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53F99751FAAEF58000B54BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A53F997E1FAAEF58000B54BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 		A53F99921FAAF008000B54BB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A523ACA61FB17B4A00A97CAE /* bglogo.png */,
 				DCBA8D631FAF66D70006BA1F /* photo-camera@2x.png */,
 				DCBA8D641FAF66D70006BA1F /* photo-camera@3x.png */,
 				DCBA8D5F1FAF630C0006BA1F /* caret-down@2x.png */,
@@ -855,6 +858,7 @@
 				DC06359F1FAE1C1A00B05366 /* lockPassword@2x.png in Resources */,
 				DCBA8D661FAF66D70006BA1F /* photo-camera@3x.png in Resources */,
 				DCBA8D3D1FAE3CBC0006BA1F /* left-arrow@3x.png in Resources */,
+				A523ACA71FB17B4A00A97CAE /* bglogo.png in Resources */,
 				DCBA8D3B1FAE3CBC0006BA1F /* filter-tool-black-shape@3x.png in Resources */,
 				A53F99A51FAAF008000B54BB /* wraing.gif in Resources */,
 				A53F99841FAAEF58000B54BB /* LaunchScreen.storyboard in Resources */,
