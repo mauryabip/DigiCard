@@ -7,6 +7,7 @@
 //
 
 #import "DigiCardModel.h"
+#import "SVProgressHUD.h"
 
 @implementation DigiCardModel
 
@@ -79,6 +80,16 @@
 - (void)HideWaiting {
     UIWindow *window = [[[UIApplication sharedApplication] windows] lastObject];
     [MBProgressHUD hideHUDForView:window animated:YES];
+}
+
+
+-(void)show{
+    [SVProgressHUD setBackgroundLayerColor:[[UIColor whiteColor] colorWithAlphaComponent:0.4]];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeCustom];
+    [SVProgressHUD show];
+}
+-(void)Hide{
+    [SVProgressHUD dismiss];
 }
 -(id)Storyboard :(NSString*)ControllerId
 {

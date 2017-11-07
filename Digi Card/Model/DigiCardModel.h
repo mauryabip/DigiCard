@@ -30,6 +30,9 @@
 -(id)Storyboard :(NSString*)ControllerId;
 
 
+-(void)show;
+-(void)Hide;
+
 - (MBProgressHUD *)ShowWaiting:(NSString *)title ;
 - (MBProgressHUD *)ShowWaitingforDirection:(NSString *)title ;
 - (MBProgressHUD *)ShowWaitingLongtime:(NSString *)title ;
