@@ -14,9 +14,46 @@
 
 @implementation AppDelegate
 
+@synthesize remoteHostStatus,isInternet;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    reachability = [Reachability reachabilityForInternetConnection];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNetworkChange:) name:kReachabilityChangedNotification object:nil];
+    [reachability startNotifier];
+    remoteHostStatus = [reachability currentReachabilityStatus];
+    
+    IsNoInternetAppear=false;
+    
+    if(remoteHostStatus == NotReachable) {
+        isInternet = false;
+        
+    }
+    else if (remoteHostStatus == ReachableViaWiFi)
+    {
+        isInternet = true;
+        //    NSLog(@"Connected via wifi");
+        
+        
+    }
+    else if (remoteHostStatus == ReachableViaWWAN)
+    {
+        isInternet = true;
+        //   NSLog(@"connected via cell");
+        IsNoInternetAppear = false;
+        
+    }
+    
+    if (APPDELEGATE.isInternet){
+        
+    }
+    else{
+        [self performSelector:@selector(handle) withObject:nil afterDelay:2.000];
+        
+    }
+    
     return YES;
 }
 
@@ -95,5 +132,86 @@
     
     
 }
+
+
+
+-(void)handle{
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    // UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
+    // UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"NoInternetViewController"];
+    remoteHostStatus = [reachability currentReachabilityStatus];
+    
+    if(remoteHostStatus == NotReachable)
+    {
+        isInternet = false;
+        if (!IsNoInternetAppear) {
+            IsNoInternetAppear = YES;
+           // [self addNoNetworkView];
+            // [navController presentViewController:vc animated:YES completion:nil];
+        }
+    }
+    else if (remoteHostStatus == ReachableViaWiFi)
+    {
+        isInternet = true;
+        if (IsNoInternetAppear) {
+            //[self removeNoNetworkView];
+            // [navController dismissViewControllerAnimated:YES completion:nil];
+            IsNoInternetAppear = false;
+        }
+    }
+    else if (remoteHostStatus == ReachableViaWWAN)
+    {
+        isInternet = true;
+        if (IsNoInternetAppear) {
+          //  [self removeNoNetworkView];
+            // [navController dismissViewControllerAnimated:YES completion:nil];
+            IsNoInternetAppear = false;
+        }
+        
+    }
+    
+}
+
+- (void)handleNetworkChange:(NSNotification *)notice
+{
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    // UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
+    //  UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"NoInternetViewController"];
+    remoteHostStatus = [reachability currentReachabilityStatus];
+    
+    if(remoteHostStatus == NotReachable)
+    {
+        isInternet = false;
+        if (!IsNoInternetAppear) {
+            IsNoInternetAppear = YES;
+           // [self addNoNetworkView];
+            // [navController presentViewController:vc animated:YES completion:nil];
+        }
+    }
+    else if (remoteHostStatus == ReachableViaWiFi)
+    {
+        isInternet = true;
+        if (IsNoInternetAppear) {
+           // [self removeNoNetworkView];
+            // [navController dismissViewControllerAnimated:YES completion:nil];
+            IsNoInternetAppear = false;
+        }
+    }
+    else if (remoteHostStatus == ReachableViaWWAN)
+    {
+        isInternet = true;
+        if (IsNoInternetAppear) {
+           // [self removeNoNetworkView];
+            ///  [navController dismissViewControllerAnimated:YES completion:nil];
+            IsNoInternetAppear = false;
+        }
+        
+    }
+    
+    
+}
+
 
 @end

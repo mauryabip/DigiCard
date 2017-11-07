@@ -87,4 +87,41 @@
     
 }
 
+- (void)errorWithTitle:(NSString*)title detailMessage:(NSString*)detail view:(UIView*)view {
+    [HHAlertView showAlertWithStyle:HHAlertStyleError inView:view Title:title detail:detail cancelButton:nil Okbutton:nil];
+}
+
+- (void)success:(NSString*)title detailMessage:(NSString*)detail view:(UIView*)view {
+    [HHAlertView showAlertWithStyle:HHAlertStyleOk inView:view Title:title detail:detail cancelButton:nil Okbutton:nil block:^(HHAlertButton buttonindex) {
+        if (buttonindex == HHAlertButtonOk) {
+            //            NSLog(@"ok Button is seleced use block");
+            
+        }
+        else
+        {
+            //            NSLog(@"cancel Button is seleced use block");
+            
+        }
+    }];
+}
+
+#pragma mark - No Network Slider
+
+-(void)ViewSlideDown:(NSString*)Message{
+    
+    [HDNotificationView showNotificationViewWithImage:[UIImage imageNamed:@"icon.png"]
+                                                title:APPNAME
+                                              message:Message
+                                           isAutoHide:YES
+                                              onTouch:^{
+                                                  
+                                                  /// On touch handle. You can hide notification view or do something
+                                                  [HDNotificationView hideNotificationViewOnComplete:nil];
+                                              }];
+    
+    
+    
+}
+
+
 @end

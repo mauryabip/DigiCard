@@ -7,6 +7,9 @@
 //
 
 #import "CardListVC.h"
+#import "CardDetailsVC.h"
+#import "CardListFilterVC.h"
+
 
 @interface CardListVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -37,6 +40,50 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)moreBtnAction:(id)sender {
+    
+    FTPopOverMenuConfiguration *configuration = [FTPopOverMenuConfiguration defaultConfiguration];
+    
+    configuration.menuRowHeight = 45;
+    configuration.menuWidth = 160;
+    configuration.textColor = [UIColor whiteColor];
+    configuration.textFont = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16.f];
+    configuration.tintColor = FTDefaultTintColor;
+    configuration.borderColor = FTDefaultTintColor;
+    configuration.borderWidth = FTDefaultMenuBorderWidth;
+    configuration.textAlignment = NSTextAlignmentCenter;
+    configuration.ignoreImageOriginalColor = NO;
+    configuration.allowRoundedArrow = NO;
+    configuration.menuTextMargin = FTDefaultMenuTextMargin;
+    configuration.menuIconMargin = FTDefaultMenuIconMargin;
+    configuration.animationDuration = FTDefaultAnimationDuration;
+    
+    NSArray *statustype=@[@"Change Password",  @"Logout"];
+    [FTPopOverMenu showForSender:sender
+                   withMenuArray:statustype
+                       doneBlock:^(NSInteger selectedIndex) {
+                           
+                           NSLog(@"done block. do something. selectedIndex : %ld", (long)selectedIndex);
+                           if (selectedIndex==0) {
+                               ChangePasswordVC *ChangePasswordVC=[self.storyboard instantiateViewControllerWithIdentifier:@"ChangePasswordVC"];
+                               [self.navigationController pushViewController:ChangePasswordVC animated:YES];
+
+                           }else{
+                               [NSUSERDEFAULTS setObject:@"0" forKey:@"Status"];
+                               [NSUSERDEFAULTS synchronize];
+
+
+                               UINavigationController *controller = (UINavigationController*)[self.storyboard instantiateViewControllerWithIdentifier: @"RootNavigationController"];
+                               
+                               LoginVC *LoginVC=[self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+                               [controller setViewControllers:[NSArray arrayWithObject:LoginVC] animated:YES];
+                               APPDELEGATE.window.rootViewController=controller;
+                           }
+                           
+                       } dismissBlock:^{
+                           NSLog(@"user canceled. do nothing.");
+                           
+                       }];
+    
 }
 
 #pragma mark - Table View
@@ -82,7 +129,8 @@
     
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    CardDetailsVC *CardDetailsVC=[self.storyboard instantiateViewControllerWithIdentifier:@"CardDetailsVC"];
+    [self.navigationController pushViewController:CardDetailsVC animated:YES];
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -101,6 +149,10 @@
     }
     
  
+}
+- (IBAction)filterAction:(id)sender {
+    CardListFilterVC *CardListFilterVC=[self.storyboard instantiateViewControllerWithIdentifier:@"CardListFilterVC"];
+    [self.navigationController presentViewController:CardListFilterVC animated:YES completion:nil];
 }
 
 /*

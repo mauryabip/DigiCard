@@ -125,14 +125,14 @@
     // floatLabel
     _floatLabel = [UILabel new];
     _floatLabel.textColor = [UIColor blackColor];
-    _floatLabel.font =[UIFont fontWithName:@"HelveticaNeue" size:9.0f];
+    _floatLabel.font =[UIFont fontWithName:@"HelveticaNeue" size:16.0f];
     _floatLabel.alpha = 0.0f;
     [_floatLabel setCenter:CGPointMake(_xOrigin, 0.0f)];
     [self addSubview:_floatLabel];
     
     // colors
     _floatLabelPassiveColor = [UIColor lightGrayColor];
-    _floatLabelActiveColor = [UIColor colorWithRed:255.0 / 255.0 green:90.0 / 255.0 blue:95.0 / 255.0 alpha:1.0];
+    _floatLabelActiveColor = [UIColor colorWithRed:2.0 / 255.0 green:77.0 / 255.0 blue:64.0 / 255.0 alpha:1.0];
     
     // animationDuration
     _floatLabelShowAnimationDuration = @0.25f;

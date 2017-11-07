@@ -13,6 +13,8 @@
 #define SCREENWIDTH  [UIScreen mainScreen].bounds.size.width
 #define NSUSERDEFAULTS [NSUserDefaults standardUserDefaults]
 
+#define APPNAME @"Digi Card"
+
 //Development key  @"AIzaSyDEYHJ1klSThJJAvKKNfuGD794SebsdyM8"
 
 //Live Key: @"AIzaSyANQIQGZMGmYWQ4Wt6h49ll_vuSEh3l0YM"
@@ -20,6 +22,16 @@
 #define NAVCOLBASE [UIColor whiteColor]
 #define FONT [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f]
 #define STORYBOARD @"Main"
+
+
+
+#define FTDefaultMenuTextMargin             6.f
+#define FTDefaultMenuIconMargin             6.f
+#define FTDefaultAnimationDuration          0.2
+#define FTDefaultTintColor                  [UIColor colorWithRed:51/255.f green:51/255.f blue:51/255.f alpha:1.f]
+#define FTDefaultMenuFont                   [UIFont fontWithName:@"HelveticaNeue" size:16.f]
+#define FTDefaultMenuBorderWidth            0.8
+
 
 
 #endif /* Macro_h */

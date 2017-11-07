@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "LoginVC.h"
 
 @interface ViewController ()
 
@@ -36,8 +35,17 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)btnAction:(id)sender {
-    LoginVC *LoginVC=[self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
-    [self.navigationController pushViewController:LoginVC animated:YES];
+    NSString *Status=[NSUSERDEFAULTS objectForKey:@"Status"];
+    if ([Status isEqualToString:@"1"]) {
+        [APPDELEGATE SetNavigationBar];
+        [APPDELEGATE.maintab setSelectedIndex:1];
+        [[APPDELEGATE.maintab.viewControllers objectAtIndex:1] popToRootViewControllerAnimated:YES];
+    }
+    else{
+        LoginVC *LoginVC=[self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+        [self.navigationController pushViewController:LoginVC animated:YES];
+    }
+
 
 }
 
