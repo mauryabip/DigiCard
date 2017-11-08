@@ -13,6 +13,13 @@
 		A523ACB71FB1CF4500A97CAE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A523ACB01FB1CF4500A97CAE /* SVProgressHUD.bundle */; };
 		A523ACB81FB1CF4500A97CAE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A523ACB21FB1CF4500A97CAE /* SVProgressHUD.m */; };
 		A523ACB91FB1CF4500A97CAE /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A523ACB41FB1CF4500A97CAE /* SVRadialGradientLayer.m */; };
+		A5366B191FB2D90E009BA2CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5366B181FB2D90E009BA2CB /* CoreGraphics.framework */; };
+		A5366B1B1FB2D913009BA2CB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5366B1A1FB2D913009BA2CB /* SystemConfiguration.framework */; };
+		A5366B1D1FB2D919009BA2CB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5366B1C1FB2D919009BA2CB /* AVFoundation.framework */; };
+		A5366B1F1FB2D93D009BA2CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5366B1E1FB2D93D009BA2CB /* QuartzCore.framework */; };
+		A5366B211FB2D945009BA2CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5366B201FB2D945009BA2CB /* UIKit.framework */; };
+		A5366B231FB2D94D009BA2CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5366B221FB2D94D009BA2CB /* Foundation.framework */; };
+		A5366B271FB30989009BA2CB /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5366B261FB30989009BA2CB /* Contacts.framework */; };
 		A53F99761FAAEF58000B54BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99751FAAEF58000B54BB /* main.m */; };
 		A53F997F1FAAEF58000B54BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53F997D1FAAEF58000B54BB /* Main.storyboard */; };
 		A53F99811FAAEF58000B54BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53F99801FAAEF58000B54BB /* Assets.xcassets */; };
@@ -97,6 +104,13 @@
 		A523ACB21FB1CF4500A97CAE /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		A523ACB31FB1CF4500A97CAE /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		A523ACB41FB1CF4500A97CAE /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		A5366B181FB2D90E009BA2CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A5366B1A1FB2D913009BA2CB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A5366B1C1FB2D919009BA2CB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A5366B1E1FB2D93D009BA2CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A5366B201FB2D945009BA2CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A5366B221FB2D94D009BA2CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A5366B261FB30989009BA2CB /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		A53F99711FAAEF58000B54BB /* Digi Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Digi Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53F99751FAAEF58000B54BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A53F997E1FAAEF58000B54BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -363,6 +377,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5366B271FB30989009BA2CB /* Contacts.framework in Frameworks */,
+				A5366B231FB2D94D009BA2CB /* Foundation.framework in Frameworks */,
+				A5366B1D1FB2D919009BA2CB /* AVFoundation.framework in Frameworks */,
+				A5366B211FB2D945009BA2CB /* UIKit.framework in Frameworks */,
+				A5366B1F1FB2D93D009BA2CB /* QuartzCore.framework in Frameworks */,
+				A5366B191FB2D90E009BA2CB /* CoreGraphics.framework in Frameworks */,
+				A5366B1B1FB2D913009BA2CB /* SystemConfiguration.framework in Frameworks */,
 				A53F9C9D1FAB2AF0000B54BB /* libstdc++.6.0.9.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -806,6 +827,13 @@
 		B34D2ECB24948FA894717811 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5366B261FB30989009BA2CB /* Contacts.framework */,
+				A5366B221FB2D94D009BA2CB /* Foundation.framework */,
+				A5366B201FB2D945009BA2CB /* UIKit.framework */,
+				A5366B1E1FB2D93D009BA2CB /* QuartzCore.framework */,
+				A5366B1C1FB2D919009BA2CB /* AVFoundation.framework */,
+				A5366B1A1FB2D913009BA2CB /* SystemConfiguration.framework */,
+				A5366B181FB2D90E009BA2CB /* CoreGraphics.framework */,
 				A53F9C9E1FAB2AF0000B54BB /* libstdc++.6.tbd */,
 				A53F9C9F1FAB2AF0000B54BB /* libstdc++.tbd */,
 				A53F9B5A1FAB2946000B54BB /* libstdc++.6.0.9.tbd */,

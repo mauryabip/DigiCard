@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface ScannerVC : UIViewController<UITextFieldDelegate,UIScrollViewDelegate>{
+
+@interface ScannerVC : UIViewController<UITextFieldDelegate,UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     UITextField* activeField;
     UIView *inputAccessoryView;
     UIButton *Done;
@@ -22,6 +24,12 @@
     NSArray *addresstype;
 }
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (strong, nonatomic) IBOutlet UIImageView *frontCardImgView;
+@property (strong, nonatomic) IBOutlet UIImageView *backCardImgView;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *frontCardViewHTConst;
+
+
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTxt;
 @property (weak, nonatomic) IBOutlet UITextField *designationtxt;
@@ -50,5 +58,40 @@
 @property (weak, nonatomic) IBOutlet UIButton *selectPhonenumber3btn;
 @property (weak, nonatomic) IBOutlet UIButton *selectPhonenumber4btn;
 @property (weak, nonatomic) IBOutlet UIButton *selectPhonenumber5btn;
+
+@property (strong, nonatomic) IBOutlet UIButton *ContactTypeBtn;
+- (IBAction)ContactTypeBtnAction:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *ManagementTypeBtn;
+- (IBAction)ManagementTypeBtnAction:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UILabel *BusinessVerticalLbl;
+@property (strong, nonatomic) IBOutlet UIButton *BusinessVerticalBtn;
+- (IBAction)BusinessVerticalBtnAction:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UILabel *IndustrySegmentLbl;
+@property (strong, nonatomic) IBOutlet UIButton *IndustrySegmentBtn;
+- (IBAction)IndustrySegmentBtnAction:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UILabel *IndustryTypeLbl;
+@property (strong, nonatomic) IBOutlet UIButton *IndustryTypeBtn;
+- (IBAction)IndustryTypeBtnAction:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UILabel *PrincipleTypeLbl;
+@property (strong, nonatomic) IBOutlet UIButton *PrincipleTypeBtn;
+- (IBAction)PrincipleTypeBtnAction:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *ZoneTypeBtn;
+- (IBAction)ZoneTypeBtnAction:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *saveContactBtn;
+- (IBAction)saveContactAction:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *submitBtn;
+- (IBAction)submitBtnAction:(id)sender;
+
+- (IBAction)addFrontCardAction:(id)sender;
+
+- (IBAction)addBackCardAction:(id)sender;
 
 @end

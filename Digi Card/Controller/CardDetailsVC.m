@@ -78,18 +78,18 @@
 
 
 -(void)setValueInLabel{
-    self.nameLbl=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Name"];
-    self.designationLbl=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Designation"];
-    self.companyLbl=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Company"];
-    self.emailIdLbl=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"EmailID"];
-    self.phoneWorkLbl=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number"];
-    self.phoneMobileLbl=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number3"];
-    self.phoneMobile2Lbl=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number4"];
-    self.officeAddressLbl=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"OfficeAddress"];
-    self.factoryAddressLbl=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"FactoryAddress"];
-    self.residentialAddressLbl=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"ResidenceAddress"];
-    self.websitrURLLbl=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Website"];
-    self.zoneNameLbl=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"ZoneName"];
+    self.nameLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Name"];
+    self.designationLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Designation"];
+    self.companyLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Company"];
+    self.emailIdLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"EmailID"];
+    self.phoneWorkLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number"];
+    self.phoneMobileLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number3"];
+    self.phoneMobile2Lbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number4"];
+    self.officeAddressLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"OfficeAddress"];
+    self.factoryAddressLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"FactoryAddress"];
+    self.residentialAddressLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"ResidenceAddress"];
+    self.websitrURLLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Website"];
+    self.zoneNameLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"ZoneName"];
     
     NSString *CardFrontImagePath=[NSString stringWithFormat:@"%@%@",APPIMAGEURL,[[CustomerDetailArray objectAtIndex:0]objectForKey:@"CardFrontImage"]];
     [self.frontImageView sd_setImageWithURL:[NSURL URLWithString:CardFrontImagePath]

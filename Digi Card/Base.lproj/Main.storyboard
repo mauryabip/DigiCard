@@ -1026,6 +1026,9 @@
                                                 <state key="normal" title="Please Select Contact Type">
                                                     <color key="titleColor" red="0.0061698476779999999" green="0.3016249835" blue="0.25153377649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="ContactTypeBtnAction:" destination="yti-Eg-qcq" eventType="touchUpInside" id="RcK-gu-HL3"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Management Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0w-5w-jdh">
                                                 <rect key="frame" x="15" y="155" width="206" height="20"/>
@@ -1046,6 +1049,9 @@
                                                 <state key="normal" title="Please Select Management Type">
                                                     <color key="titleColor" red="0.0061698476779999999" green="0.3016249835" blue="0.25153377649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="ManagementTypeBtnAction:" destination="yti-Eg-qcq" eventType="touchUpInside" id="baX-e5-ht9"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Vertical" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWn-BV-4FV">
                                                 <rect key="frame" x="15" y="245" width="206" height="20"/>
@@ -1068,6 +1074,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWV-I7-sZY">
                                                 <rect key="frame" x="25" y="280" width="364" height="40.333333333333258"/>
+                                                <connections>
+                                                    <action selector="BusinessVerticalBtnAction:" destination="yti-Eg-qcq" eventType="touchUpInside" id="SNA-Pu-EUg"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Industry Segment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keW-C4-cF7">
                                                 <rect key="frame" x="15" y="335" width="206" height="20"/>
@@ -1090,6 +1099,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGX-dF-zW9">
                                                 <rect key="frame" x="25" y="370" width="364" height="40.333333333333258"/>
+                                                <connections>
+                                                    <action selector="IndustrySegmentBtnAction:" destination="yti-Eg-qcq" eventType="touchUpInside" id="r96-oX-58P"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Industry Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27Y-4E-1Os">
                                                 <rect key="frame" x="15" y="425" width="206" height="20"/>
@@ -1112,6 +1124,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qa-Ax-7AT">
                                                 <rect key="frame" x="25" y="460" width="364" height="40.333333333333258"/>
+                                                <connections>
+                                                    <action selector="IndustryTypeBtnAction:" destination="yti-Eg-qcq" eventType="touchUpInside" id="3Js-gO-Y6J"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Principle Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbM-WS-y7Q">
                                                 <rect key="frame" x="15" y="515" width="206" height="20"/>
@@ -1134,6 +1149,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwV-Dt-27m">
                                                 <rect key="frame" x="25" y="550" width="364" height="40.333333333333258"/>
+                                                <connections>
+                                                    <action selector="PrincipleTypeBtnAction:" destination="yti-Eg-qcq" eventType="touchUpInside" id="abj-a8-zrn"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zone Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTw-an-PjH">
                                                 <rect key="frame" x="15" y="605" width="206" height="20"/>
@@ -1154,6 +1172,9 @@
                                                 <state key="normal" title="Please Select Zone Type">
                                                     <color key="titleColor" red="0.0061698476779999999" green="0.3016249835" blue="0.25153377649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="ZoneTypeBtnAction:" destination="yti-Eg-qcq" eventType="touchUpInside" id="Xcf-76-mRO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNl-P9-umN">
                                                 <rect key="frame" x="25" y="695" width="150" height="30"/>
@@ -1165,6 +1186,9 @@
                                                 <state key="normal" title="Save Contact">
                                                     <color key="titleColor" red="0.0061698476779999999" green="0.3016249835" blue="0.25153377649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="saveContactAction:" destination="yti-Eg-qcq" eventType="touchUpInside" id="tbF-5S-03u"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Remark" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcV-Kq-FiA" customClass="UIFloatLabelTextField">
                                                 <rect key="frame" x="15" y="740" width="384" height="45"/>
@@ -1261,7 +1285,7 @@
                                             <constraint firstItem="0QN-PZ-koL" firstAttribute="top" secondItem="cbM-WS-y7Q" secondAttribute="bottom" constant="25" id="zYs-ns-NUH"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xiq-tK-gJX" userLabel="ContactDetailsView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xiq-tK-gJX" userLabel="BackCardImage">
                                         <rect key="frame" x="0.0" y="1941" width="414" height="205"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QG4-IM-awH">
@@ -1274,6 +1298,9 @@
                                                 <state key="normal" title="Add to Card Back Image">
                                                     <color key="titleColor" red="0.0061698476779999999" green="0.3016249835" blue="0.25153377649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="addFrontCardAction:" destination="yti-Eg-qcq" eventType="touchUpInside" id="Qjb-rc-H2O"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G81-Uf-rwd">
                                                 <rect key="frame" x="25" y="55" width="364" height="150"/>
@@ -1291,8 +1318,11 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rl5-ui-9I6">
-                                        <rect key="frame" x="0.0" y="2170" width="414" height="34"/>
+                                        <rect key="frame" x="0.0" y="2170" width="414" height="50"/>
                                         <color key="backgroundColor" red="0.033336035909999999" green="0.58853876589999998" blue="0.53335160020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ylD-0N-sgG"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <state key="normal" title="SUBMIT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1300,6 +1330,7 @@
                                         <connections>
                                             <action selector="applyAction:" destination="v0a-lk-DoY" eventType="touchUpInside" id="Hr7-U5-VGK"/>
                                             <action selector="changePasswordAction:" destination="j6i-zv-OJT" eventType="touchUpInside" id="ClI-JP-vbR"/>
+                                            <action selector="submitBtnAction:" destination="yti-Eg-qcq" eventType="touchUpInside" id="vKJ-ha-con"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1364,7 +1395,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="filterAction:" destination="EcD-RJ-JDv" eventType="touchUpInside" id="qDq-tN-SOq"/>
+                                    <action selector="addBackCardAction:" destination="yti-Eg-qcq" eventType="touchUpInside" id="d2U-Bv-f8S"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1388,15 +1419,29 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="2500"/>
                     <connections>
+                        <outlet property="BusinessVerticalBtn" destination="uWV-I7-sZY" id="ey4-Xw-9uQ"/>
+                        <outlet property="BusinessVerticalLbl" destination="aKC-Kx-Tzu" id="7Nm-dT-a5s"/>
+                        <outlet property="ContactTypeBtn" destination="hR5-dS-bSM" id="szJ-dv-MIV"/>
+                        <outlet property="IndustrySegmentBtn" destination="bGX-dF-zW9" id="b8W-lS-eiE"/>
+                        <outlet property="IndustrySegmentLbl" destination="y83-p1-pI3" id="9nf-id-zob"/>
+                        <outlet property="IndustryTypeBtn" destination="2Qa-Ax-7AT" id="Q7w-Tb-cE4"/>
+                        <outlet property="IndustryTypeLbl" destination="WFd-Pc-j77" id="mBx-WF-6sK"/>
+                        <outlet property="ManagementTypeBtn" destination="2R7-KP-wNr" id="uLp-hX-wKw"/>
+                        <outlet property="PrincipleTypeBtn" destination="NwV-Dt-27m" id="WHN-cZ-7Sg"/>
+                        <outlet property="PrincipleTypeLbl" destination="0QN-PZ-koL" id="3EX-Qk-xG0"/>
+                        <outlet property="ZoneTypeBtn" destination="tPa-hl-jIb" id="gvj-vl-XmS"/>
                         <outlet property="addressLine1txt" destination="hwr-5x-U2g" id="njU-Wb-9bd"/>
                         <outlet property="addressLine2txt" destination="9UE-ne-YhP" id="i0o-XK-CYA"/>
                         <outlet property="addressLine3txt" destination="oMw-zm-rJs" id="y23-Bm-rSd"/>
                         <outlet property="addressLine4txt" destination="9Zd-2M-HVZ" id="auF-Is-Z3Q"/>
+                        <outlet property="backCardImgView" destination="G81-Uf-rwd" id="Gaa-f4-pzF"/>
                         <outlet property="companyName1Txt" destination="7Bz-q0-X1B" id="eOa-Ib-IhO"/>
                         <outlet property="companyName2Txt" destination="QnH-L2-gc2" id="SbV-Pu-iE3"/>
                         <outlet property="designationtxt" destination="0ht-AX-M0s" id="tYA-1e-aCe"/>
                         <outlet property="emailId2Txt" destination="478-N1-HFx" id="bOC-tb-V8c"/>
                         <outlet property="emailIdTxt" destination="oZk-M8-wEn" id="DGN-5H-o4K"/>
+                        <outlet property="frontCardImgView" destination="5DS-gz-bV8" id="xwx-Jv-6o0"/>
+                        <outlet property="frontCardViewHTConst" destination="XRz-E2-0ij" id="ChI-UC-ZYz"/>
                         <outlet property="phoneNumber1txt" destination="Uga-wG-wDn" id="ctE-MS-Ms2"/>
                         <outlet property="phoneNumber2txt" destination="Y2n-7b-id2" id="REu-iU-SmX"/>
                         <outlet property="phoneNumber3txt" destination="4Lx-r9-eon" id="vdG-NN-GId"/>
@@ -1404,6 +1449,7 @@
                         <outlet property="phoneNumber5txt" destination="iy8-6H-NZO" id="orr-Vr-mmz"/>
                         <outlet property="postalCodetxt" destination="isJ-Oq-t4H" id="Zba-k2-Udd"/>
                         <outlet property="remarkTxt" destination="dcV-Kq-FiA" id="mgN-hN-RLB"/>
+                        <outlet property="saveContactBtn" destination="DNl-P9-umN" id="I1f-ow-Kir"/>
                         <outlet property="scrollView" destination="NZV-Gv-Mpk" id="bbK-78-4Hk"/>
                         <outlet property="selectAddressLine1btn" destination="kwn-L1-9xK" id="Hgt-vY-JjH"/>
                         <outlet property="selectAddressLine2btn" destination="zVp-d3-gva" id="TOX-tN-A6K"/>
@@ -1414,6 +1460,7 @@
                         <outlet property="selectPhonenumber3btn" destination="DHY-YW-1DE" id="y4w-fU-Shb"/>
                         <outlet property="selectPhonenumber4btn" destination="zSo-fN-ikE" id="mKQ-Wq-XO0"/>
                         <outlet property="selectPhonenumber5btn" destination="0fZ-Dh-58C" id="cnA-yY-Jdl"/>
+                        <outlet property="submitBtn" destination="rl5-ui-9I6" id="x1A-Wg-MxL"/>
                         <outlet property="userNameTxt" destination="FMw-fx-9ia" id="AFQ-07-dNC"/>
                         <outlet property="webURLtxt" destination="rmm-fe-zYB" id="0Ii-Xs-2ui"/>
                     </connections>
