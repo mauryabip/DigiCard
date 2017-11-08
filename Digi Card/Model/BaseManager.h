@@ -21,6 +21,8 @@
 }
 @property (strong, nonatomic) UIAlertView *alertView;
 @property (nonatomic, copy) void (^ callbackBlock)(NSDictionary *response);
+@property (nonatomic, copy) void (^ callbackBlockArray)(NSArray *response);
+
 
 + (BaseManager *)sharedInstance;
 
@@ -69,7 +71,7 @@
       IndustrySegmentID:(NSString*)IndustrySegmentID
          IndustryTypeID:(NSString*)IndustryTypeID
                  ZoneID:(NSString*)ZoneID
-           withCallback:(void(^) (NSDictionary* response)) callback;
+           withCallback:(void(^) (NSArray* response)) callback;
 
 
 -(void) AppCustomerDetail:(NSString*)AuthCode

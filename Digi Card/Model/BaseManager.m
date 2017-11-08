@@ -12,7 +12,7 @@
 @implementation BaseManager
 
 
-@synthesize callbackBlock;
+@synthesize callbackBlock,callbackBlockArray;
 - (id)init
 {
     self = [super init];
@@ -73,13 +73,21 @@
     NSError *jsonError;
     NSData *jsonData = [one dataUsingEncoding:NSUTF8StringEncoding];
     NSArray *resArray = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&jsonError];
-    NSDictionary *jsonObject;
-    if ([resArray count]>1) {
-        jsonObject=[NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&jsonError];
+    if ([[DigiCardModel sharedInstance].customerList length]>0) {
+        callbackBlockArray(resArray);
+
+    }else{
+        NSDictionary *jsonObject;
+        if ([resArray count]>1) {
+            jsonObject=[NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&jsonError];
+        }
+        else{
+            jsonObject=[[NSDictionary alloc]initWithDictionary:[resArray objectAtIndex:0]];
+        }
+        callbackBlock(jsonObject);
+
     }
-    else{
-        jsonObject=[[NSDictionary alloc]initWithDictionary:[resArray objectAtIndex:0]];
-    }
+
    // NSLog(@"%@   %lu",resArray, (unsigned long)[resArray count]);
     //NSDictionary *jsonObject=[[NSDictionary alloc]initWithDictionary:[resArray objectAtIndex:0]];
 //
@@ -87,7 +95,6 @@
     // NSLog(@"jsonObject is %@",jsonObject);
     
     // NSLog(@"%@",json);
-    callbackBlock(jsonObject);
 }
 - (NSString *)stringBystrippingxml:(NSString *)provideString
 {
@@ -352,7 +359,7 @@
 }
 
 
--(void) AppCustomerList:(NSString*)AuthCode UserID:(NSString*)UserID CustomerName:(NSString*)CustomerName PrincipleID:(NSString*)PrincipleID BusinessVerticalID:(NSString*)BusinessVerticalID IndustrySegmentID:(NSString*)IndustrySegmentID IndustryTypeID:(NSString*)IndustryTypeID ZoneID:(NSString*)ZoneID withCallback:(void(^) (NSDictionary* response)) callback
+-(void) AppCustomerList:(NSString*)AuthCode UserID:(NSString*)UserID CustomerName:(NSString*)CustomerName PrincipleID:(NSString*)PrincipleID BusinessVerticalID:(NSString*)BusinessVerticalID IndustrySegmentID:(NSString*)IndustrySegmentID IndustryTypeID:(NSString*)IndustryTypeID ZoneID:(NSString*)ZoneID withCallback:(void(^) (NSArray* response)) callback
 {
     NSString * soapMessage =[NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>"
                              "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">"
@@ -377,7 +384,7 @@
     NSString *msgLength = [NSString stringWithFormat:@"%lu", (unsigned long)[soapMessage length]];
     
     //ad required headers to the request
-    [theRequest addValue:@"cfcsitservices.co.in" forHTTPHeaderField:@"Host"];
+    [theRequest addValue: @"cfcsitservices.co.in" forHTTPHeaderField:@"Host"];
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [theRequest addValue: @"http://tempuri.org/AppCustomerList" forHTTPHeaderField:@"SOAPAction"];
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
@@ -395,7 +402,7 @@
     {
         NSLog(@"Connection is NULL");
     }
-    callbackBlock=callback;
+    callbackBlockArray=callback;
     
 }
 

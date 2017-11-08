@@ -94,7 +94,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 15;
+    return [cardListArray count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -116,7 +116,12 @@
     static NSString *simpleTableIdentifier = @"CardCell";
     
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-     //   UILabel *questionLbl=(UILabel*)[cell viewWithTag:100];
+    
+    UILabel *nameLbl=(UILabel*)[cell viewWithTag:101];
+    UILabel *designtionLbl=(UILabel*)[cell viewWithTag:102];
+    UILabel *companyNameLbl=(UILabel*)[cell viewWithTag:103];
+    UILabel *MobileLbl=(UILabel*)[cell viewWithTag:104];
+    UIImageView *cardImgView=(UIImageView*)[cell viewWithTag:105];
 
     UIView* shadowView = (UIView*)[cell viewWithTag:99];
     shadowView.backgroundColor=[UIColor colorWithRed:0.0/255.0 green:150.0/255.0 blue:136.0/255.0 alpha:0.3];
@@ -128,12 +133,48 @@
     [shadowView.layer setShadowRadius:5.0];
     [shadowView.layer setShadowOffset:CGSizeMake(5.0f, 5.0f)];
     
+    nameLbl.text=[[cardListArray objectAtIndex:indexPath.section]objectForKey:@"Name"];
+    designtionLbl.text=[[cardListArray objectAtIndex:indexPath.section]objectForKey:@"Designation"];
+    companyNameLbl.text=[[cardListArray objectAtIndex:indexPath.section]objectForKey:@"Company"];
+    MobileLbl.text=[[cardListArray objectAtIndex:indexPath.section]objectForKey:@"Number"];
+    
+    NSString *path=[NSString stringWithFormat:@"%@%@",APPIMAGEURL,[[cardListArray objectAtIndex:indexPath.section]objectForKey:@"CardFrontImage"]];
+    [cardImgView sd_setImageWithURL:[NSURL URLWithString:path]
+                          placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    cardImgView.contentMode = UIViewContentModeScaleAspectFill;
+    cardImgView.clipsToBounds = YES;
+
+    /*
+     {
+     CardBackImage = "Uploads/CardImage/527b73cd-c7a9-4e18-8005-b201eca7f59a..jpeg";
+     CardFrontImage = "Uploads/CardImage/841767de-911e-42c2-b307-e61eee772df1..jpeg";
+     Company = CFCS;
+     ContactType = "<null>";
+     CustomerID = "9baf3113-32ed-4d18-a174-71a6ce1b6870";
+     DOB = "<null>";
+     Designation = COO;
+     EmailID = "";
+     EmailID2 = "pankaj@cfesindia.com";
+     ISDeletable = 1;
+     ManagementType = "Middle Level";
+     Name = "Pankaj Chopra";
+     Number = " +91-11-40522522";
+     NumberType = Work;
+     Title = "";
+     Website = "w.cfcs.co.in/theo";
+     ZoneID = 1008;
+     ZoneName = "<null>";
+     }
+     */
+    
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CardDetailsVC *CardDetailsVC=[self.storyboard instantiateViewControllerWithIdentifier:@"CardDetailsVC"];
+    CardDetailsVC.customerId=[[cardListArray objectAtIndex:indexPath.section]objectForKey:@"CustomerID"];
     [self.navigationController pushViewController:CardDetailsVC animated:YES];
 }
 
@@ -160,21 +201,20 @@
 }
 
 -(void)AppCustomerList{
-    [[DigiCardModel sharedInstance]ShowWaitingLongtime:@""];
-    NSString *UserName=[NSUSERDEFAULTS objectForKey:@"UserName"];
+    [DigiCardModel sharedInstance].customerList=@"Card";
+    //[[DigiCardModel sharedInstance]ShowWaitingLongtime:@""];
+    // NSString *UserName=[NSUSERDEFAULTS objectForKey:@"UserName"];
     NSString *UserUserID=[NSUSERDEFAULTS objectForKey:@"UserUserID"];
     NSString *AuthCode=[NSUSERDEFAULTS objectForKey:@"AuthCode"];
 
+    [[DigiCardModel sharedInstance]show];
 
-    [[BaseManager sharedInstance]AppCustomerList:AuthCode UserID:UserUserID CustomerName:@"" PrincipleID:@"0" BusinessVerticalID:@"0" IndustrySegmentID:@"0" IndustryTypeID:@"0" ZoneID:@"0" withCallback:^(NSDictionary *response) {
-        [[DigiCardModel sharedInstance]HideWaiting];
-        NSString *statusValue=[[response objectForKey:@"status"] objectAtIndex:0];
-        if ([statusValue isEqualToString:@"failed"]) {
-            [[DigiCardModel sharedInstance]errorWithTitle:APPNAME detailMessage:[response objectForKey:@"MsgNotification"] view:self.view];
-        }
-        else{
-            //cardListArray=[response objectAtIndex:0];
-        }
+    [[BaseManager sharedInstance]AppCustomerList:AuthCode UserID:UserUserID CustomerName:@"" PrincipleID:@"0" BusinessVerticalID:@"0" IndustrySegmentID:@"0" IndustryTypeID:@"0" ZoneID:@"0" withCallback:^(NSArray *response) {
+       // [[DigiCardModel sharedInstance]HideWaiting];
+        [[DigiCardModel sharedInstance]Hide];
+        [DigiCardModel sharedInstance].customerList=@"";
+        cardListArray=response;
+        [self.tableView reloadData];
         
     }];
 }

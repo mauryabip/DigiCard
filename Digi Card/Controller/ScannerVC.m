@@ -27,13 +27,9 @@
     NSLog(@"%@   dsadas%@",[[DigiCardModel sharedInstance].NumberTypeMasterDic valueForKey:@"NumberType"],[[[DigiCardModel sharedInstance].NumberTypeMasterDic valueForKey:@"NumberType"] objectAtIndex:0]);
     addresstype=@[@"Office", @"Factory", @"Residence"];
     
-    [[DigiCardModel sharedInstance]show];
-    [self performSelector:@selector(hide) withObject:nil afterDelay:2.00];
 
 }
--(void)hide{
-    [[DigiCardModel sharedInstance]Hide];
-}
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;

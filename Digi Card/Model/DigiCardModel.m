@@ -84,7 +84,7 @@
 
 
 -(void)show{
-    [SVProgressHUD setBackgroundLayerColor:[[UIColor whiteColor] colorWithAlphaComponent:0.4]];
+    [SVProgressHUD setBackgroundLayerColor:[[UIColor whiteColor] colorWithAlphaComponent:0.3]];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeCustom];
     [SVProgressHUD show];
 }

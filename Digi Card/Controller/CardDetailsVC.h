@@ -10,4 +10,6 @@
 
 @interface CardDetailsVC : UIViewController
 
+@property (strong,nonatomic) NSString *customerId;
+
 @end

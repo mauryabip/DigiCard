@@ -51,7 +51,9 @@
     //    if (isValid){
     //
     //    }
-    [[DigiCardModel sharedInstance]ShowWaitingLongtime:@""];
+    //[[DigiCardModel sharedInstance]ShowWaitingLongtime:@""];
+    [[DigiCardModel sharedInstance]show];
+
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     NSTimeInterval  today = [[NSDate date] timeIntervalSince1970];
     NSString *intervalString = [NSString stringWithFormat:@"%f", today];
@@ -90,8 +92,9 @@
 -(void)AppddlList:(NSString*)authCode UserID:(NSString*)UserID{
     
     [[BaseManager sharedInstance]AppddlList:authCode UserID:UserID withCallback:^(NSDictionary *response) {
-        [[DigiCardModel sharedInstance]HideWaiting];
-        
+       // [[DigiCardModel sharedInstance]HideWaiting];
+        [[DigiCardModel sharedInstance]Hide];
+
         NSString *statusValue=[response objectForKey:@"status"];
         if ([statusValue isEqualToString:@"failed"]) {
             [[DigiCardModel sharedInstance]errorWithTitle:APPNAME detailMessage:[response objectForKey:@"MsgNotification"] view:self.view];

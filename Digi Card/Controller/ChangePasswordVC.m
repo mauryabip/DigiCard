@@ -59,9 +59,13 @@
         NSString *UserUserID=[NSUSERDEFAULTS objectForKey:@"UserUserID"];
         NSString *AuthCode=[NSUSERDEFAULTS objectForKey:@"AuthCode"];
 
-        [[DigiCardModel sharedInstance]ShowWaitingLongtime:@""];
+       // [[DigiCardModel sharedInstance]ShowWaitingLongtime:@""];
+        [[DigiCardModel sharedInstance]show];
+
         [[BaseManager sharedInstance]AppUserChangePassword:UserUserID OldPassword:self.currentPassTxt.text NewPassword:self.passwordTxt.text AuthCode:AuthCode withCallback:^(NSDictionary *response) {
-            [[DigiCardModel sharedInstance]HideWaiting];
+           // [[DigiCardModel sharedInstance]HideWaiting];
+            [[DigiCardModel sharedInstance]Hide];
+
             NSString *statusValue=[response objectForKey:@"status"];
             if ([statusValue isEqualToString:@"failed"]) {
                 [[DigiCardModel sharedInstance]errorWithTitle:APPNAME detailMessage:[response objectForKey:@"MsgNotification"] view:self.view];

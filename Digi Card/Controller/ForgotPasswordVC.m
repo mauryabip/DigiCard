@@ -41,9 +41,13 @@
     BOOL isValid=[self CheckForValidation];
     if (isValid){
         NSString *UserName=[NSUSERDEFAULTS objectForKey:@"UserName"];
-        [[DigiCardModel sharedInstance]ShowWaitingLongtime:@""];
+      //  [[DigiCardModel sharedInstance]ShowWaitingLongtime:@""];
+        [[DigiCardModel sharedInstance]Hide];
+
         [[BaseManager sharedInstance]AppUserForgetPassword:UserName withCallback:^(NSDictionary *response) {
-            [[DigiCardModel sharedInstance]HideWaiting];
+           // [[DigiCardModel sharedInstance]HideWaiting];
+            [[DigiCardModel sharedInstance]show];
+
             NSString *statusValue=[response objectForKey:@"status"];
             if ([statusValue isEqualToString:@"failed"]) {
                 [[DigiCardModel sharedInstance]errorWithTitle:APPNAME detailMessage:[response objectForKey:@"MsgNotification"] view:self.view];

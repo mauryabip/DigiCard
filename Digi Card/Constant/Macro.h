@@ -14,6 +14,7 @@
 #define NSUSERDEFAULTS [NSUserDefaults standardUserDefaults]
 
 #define APPNAME @"Digi Card"
+#define APPIMAGEURL @"http://card.nmtronics.in/"
 
 //Development key  @"AIzaSyDEYHJ1klSThJJAvKKNfuGD794SebsdyM8"
 

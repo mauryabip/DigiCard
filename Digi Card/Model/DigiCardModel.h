@@ -24,6 +24,8 @@
 @property (strong,nonatomic) NSDictionary  *ContactTypeMasterDic;
 @property (strong,nonatomic) NSDictionary  *TierMasterDic;
 
+@property (strong,nonatomic) NSString  *customerList;
+
 
 +(DigiCardModel*)sharedInstance;
 -(BOOL)Isnetweork;
