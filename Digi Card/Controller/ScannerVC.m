@@ -9,7 +9,9 @@
 #import "ScannerVC.h"
 @import Contacts;
 
-@interface ScannerVC ()
+@interface ScannerVC (){
+    NSString *cardSideFlag;
+}
 
 @end
 
@@ -27,6 +29,27 @@
     addresstype=@[@"Office", @"Factory", @"Residence"];
     
     
+    self.ContactTypeBtn.layer.borderWidth=1.0;
+    self.ContactTypeBtn.layer.borderColor=NAVCOLR.CGColor;
+    
+    self.ManagementTypeBtn.layer.borderWidth=1.0;
+    self.ManagementTypeBtn.layer.borderColor=NAVCOLR.CGColor;
+
+    self.BusinessVerticalBtn.layer.borderWidth=1.0;
+    self.BusinessVerticalBtn.layer.borderColor=NAVCOLR.CGColor;
+
+    self.IndustrySegmentBtn.layer.borderWidth=1.0;
+    self.IndustrySegmentBtn.layer.borderColor=NAVCOLR.CGColor;
+
+    self.IndustryTypeBtn.layer.borderWidth=1.0;
+    self.IndustryTypeBtn.layer.borderColor=NAVCOLR.CGColor;
+
+    self.PrincipleTypeBtn.layer.borderWidth=1.0;
+    self.PrincipleTypeBtn.layer.borderColor=NAVCOLR.CGColor;
+
+    self.ZoneTypeBtn.layer.borderWidth=1.0;
+    self.ZoneTypeBtn.layer.borderColor=NAVCOLR.CGColor;
+
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -577,7 +600,7 @@
     return valid;
 }
 
--(void)OpenCamera:(NSString*)FrontBackCard{
+-(void)OpenCamera{
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
     imagePicker.allowsEditing = YES;
@@ -601,6 +624,13 @@
     //UIImage *scaledimage =[self imageWithImage:orgimg scaledToSize:CGSizeMake(100, 100)];
     UIImage *myImage = [info objectForKey:UIImagePickerControllerEditedImage];
     NSData *imageData = UIImagePNGRepresentation(myImage);
+    if ([cardSideFlag isEqualToString:@"Front"]) {
+        self.frontCardImgView.image=[info objectForKey:UIImagePickerControllerOriginalImage];
+    }
+    else{
+        self.backCardImgView.image=[info objectForKey:UIImagePickerControllerOriginalImage];
+
+    }
 }
 
 
@@ -610,12 +640,21 @@
 - (IBAction)ManagementTypeBtnAction:(id)sender {
 }
 - (IBAction)BusinessVerticalBtnAction:(id)sender {
+    OptionVC *OptionVC=[self.storyboard instantiateViewControllerWithIdentifier:@"OptionVC"];
+    [self presentViewController:OptionVC animated:YES completion:nil];
+
 }
 - (IBAction)IndustrySegmentBtnAction:(id)sender {
+    OptionVC *OptionVC=[self.storyboard instantiateViewControllerWithIdentifier:@"OptionVC"];
+    [self presentViewController:OptionVC animated:YES completion:nil];
 }
 - (IBAction)IndustryTypeBtnAction:(id)sender {
+    OptionVC *OptionVC=[self.storyboard instantiateViewControllerWithIdentifier:@"OptionVC"];
+    [self presentViewController:OptionVC animated:YES completion:nil];
 }
 - (IBAction)PrincipleTypeBtnAction:(id)sender {
+    OptionVC *OptionVC=[self.storyboard instantiateViewControllerWithIdentifier:@"OptionVC"];
+    [self presentViewController:OptionVC animated:YES completion:nil];
 }
 - (IBAction)ZoneTypeBtnAction:(id)sender {
 }
@@ -634,8 +673,12 @@
 - (IBAction)submitBtnAction:(id)sender {
 }
 - (IBAction)addFrontCardAction:(id)sender {
+    cardSideFlag=@"Front";
+    [self OpenCamera];
 }
 - (IBAction)addBackCardAction:(id)sender {
+    cardSideFlag=@"";
+     [self OpenCamera];
 }
 
 

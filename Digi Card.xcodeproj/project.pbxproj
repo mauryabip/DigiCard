@@ -27,6 +27,11 @@
 		A5366BDF1FB326A4009BA2CB /* card_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5366BD91FB326A4009BA2CB /* card_icon@3x.png */; };
 		A5366BE01FB326A4009BA2CB /* pro_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5366BDA1FB326A4009BA2CB /* pro_icon@2x.png */; };
 		A5366BE11FB326A4009BA2CB /* pro_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5366BDB1FB326A4009BA2CB /* pro_icon@3x.png */; };
+		A5366BE41FB3412D009BA2CB /* OptionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5366BE31FB3412D009BA2CB /* OptionVC.m */; };
+		A5366BE91FB342CC009BA2CB /* checksquare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5366BE51FB342CC009BA2CB /* checksquare@2x.png */; };
+		A5366BEA1FB342CC009BA2CB /* checksquare@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5366BE61FB342CC009BA2CB /* checksquare@3x.png */; };
+		A5366BEB1FB342CC009BA2CB /* square@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5366BE71FB342CC009BA2CB /* square@2x.png */; };
+		A5366BEC1FB342CC009BA2CB /* square@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5366BE81FB342CC009BA2CB /* square@3x.png */; };
 		A53F99761FAAEF58000B54BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99751FAAEF58000B54BB /* main.m */; };
 		A53F997F1FAAEF58000B54BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53F997D1FAAEF58000B54BB /* Main.storyboard */; };
 		A53F99811FAAEF58000B54BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53F99801FAAEF58000B54BB /* Assets.xcassets */; };
@@ -125,6 +130,12 @@
 		A5366BD91FB326A4009BA2CB /* card_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card_icon@3x.png"; sourceTree = "<group>"; };
 		A5366BDA1FB326A4009BA2CB /* pro_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pro_icon@2x.png"; sourceTree = "<group>"; };
 		A5366BDB1FB326A4009BA2CB /* pro_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pro_icon@3x.png"; sourceTree = "<group>"; };
+		A5366BE21FB3412C009BA2CB /* OptionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionVC.h; sourceTree = "<group>"; };
+		A5366BE31FB3412D009BA2CB /* OptionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionVC.m; sourceTree = "<group>"; };
+		A5366BE51FB342CC009BA2CB /* checksquare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checksquare@2x.png"; sourceTree = "<group>"; };
+		A5366BE61FB342CC009BA2CB /* checksquare@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checksquare@3x.png"; sourceTree = "<group>"; };
+		A5366BE71FB342CC009BA2CB /* square@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square@2x.png"; sourceTree = "<group>"; };
+		A5366BE81FB342CC009BA2CB /* square@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square@3x.png"; sourceTree = "<group>"; };
 		A53F99711FAAEF58000B54BB /* Digi Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Digi Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53F99751FAAEF58000B54BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A53F997E1FAAEF58000B54BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -496,6 +507,8 @@
 				A53F99B31FAAF0E2000B54BB /* ScannerVC.m */,
 				A53F99B51FAAF0F4000B54BB /* MyProfileVC.h */,
 				A53F99B61FAAF0F4000B54BB /* MyProfileVC.m */,
+				A5366BE21FB3412C009BA2CB /* OptionVC.h */,
+				A5366BE31FB3412D009BA2CB /* OptionVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -514,6 +527,10 @@
 		A53F99921FAAF008000B54BB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A5366BE51FB342CC009BA2CB /* checksquare@2x.png */,
+				A5366BE61FB342CC009BA2CB /* checksquare@3x.png */,
+				A5366BE71FB342CC009BA2CB /* square@2x.png */,
+				A5366BE81FB342CC009BA2CB /* square@3x.png */,
 				A5366BD61FB326A4009BA2CB /* cam_icon@2x.png */,
 				A5366BD71FB326A4009BA2CB /* cam_icon@3x.png */,
 				A5366BD81FB326A4009BA2CB /* card_icon@2x.png */,
@@ -949,6 +966,7 @@
 				A53F99A51FAAF008000B54BB /* wraing.gif in Resources */,
 				A53F99841FAAEF58000B54BB /* LaunchScreen.storyboard in Resources */,
 				A5366BDF1FB326A4009BA2CB /* card_icon@3x.png in Resources */,
+				A5366BEC1FB342CC009BA2CB /* square@3x.png in Resources */,
 				DCBA8D5E1FAE56120006BA1F /* previousDisable@3x.png in Resources */,
 				A53F99811FAAEF58000B54BB /* Assets.xcassets in Resources */,
 				A5366BD41FB3235E009BA2CB /* msg_icon.png in Resources */,
@@ -965,14 +983,17 @@
 				DCBA8D5A1FAE56120006BA1F /* nextk@3x.png in Resources */,
 				DCBA8D5C1FAE56120006BA1F /* previous@3x.png in Resources */,
 				DCBA8D621FAF630C0006BA1F /* caret-down@3x.png in Resources */,
+				A5366BEB1FB342CC009BA2CB /* square@2x.png in Resources */,
 				A53F997F1FAAEF58000B54BB /* Main.storyboard in Resources */,
 				DCBA8D561FAE56120006BA1F /* next@3x.png in Resources */,
 				DCBA8D591FAE56120006BA1F /* nextk@2x.png in Resources */,
+				A5366BE91FB342CC009BA2CB /* checksquare@2x.png in Resources */,
 				DCBA8D571FAE56120006BA1F /* nextDisable@2x.png in Resources */,
 				DCBA8D341FAE3BAF0006BA1F /* loginUser@2x.png in Resources */,
 				A53F99A31FAAF008000B54BB /* error.gif in Resources */,
 				A5366BE11FB326A4009BA2CB /* pro_icon@3x.png in Resources */,
 				A53F99A41FAAF008000B54BB /* success.gif in Resources */,
+				A5366BEA1FB342CC009BA2CB /* checksquare@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1016,6 +1037,7 @@
 				A523ACB61FB1CF4500A97CAE /* SVProgressAnimatedView.m in Sources */,
 				A53F99E41FAAF3B2000B54BB /* MBProgressHUD.m in Sources */,
 				A53F99B11FAAF0C4000B54BB /* CardListVC.m in Sources */,
+				A5366BE41FB3412D009BA2CB /* OptionVC.m in Sources */,
 				A53F99AE1FAAF079000B54BB /* ChangePasswordVC.m in Sources */,
 				A53F99BA1FAAF113000B54BB /* CardDetailsVC.m in Sources */,
 				A53F99EC1FAAF3B2000B54BB /* SDWebImageDownloader.m in Sources */,

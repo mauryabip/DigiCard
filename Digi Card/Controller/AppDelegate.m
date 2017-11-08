@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [NSThread sleepForTimeInterval:2.0];
+   // [NSThread sleepForTimeInterval:2.0];
     
     reachability = [Reachability reachabilityForInternetConnection];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNetworkChange:) name:kReachabilityChangedNotification object:nil];
@@ -100,7 +100,7 @@
      @{NSForegroundColorAttributeName:NAVCOLBASE,NSFontAttributeName:FONT }];
     _maintab=[[UITabBarController alloc]init];
     _maintab.delegate=self;
-    [[UITabBar appearance] setTintColor:[UIColor redColor]];
+    [[UITabBar appearance] setTintColor:NAVCOLR];
     
     UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController: [[DigiCardModel sharedInstance]Storyboard:@"CardListVC"]];
     UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController: [[DigiCardModel sharedInstance]Storyboard:@"ScannerVC"]];
@@ -120,12 +120,14 @@
     [[_maintab.tabBar.items objectAtIndex:2] setImage:[UIImage imageNamed:@"pro_icon.png"]];
 
 
-    [[_maintab.tabBar.items objectAtIndex:0] setTitlePositionAdjustment:UIOffsetMake(0, -5)];
-    [[_maintab.tabBar.items objectAtIndex:1] setTitlePositionAdjustment:UIOffsetMake(0, -5)];
-    [[_maintab.tabBar.items objectAtIndex:2] setTitlePositionAdjustment:UIOffsetMake(0, -5)];
+//    [[_maintab.tabBar.items objectAtIndex:0] setTitlePositionAdjustment:UIOffsetMake(0, -7)];
+//    [[_maintab.tabBar.items objectAtIndex:1] setTitlePositionAdjustment:UIOffsetMake(0, -7)];
+//    [[_maintab.tabBar.items objectAtIndex:2] setTitlePositionAdjustment:UIOffsetMake(0, -7)];
 
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Helvetica" size:20.0f], UITextAttributeFont, nil] forState:UIControlStateNormal];
-
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{
+                                                        NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Medium" size:16]                                                        }
+                                             forState:UIControlStateNormal];
     
     self.window.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:234.0/255.0f blue:234.0/255.0f alpha:1.0f];
     [self.window makeKeyAndVisible];
@@ -135,12 +137,12 @@
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+  
     NSUInteger indexOfTab = [_maintab.viewControllers indexOfObject:viewController];
     [[_maintab.viewControllers objectAtIndex:indexOfTab] popToRootViewControllerAnimated:YES];
     
     
 }
-
 
 
 -(void)handle{
