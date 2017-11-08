@@ -115,15 +115,16 @@
     [[_maintab.tabBar.items objectAtIndex:1] setTitle:@"Scanner"];
     [[_maintab.tabBar.items objectAtIndex:2] setTitle:@"Profile"];
     
-    
-    [[_maintab.tabBar.items objectAtIndex:0] setImage:[UIImage imageNamed:@"q&a.png"]];
-    [[_maintab.tabBar.items objectAtIndex:1] setImage:[UIImage imageNamed:@"messages.png"]];
-    [[_maintab.tabBar.items objectAtIndex:2] setImage:[UIImage imageNamed:@"askTab.png"]];
+    [[_maintab.tabBar.items objectAtIndex:0] setImage:[UIImage imageNamed:@"cam_icon.png"]];
+    [[_maintab.tabBar.items objectAtIndex:1] setImage:[UIImage imageNamed:@"card_icon.png"]];
+    [[_maintab.tabBar.items objectAtIndex:2] setImage:[UIImage imageNamed:@"pro_icon.png"]];
 
 
     [[_maintab.tabBar.items objectAtIndex:0] setTitlePositionAdjustment:UIOffsetMake(0, -5)];
     [[_maintab.tabBar.items objectAtIndex:1] setTitlePositionAdjustment:UIOffsetMake(0, -5)];
     [[_maintab.tabBar.items objectAtIndex:2] setTitlePositionAdjustment:UIOffsetMake(0, -5)];
+
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Helvetica" size:20.0f], UITextAttributeFont, nil] forState:UIControlStateNormal];
 
     
     self.window.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:234.0/255.0f blue:234.0/255.0f alpha:1.0f];
