@@ -13,16 +13,10 @@
 
 @interface DigiCardModel : NSObject
 
-@property (strong,nonatomic) NSDictionary  *NumberTypeMasterDic;
-@property (strong,nonatomic) NSDictionary  *PrincipleMasterDic;
-@property (strong,nonatomic) NSDictionary  *BusinessVerticalMasterDic;
-@property (strong,nonatomic) NSDictionary  *IndustryTypeMasterDic;
-@property (strong,nonatomic) NSDictionary  *IndustrySegmentMasterDic;
-@property (strong,nonatomic) NSDictionary  *TitleMasterDic;
-@property (strong,nonatomic) NSDictionary  *ZoneMasterDic;
-@property (strong,nonatomic) NSDictionary  *ManagementTypeMasterDic;
-@property (strong,nonatomic) NSDictionary  *ContactTypeMasterDic;
-@property (strong,nonatomic) NSDictionary  *TierMasterDic;
+@property (strong,nonatomic) NSArray  *PrincipleMasterArray;
+@property (strong,nonatomic) NSArray  *BusinessVerticalMasterArray;
+@property (strong,nonatomic) NSArray  *IndustryTypeMasterArray;
+@property (strong,nonatomic) NSArray  *IndustrySegmentMasterArray;
 
 @property (strong,nonatomic) NSString  *customerList;
 

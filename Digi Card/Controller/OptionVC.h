@@ -10,4 +10,8 @@
 
 @interface OptionVC : UIViewController
 
+@property (strong,nonatomic) NSArray *optionDataArray;
+@property (strong,nonatomic) NSString *selectedType;
+
+
 @end

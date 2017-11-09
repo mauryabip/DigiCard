@@ -536,7 +536,7 @@
                              "<AppCustomerInsUpdt xmlns=\"http://tempuri.org/\">"
                              "<AuthCode>%@</AuthCode>"
                              "<UserID>%@</UserID>"
-                             "<CustomerID>string</CustomerID>"
+                             "<CustomerID>%@</CustomerID>"
                              "<Title>%@</Title>"
                              "<CustomerName>%@</CustomerName>"
                              "<DOB>%@</DOB>"

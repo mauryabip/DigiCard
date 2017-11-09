@@ -101,17 +101,20 @@
         }
         else{
             
-            [DigiCardModel sharedInstance].NumberTypeMasterDic=[response objectForKey:@"NumberTypeMaster"];
-            [DigiCardModel sharedInstance].PrincipleMasterDic=[response objectForKey:@"PrincipleMaster"];
-            [DigiCardModel sharedInstance].BusinessVerticalMasterDic=[response objectForKey:@"BusinessVerticalMaster"];
-            [DigiCardModel sharedInstance].IndustryTypeMasterDic=[response objectForKey:@"IndustryTypeMaster"];
-            [DigiCardModel sharedInstance].IndustrySegmentMasterDic=[response objectForKey:@"IndustrySegmentMaster"];
-            [DigiCardModel sharedInstance].TitleMasterDic=[response objectForKey:@"TitleMaster"];
-            [DigiCardModel sharedInstance].ZoneMasterDic=[response objectForKey:@"ZoneMaster"];
-            [DigiCardModel sharedInstance].ManagementTypeMasterDic=[response objectForKey:@""];
-            [DigiCardModel sharedInstance].ContactTypeMasterDic=[response objectForKey:@"ContactTypeMaster"];
-            [DigiCardModel sharedInstance].TierMasterDic=[response objectForKey:@"TierMaster"];
+            [NSUSERDEFAULTS setObject:[response objectForKey:@"NumberTypeMaster"] forKey:@"NumberTypeMaster"];
+            [NSUSERDEFAULTS setObject:[response objectForKey:@"PrincipleMaster"] forKey:@"PrincipleMaster"];
+            [NSUSERDEFAULTS setObject:[response objectForKey:@"BusinessVerticalMaster"] forKey:@"BusinessVerticalMaster"];
+            [NSUSERDEFAULTS setObject:[response objectForKey:@"IndustryTypeMaster"] forKey:@"IndustryTypeMaster"];
+            [NSUSERDEFAULTS setObject:[response objectForKey:@"IndustrySegmentMaster"] forKey:@"IndustrySegmentMaster"];
+            [NSUSERDEFAULTS setObject:[response objectForKey:@"TitleMaster"] forKey:@"TitleMaster"];
+            [NSUSERDEFAULTS setObject:[response objectForKey:@"ZoneMaster"] forKey:@"ZoneMaster"];
+            [NSUSERDEFAULTS setObject:[response objectForKey:@"ContactTypeMaster"] forKey:@"ContactTypeMaster"];
+            [NSUSERDEFAULTS setObject:[response objectForKey:@"TierMaster"] forKey:@"TierMaster"];
+            [NSUSERDEFAULTS setObject:[response objectForKey:@"ManagementTypeMaster"] forKey:@"ManagementTypeMaster"];
             
+
+            [NSUSERDEFAULTS synchronize];
+
             [[DigiCardModel sharedInstance]success:APPNAME detailMessage:@"Successfully Logged in!" view:self.view];
             
             [self performSelector:@selector(GotoScannerScreen) withObject:nil afterDelay:2.0000];

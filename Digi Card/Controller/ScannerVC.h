@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "OptionVC.h"
 
-@interface ScannerVC : UIViewController<UITextFieldDelegate,UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+@interface ScannerVC : UIViewController<UITextFieldDelegate,UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate>{
     UITextField* activeField;
     UIView *inputAccessoryView;
     UIButton *Done;
@@ -22,6 +22,16 @@
     FTPopOverMenuConfiguration *configuration;
     NSArray *phoneNumbertype;
     NSArray *addresstype;
+    UIPickerView *myPickerView;
+    NSMutableArray *pickerArray;
+    
+    NSString *locationId;
+    
+    UIBarButtonItem *_previous, *_next, *_done, *_searchone;
+    UIView *_inputAccView;
+    UIView *_inputAccViewforsearch;
+    UIToolbar *_keyboardToolbarforsearch;
+    
 }
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -61,9 +71,11 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *ContactTypeBtn;
 - (IBAction)ContactTypeBtnAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *ContactTypeTxt;
 
 @property (strong, nonatomic) IBOutlet UIButton *ManagementTypeBtn;
 - (IBAction)ManagementTypeBtnAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *managementTypeTxt;
 
 @property (strong, nonatomic) IBOutlet UILabel *BusinessVerticalLbl;
 @property (strong, nonatomic) IBOutlet UIButton *BusinessVerticalBtn;
@@ -83,6 +95,7 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *ZoneTypeBtn;
 - (IBAction)ZoneTypeBtnAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *zoneTxt;
 
 @property (strong, nonatomic) IBOutlet UIButton *saveContactBtn;
 - (IBAction)saveContactAction:(id)sender;

@@ -11,6 +11,29 @@
 
 @interface ScannerVC (){
     NSString *cardSideFlag;
+    
+    NSString *BusinessVerticalID;
+    NSString *IndustrySegmentID;
+    NSString *IndustryTypeID;
+    NSString *PrincipleID;
+    
+    NSString *saveContactFlag;
+    
+    NSString *addressType1;
+    NSString *addressType2;
+    NSString *addressType3;
+    NSString *addressType4;
+    
+    NSString *phoneNumber1;
+    NSString *phoneNumber2;
+    NSString *phoneNumber3;
+    NSString *phoneNumber4;
+    NSString *phoneNumber5;
+    
+    NSString *ContactTypeID;
+    NSString *ManagementTypeID;
+    NSString *ZoneID;
+    
 }
 
 @end
@@ -24,8 +47,7 @@
     [self setNeedsStatusBarAppearanceUpdate];
     configuration = [FTPopOverMenuConfiguration defaultConfiguration];
     phoneNumbertype=[[NSArray alloc]init];
-    phoneNumbertype=[[[DigiCardModel sharedInstance].NumberTypeMasterDic valueForKey:@"NumberType"] objectAtIndex:0];
-    NSLog(@"%@   dsadas%@",[[DigiCardModel sharedInstance].NumberTypeMasterDic valueForKey:@"NumberType"],[[[DigiCardModel sharedInstance].NumberTypeMasterDic valueForKey:@"NumberType"] objectAtIndex:0]);
+    phoneNumbertype=[NSUSERDEFAULTS objectForKey:@"NumberTypeMaster"];
     addresstype=@[@"Office", @"Factory", @"Residence"];
     
     
@@ -34,22 +56,22 @@
     
     self.ManagementTypeBtn.layer.borderWidth=1.0;
     self.ManagementTypeBtn.layer.borderColor=NAVCOLR.CGColor;
-
+    
     self.BusinessVerticalBtn.layer.borderWidth=1.0;
     self.BusinessVerticalBtn.layer.borderColor=NAVCOLR.CGColor;
-
+    
     self.IndustrySegmentBtn.layer.borderWidth=1.0;
     self.IndustrySegmentBtn.layer.borderColor=NAVCOLR.CGColor;
-
+    
     self.IndustryTypeBtn.layer.borderWidth=1.0;
     self.IndustryTypeBtn.layer.borderColor=NAVCOLR.CGColor;
-
+    
     self.PrincipleTypeBtn.layer.borderWidth=1.0;
     self.PrincipleTypeBtn.layer.borderColor=NAVCOLR.CGColor;
-
+    
     self.ZoneTypeBtn.layer.borderWidth=1.0;
     self.ZoneTypeBtn.layer.borderColor=NAVCOLR.CGColor;
-
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -59,6 +81,53 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     [self.navigationController setNavigationBarHidden:YES];
+    
+    if ([[DigiCardModel sharedInstance].BusinessVerticalMasterArray count]) {
+        
+        NSString * result = [[[[DigiCardModel sharedInstance].BusinessVerticalMasterArray valueForKey:@"BusinessVertical"] valueForKey:@"description"] componentsJoinedByString:@","];
+        self.BusinessVerticalLbl.text=result;
+        BusinessVerticalID=[[[[DigiCardModel sharedInstance].BusinessVerticalMasterArray valueForKey:@"BusinessVerticalID"] valueForKey:@"description"] componentsJoinedByString:@","];
+        
+    }else{
+        self.BusinessVerticalLbl.text=@"Please Select the Business Vertical";
+        BusinessVerticalID=@"";
+    }
+    
+    
+    if ([[DigiCardModel sharedInstance].IndustrySegmentMasterArray count]) {
+        
+        NSString * result = [[[[DigiCardModel sharedInstance].IndustrySegmentMasterArray valueForKey:@"IndustrySegment" ]valueForKey:@"description"] componentsJoinedByString:@","];
+        self.IndustrySegmentLbl.text=result;
+        IndustrySegmentID=[[[[DigiCardModel sharedInstance].IndustrySegmentMasterArray valueForKey:@"IndustrySegmentID" ]valueForKey:@"description"] componentsJoinedByString:@","];
+    }else{
+        self.IndustrySegmentLbl.text=@"Please Select the Industry Segment";
+        IndustrySegmentID=@"";
+        
+    }
+    
+    
+    if ([[DigiCardModel sharedInstance].IndustryTypeMasterArray count]) {
+        
+        NSString * result = [[[[DigiCardModel sharedInstance].IndustryTypeMasterArray valueForKey:@"IndustryType" ] valueForKey:@"description"] componentsJoinedByString:@","];
+        self.IndustryTypeLbl.text=result;
+        IndustryTypeID=[[[[DigiCardModel sharedInstance].IndustryTypeMasterArray valueForKey:@"IndustryTypeID" ] valueForKey:@"description"] componentsJoinedByString:@","];
+    }else{
+        self.IndustryTypeLbl.text=@"Please Select the Industry Type";
+        IndustryTypeID=@"";
+    }
+    
+    
+    if ([[DigiCardModel sharedInstance].PrincipleMasterArray count]) {
+        
+        NSString * result = [[[[DigiCardModel sharedInstance].PrincipleMasterArray valueForKey:@"Principle" ]valueForKey:@"description"] componentsJoinedByString:@","];
+        self.PrincipleTypeLbl.text=result;
+        PrincipleID=[[[[DigiCardModel sharedInstance].PrincipleMasterArray valueForKey:@"PrincipleID" ]valueForKey:@"description"] componentsJoinedByString:@","];
+        
+    }else{
+        self.PrincipleTypeLbl.text=@"Please Select the Principle Type";
+        PrincipleID=@"";
+    }
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -126,6 +195,7 @@
                            
                            NSLog(@"done block. do something. selectedIndex : %ld", (long)selectedIndex);
                            [self.selectAddressLine1btn setTitle:[addresstype objectAtIndex:selectedIndex] forState:UIControlStateNormal];
+                           addressType1=[addresstype objectAtIndex:selectedIndex];
                            
                        } dismissBlock:^{
                            NSLog(@"user canceled. do nothing.");
@@ -140,6 +210,7 @@
                            
                            NSLog(@"done block. do something. selectedIndex : %ld", (long)selectedIndex);
                            [self.selectAddressLine2btn setTitle:[addresstype objectAtIndex:selectedIndex] forState:UIControlStateNormal];
+                           addressType2=[addresstype objectAtIndex:selectedIndex];
                            
                        } dismissBlock:^{
                            NSLog(@"user canceled. do nothing.");
@@ -154,6 +225,7 @@
                            
                            NSLog(@"done block. do something. selectedIndex : %ld", (long)selectedIndex);
                            [self.selectAddressLine3btn setTitle:[addresstype objectAtIndex:selectedIndex] forState:UIControlStateNormal];
+                           addressType3=[addresstype objectAtIndex:selectedIndex];
                            
                        } dismissBlock:^{
                            NSLog(@"user canceled. do nothing.");
@@ -168,6 +240,7 @@
                            
                            NSLog(@"done block. do something. selectedIndex : %ld", (long)selectedIndex);
                            [self.selectAddressLine4btn setTitle:[addresstype objectAtIndex:selectedIndex] forState:UIControlStateNormal];
+                           addressType4=[addresstype objectAtIndex:selectedIndex];
                            
                        } dismissBlock:^{
                            NSLog(@"user canceled. do nothing.");
@@ -179,11 +252,13 @@
 - (IBAction)selectPhonenumber1Action:(id)sender {
     [self OpenPopOver:sender];
     [FTPopOverMenu showForSender:sender
-                   withMenuArray:phoneNumbertype
+                   withMenuArray:[phoneNumbertype valueForKey:@"NumberType"]
                        doneBlock:^(NSInteger selectedIndex) {
                            
                            NSLog(@"done block. do something. selectedIndex : %ld", (long)selectedIndex);
-                           [self.selectPhonenumber1btn setTitle:[phoneNumbertype objectAtIndex:selectedIndex] forState:UIControlStateNormal];
+                           [self.selectPhonenumber1btn setTitle:[[phoneNumbertype objectAtIndex:selectedIndex] valueForKey:@"NumberType"] forState:UIControlStateNormal];
+                           phoneNumber1=[[phoneNumbertype objectAtIndex:selectedIndex] valueForKey:@"NumberType"];
+                           
                            
                        } dismissBlock:^{
                            NSLog(@"user canceled. do nothing.");
@@ -193,11 +268,13 @@
 - (IBAction)selectPhonenumber2Action:(id)sender {
     [self OpenPopOver:sender];
     [FTPopOverMenu showForSender:sender
-                   withMenuArray:phoneNumbertype
+                   withMenuArray:[phoneNumbertype valueForKey:@"NumberType"]
                        doneBlock:^(NSInteger selectedIndex) {
                            
                            NSLog(@"done block. do something. selectedIndex : %ld", (long)selectedIndex);
-                           [self.selectPhonenumber2btn setTitle:[phoneNumbertype objectAtIndex:selectedIndex] forState:UIControlStateNormal];
+                           [self.selectPhonenumber2btn setTitle:[[phoneNumbertype objectAtIndex:selectedIndex] valueForKey:@"NumberType"] forState:UIControlStateNormal];
+                           phoneNumber2=[[phoneNumbertype objectAtIndex:selectedIndex] valueForKey:@"NumberType"];
+                           
                            
                        } dismissBlock:^{
                            NSLog(@"user canceled. do nothing.");
@@ -207,11 +284,13 @@
 - (IBAction)selectPhonenumber3Action:(id)sender {
     [self OpenPopOver:sender];
     [FTPopOverMenu showForSender:sender
-                   withMenuArray:phoneNumbertype
+                   withMenuArray:[phoneNumbertype valueForKey:@"NumberType"]
                        doneBlock:^(NSInteger selectedIndex) {
                            
                            NSLog(@"done block. do something. selectedIndex : %ld", (long)selectedIndex);
-                           [self.selectPhonenumber3btn setTitle:[phoneNumbertype objectAtIndex:selectedIndex] forState:UIControlStateNormal];
+                           [self.selectPhonenumber3btn setTitle:[[phoneNumbertype objectAtIndex:selectedIndex] valueForKey:@"NumberType"] forState:UIControlStateNormal];
+                           phoneNumber3=[[phoneNumbertype objectAtIndex:selectedIndex] valueForKey:@"NumberType"];
+                           
                            
                        } dismissBlock:^{
                            NSLog(@"user canceled. do nothing.");
@@ -221,11 +300,13 @@
 - (IBAction)selectPhonenumber4Action:(id)sender {
     [self OpenPopOver:sender];
     [FTPopOverMenu showForSender:sender
-                   withMenuArray:phoneNumbertype
+                   withMenuArray:[phoneNumbertype valueForKey:@"NumberType"]
                        doneBlock:^(NSInteger selectedIndex) {
                            
                            NSLog(@"done block. do something. selectedIndex : %ld", (long)selectedIndex);
-                           [self.selectPhonenumber4btn setTitle:[phoneNumbertype objectAtIndex:selectedIndex] forState:UIControlStateNormal];
+                           [self.selectPhonenumber4btn setTitle:[[phoneNumbertype objectAtIndex:selectedIndex] valueForKey:@"NumberType"] forState:UIControlStateNormal];
+                           phoneNumber4=[[phoneNumbertype objectAtIndex:selectedIndex] valueForKey:@"NumberType"];
+                           
                            
                        } dismissBlock:^{
                            NSLog(@"user canceled. do nothing.");
@@ -235,11 +316,13 @@
 - (IBAction)selectPhonenumber5Action:(id)sender {
     [self OpenPopOver:sender];
     [FTPopOverMenu showForSender:sender
-                   withMenuArray:phoneNumbertype
+                   withMenuArray:[phoneNumbertype valueForKey:@"NumberType"]
                        doneBlock:^(NSInteger selectedIndex) {
                            
                            NSLog(@"done block. do something. selectedIndex : %ld", (long)selectedIndex);
-                           [self.selectPhonenumber5btn setTitle:[phoneNumbertype objectAtIndex:selectedIndex] forState:UIControlStateNormal];
+                           [self.selectPhonenumber5btn setTitle:[[phoneNumbertype objectAtIndex:selectedIndex] valueForKey:@"NumberType"] forState:UIControlStateNormal];
+                           phoneNumber5=[[phoneNumbertype objectAtIndex:selectedIndex] valueForKey:@"NumberType"];
+                           
                            
                        } dismissBlock:^{
                            NSLog(@"user canceled. do nothing.");
@@ -314,6 +397,22 @@
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, 265.0, 0.0);
     self.scrollView.contentInset = contentInsets;
     [textField setInputAccessoryView:[self inputAccessoryViews]];
+    
+    
+    if (textField==self.ContactTypeTxt) {
+        pickerArray=[[NSMutableArray alloc]init];
+        [pickerArray addObjectsFromArray:[NSUSERDEFAULTS objectForKey:@"ContactTypeMaster"]];
+        [self setval];
+    }else if (textField==self.managementTypeTxt){
+        pickerArray=[[NSMutableArray alloc]init];
+        [pickerArray addObjectsFromArray:[NSUSERDEFAULTS objectForKey:@"ManagementTypeMaster"]];
+        [self setval];
+    }else if (textField==self.zoneTxt){
+        pickerArray=[[NSMutableArray alloc]init];
+        [pickerArray addObjectsFromArray:[NSUSERDEFAULTS objectForKey:@"ZoneMaster"]];
+        [self setval];
+        
+    }
     
 }
 
@@ -629,36 +728,54 @@
     }
     else{
         self.backCardImgView.image=[info objectForKey:UIImagePickerControllerOriginalImage];
-
+        
     }
 }
 
 
 
 - (IBAction)ContactTypeBtnAction:(id)sender {
+    
+    
 }
 - (IBAction)ManagementTypeBtnAction:(id)sender {
 }
 - (IBAction)BusinessVerticalBtnAction:(id)sender {
     OptionVC *OptionVC=[self.storyboard instantiateViewControllerWithIdentifier:@"OptionVC"];
+    OptionVC.selectedType=@"BusinessVertical";
+    OptionVC.optionDataArray=[NSUSERDEFAULTS objectForKey:@"BusinessVerticalMaster"];
     [self presentViewController:OptionVC animated:YES completion:nil];
-
 }
 - (IBAction)IndustrySegmentBtnAction:(id)sender {
     OptionVC *OptionVC=[self.storyboard instantiateViewControllerWithIdentifier:@"OptionVC"];
+    OptionVC.selectedType=@"IndustrySegment";
+    OptionVC.optionDataArray=[NSUSERDEFAULTS objectForKey:@"IndustrySegmentMaster"];
     [self presentViewController:OptionVC animated:YES completion:nil];
 }
 - (IBAction)IndustryTypeBtnAction:(id)sender {
     OptionVC *OptionVC=[self.storyboard instantiateViewControllerWithIdentifier:@"OptionVC"];
+    OptionVC.selectedType=@"IndustryType";
+    OptionVC.optionDataArray=[NSUSERDEFAULTS objectForKey:@"IndustryTypeMaster"];
     [self presentViewController:OptionVC animated:YES completion:nil];
 }
 - (IBAction)PrincipleTypeBtnAction:(id)sender {
     OptionVC *OptionVC=[self.storyboard instantiateViewControllerWithIdentifier:@"OptionVC"];
+    OptionVC.selectedType=@"PrincipleType";
+    OptionVC.optionDataArray=[NSUSERDEFAULTS objectForKey:@"PrincipleMaster"];
     [self presentViewController:OptionVC animated:YES completion:nil];
 }
 - (IBAction)ZoneTypeBtnAction:(id)sender {
 }
-- (IBAction)saveContactAction:(id)sender {
+- (IBAction)saveContactAction:(UIButton*)sender {
+    
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        saveContactFlag=@"YES";
+        [self.saveContactBtn setImage:[UIImage imageNamed:@"checksquare.png"] forState:UIControlStateSelected];
+    }else{
+        saveContactFlag=@"";
+        [self.saveContactBtn setImage:[UIImage imageNamed:@"square.png"] forState:UIControlStateNormal];
+    }
     CNAuthorizationStatus status = [CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts];
     if (status == CNAuthorizationStatusDenied || status == CNAuthorizationStatusRestricted) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Access to contacts." message:@"This app requires access to contacts because ..." preferredStyle:UIAlertControllerStyleActionSheet];
@@ -678,7 +795,7 @@
 }
 - (IBAction)addBackCardAction:(id)sender {
     cardSideFlag=@"";
-     [self OpenCamera];
+    [self OpenCamera];
 }
 
 
@@ -717,6 +834,111 @@
     }];
 }
 
+-(void)setval
+{
+    
+    myPickerView = [[UIPickerView alloc]init];
+    myPickerView.dataSource = self;
+    myPickerView.delegate = self;
+    myPickerView.showsSelectionIndicator = YES;
+    
+    myPickerView.backgroundColor=NAVSECONDCOLOR;
 
+    _inputAccViewforsearch = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREENWIDTH, 44.0)];
+    [_inputAccViewforsearch setBackgroundColor:[UIColor whiteColor]];
+    [_inputAccViewforsearch setAlpha: 1.0];
+    
+    
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    _searchone = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(donepicker)];
+    [_keyboardToolbarforsearch removeFromSuperview];
+    _keyboardToolbarforsearch = [[UIToolbar alloc] init];
+    _keyboardToolbarforsearch.frame = CGRectMake(0.0, 0.0, SCREENWIDTH, 44.0);
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH-100, 44)];
+    titleLabel.textAlignment=NSTextAlignmentCenter;
+    titleLabel.textColor=NAVCOLR;
+    if (activeField==self.ContactTypeTxt) {
+        titleLabel.text = @"Select Contact Type";
+    }else if (activeField==self.managementTypeTxt){
+        titleLabel.text = @"Select Management Type";
+    }else{
+        titleLabel.text = @"Select Zone Type";
+    }
+    
+    
+    [titleLabel setFont:[UIFont fontWithName:@"Helvetica-Medium" size:16]];
+   
+    UIBarButtonItem *title = [[UIBarButtonItem alloc] initWithCustomView:titleLabel];
+   
+    _keyboardToolbarforsearch.items = [NSArray arrayWithObjects:spacer,_searchone,title, nil];
+    [_keyboardToolbarforsearch setBarStyle:UIBarStyleDefault];
+    [_keyboardToolbarforsearch setBackgroundColor:[UIColor clearColor]];
+    
+    [_inputAccViewforsearch addSubview:_keyboardToolbarforsearch];
+    activeField.inputView = myPickerView;
+    activeField.inputAccessoryView = _inputAccViewforsearch;
+    
+}
+
+
+#pragma mark - Picker View Data source
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return [pickerArray count];
+}
+
+#pragma mark- Picker View Delegate
+
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSString *title;
+    if (activeField==self.ContactTypeTxt) {
+        title= [[pickerArray valueForKey:@"ContactType"]objectAtIndex:row];
+    }else if (activeField==self.managementTypeTxt){
+        title= [[pickerArray valueForKey:@"ManagementType"]objectAtIndex:row];
+    }else{
+        title= [[pickerArray valueForKey:@"ZoneName"]objectAtIndex:row];
+    }
+    NSAttributedString *attString =
+    [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    return attString;
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    if (activeField==self.ContactTypeTxt) {
+        [self.ContactTypeBtn setTitle:[[pickerArray valueForKey:@"ContactType"]objectAtIndex:row] forState:UIControlStateNormal];
+        ContactTypeID=[[pickerArray valueForKey:@"ContactTypeID"]objectAtIndex:row];
+    }else if (activeField==self.managementTypeTxt){
+        [self.ManagementTypeBtn setTitle:[[pickerArray valueForKey:@"ManagementType"]objectAtIndex:row] forState:UIControlStateNormal];
+        ManagementTypeID=[[pickerArray valueForKey:@"ManagementTypeID"]objectAtIndex:row];
+        
+    }else if (activeField==self.zoneTxt){
+        [self.ZoneTypeBtn setTitle:[[pickerArray valueForKey:@"ZoneName"]objectAtIndex:row] forState:UIControlStateNormal];
+        ZoneID=[[pickerArray valueForKey:@"ZoneID"]objectAtIndex:row];
+        
+        
+    }
+    
+}
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    if (activeField==self.ContactTypeTxt) {
+        return [[pickerArray valueForKey:@"ContactType"]objectAtIndex:row];
+    }else if (activeField==self.managementTypeTxt){
+        return [[pickerArray valueForKey:@"ManagementType"]objectAtIndex:row];
+    }else{
+        return [[pickerArray valueForKey:@"ZoneName"]objectAtIndex:row];
+    }
+    
+}
+-(void)donepicker
+{
+    myPickerView.hidden=YES;
+    [activeField resignFirstResponder];
+}
 
 @end

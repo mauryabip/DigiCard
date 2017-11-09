@@ -8,7 +8,10 @@
 
 #import "CardListFilterVC.h"
 
-@interface CardListFilterVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface CardListFilterVC ()<UITableViewDelegate,UITableViewDataSource>{
+    NSArray *titleArr;
+    NSInteger selectedIndex;
+}
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -21,7 +24,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setNeedsStatusBarAppearanceUpdate];
-    
+    selectedIndex=1000;
+    titleArr=@[@"Region", @"Business Vertical", @"Industry Segment",@"Industry Type",@"Principle"];
+
     
 }
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -48,7 +53,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return [titleArr count];
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -62,17 +67,24 @@
     static NSString *tableCellIdentifier = @"FilterCell";
     
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:tableCellIdentifier];
-    //   UILabel *typeLbl=(UILabel*)[cell viewWithTag:112];
-    //   UIImageView *upDownImgView=(UIImageView*)[cell viewWithTag:111];
-
-
     
+    UILabel *typeLbl=(UILabel*)[cell viewWithTag:112];
+    UIImageView *upDownImgView=(UIImageView*)[cell viewWithTag:111];
+
+    typeLbl.text=[NSString stringWithFormat:@"%@",[titleArr objectAtIndex:indexPath.row]];
+    if (selectedIndex==indexPath.row) {
+        upDownImgView.image=[UIImage imageNamed:@"down-arrow.png"];
+    }else{
+        upDownImgView.image=[UIImage imageNamed:@"up-arrow"];
+    }
+
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    selectedIndex=indexPath.row;
+    [self.tableView reloadData];
 }
 
 - (IBAction)applyAction:(id)sender {

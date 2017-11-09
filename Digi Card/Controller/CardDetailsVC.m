@@ -89,7 +89,11 @@
     self.factoryAddressLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"FactoryAddress"];
     self.residentialAddressLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"ResidenceAddress"];
     self.websitrURLLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Website"];
-    self.zoneNameLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"ZoneName"];
+    NSString* zoneNme=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"ZoneName"];
+    if ([zoneNme isKindOfClass:[NSNull class]]) {
+        zoneNme=@"";
+    }
+    self.zoneNameLbl.text=zoneNme;
     
     NSString *CardFrontImagePath=[NSString stringWithFormat:@"%@%@",APPIMAGEURL,[[CustomerDetailArray objectAtIndex:0]objectForKey:@"CardFrontImage"]];
     [self.frontImageView sd_setImageWithURL:[NSURL URLWithString:CardFrontImagePath]
@@ -179,5 +183,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+//static id ObjectOrNull(id object)
+//{
+//    return object ?: [NSNull null];
+//}
 
 @end
