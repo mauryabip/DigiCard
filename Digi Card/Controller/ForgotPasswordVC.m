@@ -151,6 +151,48 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
+ 
+ 
+ AuthCode:
+ UserID:
+ CustomerID:
+ Title:
+ CustomerName:  Necc
+ DOB:
+ Designation:	Necc
+ CompanyName:	Necc
+ Website:
+ ContactTypeID:	Necc
+ ManagementTypeID:	Necc
+ ZoneID:	  Necc
+ EmailID:	  Necc
+ EmailID2:
+ NumberType1:	 + and type
+ Number1:
+ NumberType2:
+ Number2:
+ NumberType3:
+ Number3:
+ NumberType4:
+ Number4:
+ NumberType5:
+ Number5:
+ CardFrontImageString:	base64  Necc
+ CardFrontImageExtension:	.jpeg
+ CardBackImageString:
+ CardBackImageExtension:
+ Remark:
+ OfficeAddress:	  one Necc
+ OfficePin:
+ FactoryAddress:
+ FactoryPin:
+ ResidenceAddress:
+ ResidencePin:
+ PrincipleList:	Necc
+ BusinessVerticalList:	Necc
+ IndustrySegmentList:	Necc
+ IndustryTypeList:	Necc
+
 */
 
 @end

@@ -693,11 +693,183 @@
 -(BOOL)CheckForValidation
 {
     BOOL valid=YES;
-    
-    
+    if([self.userNameTxt.text isEqualToString:@""] && [self.userNameTxt.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]])
+    {
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter name"];
+    }
+    else if(([self.designationtxt.text isEqualToString:@""]&& [self.designationtxt.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]))
+    {
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter designation"];
+    }else if(([self.companyName1Txt.text isEqualToString:@""]&& [self.companyName1Txt.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]))
+    {
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter company name"];
+    }
     
     return valid;
 }
+
+
+-(BOOL)addressValidation{
+    BOOL valid=YES;
+     if(([self.addressLine1txt.text length]) || ([self.addressLine2txt.text length]) || ([self.addressLine3txt.text length]) || ([self.addressLine4txt.text length]))
+    {
+        if ([self.addressLine1txt.text length]) {
+            if ([addressType1 length]==0) {
+                valid = NO;
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter address type"];
+            }
+        }else if ([self.addressLine2txt.text length]) {
+            if ([addressType2 length]==0) {
+                valid = NO;
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter address type"];
+            }
+        }else if ([self.addressLine3txt.text length]) {
+            if ([addressType3 length]==0) {
+                valid = NO;
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter address type"];
+            }
+        }else if ([self.addressLine4txt.text length]) {
+            if ([addressType4 length]==0) {
+                valid = NO;
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter address type"];
+            }
+        }
+    }else{
+         valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter address"];
+     }
+    return valid;
+}
+
+
+-(BOOL)phoneNumberValidation{
+    BOOL valid=YES;
+    if(([self.phoneNumber1txt.text length]) || ([self.phoneNumber2txt.text length]) || ([self.phoneNumber3txt.text length]) || ([self.phoneNumber4txt.text length]) || ([self.phoneNumber5txt.text length]))
+    {
+        if ([self.phoneNumber1txt.text length]) {
+            if([self.phoneNumber1txt.text containsString:@"+"]){
+                if ([phoneNumber1 length]==0) {
+                    valid = NO;
+                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number type"];
+                }
+            }else{
+                valid = NO;
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number with + sign"];
+            }
+            
+        }else if ([self.phoneNumber2txt.text length]) {
+            if([self.phoneNumber2txt.text containsString:@"+"]){
+                if ([phoneNumber2 length]==0) {
+                    valid = NO;
+                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number type"];
+                }
+            }else{
+                valid = NO;
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number with + sign"];
+            }
+
+        }else if ([self.phoneNumber3txt.text length]) {
+            if([self.phoneNumber3txt.text containsString:@"+"]){
+                if ([phoneNumber3 length]==0) {
+                    valid = NO;
+                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number type"];
+                }
+            }else{
+                valid = NO;
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number with + sign"];
+            }
+        }else if ([self.phoneNumber4txt.text length]) {
+            if([self.phoneNumber4txt.text containsString:@"+"]){
+                if ([phoneNumber4 length]==0) {
+                    valid = NO;
+                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number type"];
+                }
+            }else{
+                valid = NO;
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number with + sign"];
+            }
+
+        }else if ([self.phoneNumber5txt.text length]) {
+            if([self.phoneNumber5txt.text containsString:@"+"]){
+                if ([phoneNumber5 length]==0) {
+                    valid = NO;
+                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number type"];
+                }
+            }else{
+                valid = NO;
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number with + sign"];
+            }
+            
+        }
+    }else{
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number"];
+    }
+    return valid;
+}
+
+
+-(BOOL)emailAndOtherValidation{
+    BOOL valid=YES;
+    
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"];
+
+    
+    if([self.emailIdTxt.text isEqualToString:@""] && [self.emailIdTxt.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]])
+    {
+        valid = NO;
+        [self.emailIdTxt becomeFirstResponder];
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter email id"];
+    }
+    else if ([self.emailIdTxt.text length]>0) {
+        if(![emailTest evaluateWithObject:self.emailIdTxt.text]){
+            valid = NO;
+            [self.emailIdTxt becomeFirstResponder];
+            [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter valid email id"];
+            
+        }
+    }else if(([self.webURLtxt.text isEqualToString:@""]&& [self.webURLtxt.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]))
+    {
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter web url"];
+    }else if(([ContactTypeID isEqualToString:@""]&& [ContactTypeID stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]))
+    {
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select contact type"];
+    }else if(([ManagementTypeID isEqualToString:@""]&& [ManagementTypeID stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]))
+    {
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select management type"];
+    }else if(([BusinessVerticalID isEqualToString:@""]&& [BusinessVerticalID stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]))
+    {
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select business vertical"];
+    }else if(([IndustrySegmentID isEqualToString:@""]&& [IndustrySegmentID stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]))
+    {
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select industry segment"];
+    }else if(([IndustryTypeID isEqualToString:@""]&& [IndustryTypeID stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]))
+    {
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select industry type"];
+    }else if(([PrincipleID isEqualToString:@""]&& [PrincipleID stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]))
+    {
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select principle"];
+    }else if(([ZoneID isEqualToString:@""]&& [ZoneID stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]))
+    {
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select zone"];
+    }
+
+
+    
+       return valid;
+}
+
 
 -(void)OpenCamera{
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -788,6 +960,19 @@
     }
 }
 - (IBAction)submitBtnAction:(id)sender {
+    BOOL isValid=[self CheckForValidation];
+    if (isValid){
+        BOOL isValid=[self addressValidation];
+        if (isValid){
+            BOOL isValid=[self phoneNumberValidation];
+            if (isValid){
+                BOOL isValid=[self emailAndOtherValidation];
+                if (isValid){
+                    
+                }
+            }
+        }
+    }
 }
 - (IBAction)addFrontCardAction:(id)sender {
     cardSideFlag=@"Front";
