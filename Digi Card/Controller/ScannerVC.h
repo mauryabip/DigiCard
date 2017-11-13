@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "OptionVC.h"
+#import <TesseractOCR/TesseractOCR.h>
 
-@interface ScannerVC : UIViewController<UITextFieldDelegate,UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate>{
+@interface ScannerVC : UIViewController<UITextFieldDelegate,UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate,G8TesseractDelegate,UIAlertViewDelegate>{
     UITextField* activeField;
     UIView *inputAccessoryView;
     UIButton *Done;
@@ -37,7 +38,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *frontCardImgView;
 @property (strong, nonatomic) IBOutlet UIImageView *backCardImgView;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *frontCardViewHTConst;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *frontCardViewHTConst;//205
 
 
 

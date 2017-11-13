@@ -6,48 +6,53 @@
 	<dict>
 		<key>AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>ISO8601DateFormatterValueTransformer.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Digi Card.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>RKValueTransformers.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>RestKit.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SOCKit.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TesseractOCRiOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>TransitionKit.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05982AFEBA8804E9877F77652D7FF14B</key>
+		<key>43FE2759F8B2B107E05E015F400DD799</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39CC6AEC4B55225AB2372AD9897775A3</key>
+		<key>4D6ADC2AB736BD45D9AAA58791A69892</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,22 +62,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EE104FC8DC112DD5F4C3B587D0DE64D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>AEFC2183D5F1E351B229C8A5216E61B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9DD0F41C2A5256400D2FF750F5FD86C</key>
+		<key>BBF39EC626DDEB4954AB88832ACEF757</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBF39EC626DDEB4954AB88832ACEF757</key>
+		<key>CD5985F9B89242C3617B8D408B8F436B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D0AD577993B53B51E9FC0379276443B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D79C3B4B4BA1E607CFEC96A5B70342C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

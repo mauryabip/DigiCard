@@ -87,6 +87,7 @@
     [SVProgressHUD setBackgroundLayerColor:[[UIColor whiteColor] colorWithAlphaComponent:0.3]];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeCustom];
     [SVProgressHUD show];
+        [self performSelector:@selector(Hide) withObject:@"" afterDelay:30.000];
 }
 -(void)Hide{
     [SVProgressHUD dismiss];

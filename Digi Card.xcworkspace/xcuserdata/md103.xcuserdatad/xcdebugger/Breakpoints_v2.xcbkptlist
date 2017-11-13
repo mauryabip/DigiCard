@@ -13,5 +13,37 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Digi Card/Controller/AppDelegate.m"
+            timestampString = "532189252.213453"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "-resetValue"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Digi Card/Model/BaseManager.m"
+            timestampString = "532169451.17233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "586"
+            endingLineNumber = "586"
+            landmarkName = "-AppCustomerInsUpdt:UserID:CustomerID:Title:CustomerName:DOB:Designation:CompanyName:Website:ContactTypeID:ManagementTypeID:ZoneID:EmailID:EmailID2:NumberType1:Number1:NumberType2:Number2:NumberType3:Number3:NumberType4:Number4:NumberType5:Number5:CardFrontImageString:CardFrontImageExtension:CardBackImageString:CardBackImageExtension:Remark:OfficeAddress:OfficePin:FactoryAddress:FactoryPin:ResidenceAddress:ResidencePin:PrincipleList:BusinessVerticalList:IndustrySegmentList:IndustryTypeList:withCallback:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

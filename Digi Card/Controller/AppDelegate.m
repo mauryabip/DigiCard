@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-   // [NSThread sleepForTimeInterval:2.0];
+    // [NSThread sleepForTimeInterval:2.0];
     
     reachability = [Reachability reachabilityForInternetConnection];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNetworkChange:) name:kReachabilityChangedNotification object:nil];
@@ -54,12 +54,6 @@
         
     }
     
-    NSString *Status=[NSUSERDEFAULTS objectForKey:@"Status"];
-    if ([Status isEqualToString:@"1"]) {
-        [APPDELEGATE SetNavigationBar];
-        [APPDELEGATE.maintab setSelectedIndex:1];
-        [[APPDELEGATE.maintab.viewControllers objectAtIndex:1] popToRootViewControllerAnimated:YES];
-    }
     
     return YES;
 }
@@ -110,7 +104,7 @@
     
     _maintab.viewControllers=tabbarray;
     self.window.rootViewController = _maintab;
-
+    
     [[_maintab.tabBar.items objectAtIndex:0] setTitle:@"Card"];
     [[_maintab.tabBar.items objectAtIndex:1] setTitle:@"Scanner"];
     [[_maintab.tabBar.items objectAtIndex:2] setTitle:@"Profile"];
@@ -118,15 +112,15 @@
     [[_maintab.tabBar.items objectAtIndex:0] setImage:[UIImage imageNamed:@"cam_icon.png"]];
     [[_maintab.tabBar.items objectAtIndex:1] setImage:[UIImage imageNamed:@"card_icon.png"]];
     [[_maintab.tabBar.items objectAtIndex:2] setImage:[UIImage imageNamed:@"pro_icon.png"]];
-
-
-//    [[_maintab.tabBar.items objectAtIndex:0] setTitlePositionAdjustment:UIOffsetMake(0, -7)];
-//    [[_maintab.tabBar.items objectAtIndex:1] setTitlePositionAdjustment:UIOffsetMake(0, -7)];
-//    [[_maintab.tabBar.items objectAtIndex:2] setTitlePositionAdjustment:UIOffsetMake(0, -7)];
-
+    
+    
+    //    [[_maintab.tabBar.items objectAtIndex:0] setTitlePositionAdjustment:UIOffsetMake(0, -7)];
+    //    [[_maintab.tabBar.items objectAtIndex:1] setTitlePositionAdjustment:UIOffsetMake(0, -7)];
+    //    [[_maintab.tabBar.items objectAtIndex:2] setTitlePositionAdjustment:UIOffsetMake(0, -7)];
+    
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{
-                                                        NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Medium" size:16]                                                        }
+                                                        NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:15]                                                        }
                                              forState:UIControlStateNormal];
     
     self.window.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:234.0/255.0f blue:234.0/255.0f alpha:1.0f];
@@ -137,13 +131,42 @@
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-  
+    
     NSUInteger indexOfTab = [_maintab.viewControllers indexOfObject:viewController];
+    if (indexOfTab==0) {
+        [self resetValue];
+    }
     [[_maintab.viewControllers objectAtIndex:indexOfTab] popToRootViewControllerAnimated:YES];
     
     
 }
 
+-(void)resetValue{
+    
+    NSDictionary *dictionary = @{
+                                 @"PrincipleID": @{
+                                         @"PrincipleID": @"0"
+                                         },
+                                 @"BusinessVerticalID": @{
+                                         @"BusinessVerticalID": @"0"
+                                         },
+                                 @"IndustryTypeID": @{
+                                         @"IndustryTypeID": @"0"
+                                         },
+                                 @"IndustrySegmentID": @{
+                                         @"IndustrySegmentID": @"0"
+                                         },
+                                 @"ZoneID": @{
+                                         @"ZoneID": @"0"
+                                         },
+                                 };
+    
+    [DigiCardModel sharedInstance].PrincipleMasterIDArray=[dictionary objectForKey:@"PrincipleID"];
+    [DigiCardModel sharedInstance].BusinessVerticalIDMasterArray=[dictionary objectForKey:@"BusinessVerticalID"];
+    [DigiCardModel sharedInstance].IndustryTypeMasterIDArray=[dictionary objectForKey:@"IndustryTypeID"];
+    [DigiCardModel sharedInstance].IndustrySegmentMasterIDArray=[dictionary objectForKey:@"IndustrySegmentID"];
+    [DigiCardModel sharedInstance].zoneIDArray=[dictionary objectForKey:@"ZoneID"];
+}
 
 -(void)handle{
     NSString * storyboardName = @"Main";
@@ -157,7 +180,9 @@
         isInternet = false;
         if (!IsNoInternetAppear) {
             IsNoInternetAppear = YES;
-           // [self addNoNetworkView];
+            [[DigiCardModel sharedInstance]Hide];
+            [[DigiCardModel sharedInstance]ViewSlideDown:NETWORKUNAVILABLE];
+            // [self addNoNetworkView];
             // [navController presentViewController:vc animated:YES completion:nil];
         }
     }
@@ -165,6 +190,8 @@
     {
         isInternet = true;
         if (IsNoInternetAppear) {
+            [[DigiCardModel sharedInstance]ViewSlideDown:NETWORKAVILABLE];
+
             //[self removeNoNetworkView];
             // [navController dismissViewControllerAnimated:YES completion:nil];
             IsNoInternetAppear = false;
@@ -174,7 +201,9 @@
     {
         isInternet = true;
         if (IsNoInternetAppear) {
-          //  [self removeNoNetworkView];
+            [[DigiCardModel sharedInstance]ViewSlideDown:NETWORKAVILABLE];
+
+            //  [self removeNoNetworkView];
             // [navController dismissViewControllerAnimated:YES completion:nil];
             IsNoInternetAppear = false;
         }
@@ -196,7 +225,10 @@
         isInternet = false;
         if (!IsNoInternetAppear) {
             IsNoInternetAppear = YES;
-           // [self addNoNetworkView];
+            [[DigiCardModel sharedInstance]Hide];
+            [[DigiCardModel sharedInstance]ViewSlideDown:NETWORKUNAVILABLE];
+
+            // [self addNoNetworkView];
             // [navController presentViewController:vc animated:YES completion:nil];
         }
     }
@@ -204,7 +236,8 @@
     {
         isInternet = true;
         if (IsNoInternetAppear) {
-           // [self removeNoNetworkView];
+            [[DigiCardModel sharedInstance]ViewSlideDown:NETWORKAVILABLE];
+            // [self removeNoNetworkView];
             // [navController dismissViewControllerAnimated:YES completion:nil];
             IsNoInternetAppear = false;
         }
@@ -213,7 +246,8 @@
     {
         isInternet = true;
         if (IsNoInternetAppear) {
-           // [self removeNoNetworkView];
+            [[DigiCardModel sharedInstance]ViewSlideDown:NETWORKAVILABLE];
+            // [self removeNoNetworkView];
             ///  [navController dismissViewControllerAnimated:YES completion:nil];
             IsNoInternetAppear = false;
         }

@@ -46,7 +46,8 @@
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"Some error in your Connection. Please try again.");
     
-     [[DigiCardModel sharedInstance]HideWaiting];
+    [[DigiCardModel sharedInstance]Hide];
+    [[DigiCardModel sharedInstance]ViewSlideDown:NETWORKUNAVILABLE];
     //    self.alertView = [[UIAlertView alloc] initWithTitle:NoInternetConnection message:TryAgainLater delegate:self cancelButtonTitle:OK otherButtonTitles:nil];
     //    [self.alertView show];
 }

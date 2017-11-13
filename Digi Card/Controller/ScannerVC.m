@@ -7,6 +7,8 @@
 //
 
 #import "ScannerVC.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+
 @import Contacts;
 
 @interface ScannerVC (){
@@ -34,7 +36,18 @@
     NSString *ManagementTypeID;
     NSString *ZoneID;
     
+    NSMutableArray *phoneNumberArray;
+    
+    NSString *frontImgBase64;
+    NSString *backImgBase64;
+    
+    NSString *frontImgName;
+    NSString *backImgName;
+    
+    
 }
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, strong) NSOperationQueue *operationQueue;
 
 @end
 
@@ -45,6 +58,41 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setNeedsStatusBarAppearanceUpdate];
+    
+    BusinessVerticalID=@"";
+    IndustrySegmentID=@"";
+    IndustryTypeID=@"";
+    PrincipleID=@"";
+    
+    saveContactFlag=@"";
+    
+    addressType1=@"";
+    addressType2=@"";
+    addressType3=@"";
+    addressType4=@"";
+    
+    phoneNumber1=@"";
+    phoneNumber2=@"";
+    phoneNumber3=@"";
+    phoneNumber4=@"";
+    phoneNumber5=@"";
+    
+    ContactTypeID=@"";
+    ManagementTypeID=@"";
+    ZoneID=@"";
+    
+    NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"Sample.jpg"]);
+    
+    backImgBase64=frontImgBase64=[imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    backImgName=@"sdd.png";
+    frontImgName=@"dfdf.png";
+    
+    
+    self.operationQueue = [[NSOperationQueue alloc] init];
+    
+    [self recognizeImageWithTesseract:[UIImage imageNamed:@"Sample.jpg"]];
+    
+    _frontCardViewHTConst.constant=50;
     configuration = [FTPopOverMenuConfiguration defaultConfiguration];
     phoneNumbertype=[[NSArray alloc]init];
     phoneNumbertype=[NSUSERDEFAULTS objectForKey:@"NumberTypeMaster"];
@@ -524,20 +572,20 @@
     {
         
         [self.phoneNumber1txt resignFirstResponder];
-        activeField = self.postalCodetxt;
-    }
-    else if ([self.postalCodetxt isFirstResponder])
-    {
-        
-        [self.postalCodetxt resignFirstResponder];
-        activeField = self.addressLine4txt;
-    }
-    else if ([self.addressLine4txt isFirstResponder])
-    {
-        
-        [self.addressLine4txt resignFirstResponder];
         activeField = self.addressLine3txt;
     }
+    //    else if ([self.postalCodetxt isFirstResponder])
+    //    {
+    //
+    //        [self.postalCodetxt resignFirstResponder];
+    //        activeField = self.addressLine4txt;
+    //    }
+    //    else if ([self.addressLine4txt isFirstResponder])
+    //    {
+    //
+    //        [self.addressLine4txt resignFirstResponder];
+    //        activeField = self.addressLine3txt;
+    //    }
     else if ([self.addressLine3txt isFirstResponder])
     {
         
@@ -621,20 +669,20 @@
     {
         
         [self.addressLine3txt resignFirstResponder];
-        activeField = self.addressLine4txt;
-    }
-    else if ([self.addressLine4txt isFirstResponder])
-    {
-        
-        [self.addressLine4txt resignFirstResponder];
-        activeField = self.postalCodetxt;
-    }
-    else if ([self.postalCodetxt isFirstResponder])
-    {
-        
-        [self.postalCodetxt resignFirstResponder];
         activeField = self.phoneNumber1txt;
     }
+    //    else if ([self.addressLine4txt isFirstResponder])
+    //    {
+    //
+    //        [self.addressLine4txt resignFirstResponder];
+    //        activeField = self.postalCodetxt;
+    //    }
+    //    else if ([self.postalCodetxt isFirstResponder])
+    //    {
+    //
+    //        [self.postalCodetxt resignFirstResponder];
+    //        activeField = self.phoneNumber1txt;
+    //    }
     else if ([self.phoneNumber1txt isFirstResponder])
     {
         
@@ -714,33 +762,45 @@
 
 -(BOOL)addressValidation{
     BOOL valid=YES;
-     if(([self.addressLine1txt.text length]) || ([self.addressLine2txt.text length]) || ([self.addressLine3txt.text length]) || ([self.addressLine4txt.text length]))
+    if(([self.addressLine1txt.text length]) || ([self.addressLine2txt.text length]) || ([self.addressLine3txt.text length]) || ([self.addressLine4txt.text length]))
     {
         if ([self.addressLine1txt.text length]) {
             if ([addressType1 length]==0) {
                 valid = NO;
-                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter address type"];
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select address type"];
             }
         }else if ([self.addressLine2txt.text length]) {
             if ([addressType2 length]==0) {
                 valid = NO;
-                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter address type"];
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select address type"];
             }
         }else if ([self.addressLine3txt.text length]) {
             if ([addressType3 length]==0) {
                 valid = NO;
-                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter address type"];
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select address type"];
             }
         }else if ([self.addressLine4txt.text length]) {
             if ([addressType4 length]==0) {
                 valid = NO;
-                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter address type"];
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select address type"];
             }
+        }else  if([addressType1 isEqualToString:addressType2] || [addressType1 isEqualToString:addressType3]) {
+            valid = NO;
+            [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select diffrent address type"];
+            
+        }else if([addressType2 isEqualToString:addressType3]) {
+            valid = NO;
+            [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select diffrent address type"];
+            
         }
     }else{
-         valid = NO;
+        valid = NO;
         [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter address"];
-     }
+    }
+    
+    
+    
+    
     return valid;
 }
 
@@ -753,7 +813,7 @@
             if([self.phoneNumber1txt.text containsString:@"+"]){
                 if ([phoneNumber1 length]==0) {
                     valid = NO;
-                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number type"];
+                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select phone number type"];
                 }
             }else{
                 valid = NO;
@@ -764,39 +824,39 @@
             if([self.phoneNumber2txt.text containsString:@"+"]){
                 if ([phoneNumber2 length]==0) {
                     valid = NO;
-                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number type"];
+                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select phone number type"];
                 }
             }else{
                 valid = NO;
                 [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number with + sign"];
             }
-
+            
         }else if ([self.phoneNumber3txt.text length]) {
             if([self.phoneNumber3txt.text containsString:@"+"]){
                 if ([phoneNumber3 length]==0) {
                     valid = NO;
-                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number type"];
+                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select phone number type"];
                 }
             }else{
                 valid = NO;
-                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number with + sign"];
+                [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter select number with + sign"];
             }
         }else if ([self.phoneNumber4txt.text length]) {
             if([self.phoneNumber4txt.text containsString:@"+"]){
                 if ([phoneNumber4 length]==0) {
                     valid = NO;
-                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number type"];
+                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select phone number type"];
                 }
             }else{
                 valid = NO;
                 [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number with + sign"];
             }
-
+            
         }else if ([self.phoneNumber5txt.text length]) {
             if([self.phoneNumber5txt.text containsString:@"+"]){
                 if ([phoneNumber5 length]==0) {
                     valid = NO;
-                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter phone number type"];
+                    [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select phone number type"];
                 }
             }else{
                 valid = NO;
@@ -816,7 +876,7 @@
     BOOL valid=YES;
     
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"];
-
+    
     
     if([self.emailIdTxt.text isEqualToString:@""] && [self.emailIdTxt.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]])
     {
@@ -864,10 +924,10 @@
         valid = NO;
         [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select zone"];
     }
-
-
     
-       return valid;
+    
+    
+    return valid;
 }
 
 
@@ -889,19 +949,67 @@
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    [self dismissViewControllerAnimated:YES completion:nil];
-    UIImage *orgimg = [info objectForKey:UIImagePickerControllerEditedImage];
-    //UIImagePickerControllerOriginalImage
-    //UIImage *scaledimage =[self imageWithImage:orgimg scaledToSize:CGSizeMake(100, 100)];
-    UIImage *myImage = [info objectForKey:UIImagePickerControllerEditedImage];
-    NSData *imageData = UIImagePNGRepresentation(myImage);
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    
+    NSData *imageData = UIImagePNGRepresentation(chosenImage);
+    
     if ([cardSideFlag isEqualToString:@"Front"]) {
-        self.frontCardImgView.image=[info objectForKey:UIImagePickerControllerOriginalImage];
-    }
-    else{
-        self.backCardImgView.image=[info objectForKey:UIImagePickerControllerOriginalImage];
+        self.frontCardImgView.image=[info objectForKey:UIImagePickerControllerEditedImage];
+        frontImgBase64=[imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        
+        NSURL *refURL = [info valueForKey:UIImagePickerControllerReferenceURL];
+        
+        ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *imageAsset)
+        {
+            ALAssetRepresentation *imageRep = [imageAsset defaultRepresentation];
+            NSLog(@"[imageRep filename] : %@", [imageRep filename]);
+            frontImgName=[imageRep filename];
+            if ([frontImgName length]==0) {
+                NSTimeInterval  today = [[NSDate date] timeIntervalSince1970];
+                NSString *intervalString = [NSString stringWithFormat:@"%f", today];
+                frontImgName=[NSString stringWithFormat:@"ios%@.png",intervalString];
+            }
+            
+            NSLog(@"name   %@",frontImgName);
+        };
+        
+        // get the asset library and fetch the asset based on the ref url
+        ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
+        [assetslibrary assetForURL:refURL resultBlock:resultblock failureBlock:nil];
+        
+        [self recognizeImageWithTesseract:chosenImage];
         
     }
+    else{
+        _frontCardViewHTConst.constant=205;
+        self.backCardImgView.image=[info objectForKey:UIImagePickerControllerEditedImage];
+        backImgBase64=[imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        
+        NSURL *refURL = [info valueForKey:UIImagePickerControllerReferenceURL];
+        
+        ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *imageAsset)
+        {
+            ALAssetRepresentation *imageRep = [imageAsset defaultRepresentation];
+            NSLog(@"[imageRep filename] : %@", [imageRep filename]);
+            backImgName=[imageRep filename];
+            if ([backImgName length]==0) {
+                NSTimeInterval  today = [[NSDate date] timeIntervalSince1970];
+                NSString *intervalString = [NSString stringWithFormat:@"%f", today];
+                backImgName=[NSString stringWithFormat:@"ios%@.png",intervalString];
+            }
+            
+            NSLog(@"backImgName   %@",backImgName);
+        };
+        
+        // get the asset library and fetch the asset based on the ref url
+        ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
+        [assetslibrary assetForURL:refURL resultBlock:resultblock failureBlock:nil];
+        
+    }
+    
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
 }
 
 
@@ -968,7 +1076,7 @@
             if (isValid){
                 BOOL isValid=[self emailAndOtherValidation];
                 if (isValid){
-                    
+                    [self addCardDetails];
                 }
             }
         }
@@ -1000,12 +1108,32 @@
         
         // create contact
         
-        CNMutableContact *contact = [[CNMutableContact alloc] init];
-        contact.familyName = @"Maurya";
-        contact.givenName = @"Bipin";
         
-        CNLabeledValue *homePhone = [CNLabeledValue labeledValueWithLabel:CNLabelHome value:[CNPhoneNumber phoneNumberWithStringValue:@"312-555-1212"]];
-        contact.phoneNumbers = @[homePhone];
+        CNMutableContact *contact = [[CNMutableContact alloc] init];
+        contact.contactType = CNContactTypePerson;
+        
+        
+        NSArray *arrayWithTwoStrings = [self.userNameTxt.text componentsSeparatedByString:@" "];
+        contact.givenName=[arrayWithTwoStrings objectAtIndex:0];
+        
+        if (arrayWithTwoStrings.count>1) {
+            
+            NSString *userLastName;
+            for (NSString *LastName in arrayWithTwoStrings) {
+                userLastName=[userLastName stringByAppendingString:LastName];
+            }
+            contact.familyName =userLastName;
+            
+        }
+        
+        
+        CNLabeledValue *homePhone_1 = [CNLabeledValue labeledValueWithLabel:CNLabelHome value:[CNPhoneNumber phoneNumberWithStringValue:self.phoneNumber1txt.text]];
+        CNLabeledValue * homePhone_2 = [CNLabeledValue labeledValueWithLabel:CNLabelWork value:[CNPhoneNumber phoneNumberWithStringValue:self.phoneNumber2txt.text]];
+        CNLabeledValue *homePhone_3 = [CNLabeledValue labeledValueWithLabel:CNLabelHome value:[CNPhoneNumber phoneNumberWithStringValue:self.phoneNumber3txt.text]];
+        CNLabeledValue * homePhone_4 = [CNLabeledValue labeledValueWithLabel:CNLabelWork value:[CNPhoneNumber phoneNumberWithStringValue:self.phoneNumber4txt.text]];
+        CNLabeledValue *homePhone_5 = [CNLabeledValue labeledValueWithLabel:CNLabelHome value:[CNPhoneNumber phoneNumberWithStringValue:self.phoneNumber5txt.text]];
+        contact.phoneNumbers = @[homePhone_1, homePhone_2,homePhone_3,homePhone_4,homePhone_5];
+        
         
         CNSaveRequest *request = [[CNSaveRequest alloc] init];
         [request addContact:contact toContainerWithIdentifier:nil];
@@ -1028,7 +1156,7 @@
     myPickerView.showsSelectionIndicator = YES;
     
     myPickerView.backgroundColor=NAVSECONDCOLOR;
-
+    
     _inputAccViewforsearch = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREENWIDTH, 44.0)];
     [_inputAccViewforsearch setBackgroundColor:[UIColor whiteColor]];
     [_inputAccViewforsearch setAlpha: 1.0];
@@ -1053,9 +1181,9 @@
     
     
     [titleLabel setFont:[UIFont fontWithName:@"Helvetica-Medium" size:16]];
-   
+    
     UIBarButtonItem *title = [[UIBarButtonItem alloc] initWithCustomView:titleLabel];
-   
+    
     _keyboardToolbarforsearch.items = [NSArray arrayWithObjects:spacer,_searchone,title, nil];
     [_keyboardToolbarforsearch setBarStyle:UIBarStyleDefault];
     [_keyboardToolbarforsearch setBackgroundColor:[UIColor clearColor]];
@@ -1090,6 +1218,21 @@
     NSAttributedString *attString =
     [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
+    
+    if (activeField==self.ContactTypeTxt) {
+        [self.ContactTypeBtn setTitle:[[pickerArray valueForKey:@"ContactType"]objectAtIndex:0] forState:UIControlStateNormal];
+        ContactTypeID=[[pickerArray valueForKey:@"ContactTypeID"]objectAtIndex:0];
+    }else if (activeField==self.managementTypeTxt){
+        [self.ManagementTypeBtn setTitle:[[pickerArray valueForKey:@"ManagementType"]objectAtIndex:0] forState:UIControlStateNormal];
+        ManagementTypeID=[[pickerArray valueForKey:@"ManagementTypeID"]objectAtIndex:0];
+        
+    }else if (activeField==self.zoneTxt){
+        [self.ZoneTypeBtn setTitle:[[pickerArray valueForKey:@"ZoneName"]objectAtIndex:0] forState:UIControlStateNormal];
+        ZoneID=[[pickerArray valueForKey:@"ZoneID"]objectAtIndex:0];
+        
+    }
+    
+    
     return attString;
 }
 
@@ -1105,7 +1248,6 @@
     }else if (activeField==self.zoneTxt){
         [self.ZoneTypeBtn setTitle:[[pickerArray valueForKey:@"ZoneName"]objectAtIndex:row] forState:UIControlStateNormal];
         ZoneID=[[pickerArray valueForKey:@"ZoneID"]objectAtIndex:row];
-        
         
     }
     
@@ -1125,5 +1267,502 @@
     myPickerView.hidden=YES;
     [activeField resignFirstResponder];
 }
+
+
+//Scan Card Functionality
+-(void)recognizeImageWithTesseract:(UIImage *)image
+{
+    // Animate a progress activity indicator
+    [self.activityIndicator startAnimating];
+    
+    // Create a new `G8RecognitionOperation` to perform the OCR asynchronously
+    // It is assumed that there is a .traineddata file for the language pack
+    // you want Tesseract to use in the "tessdata" folder in the root of the
+    // project AND that the "tessdata" folder is a referenced folder and NOT
+    // a symbolic group in your project
+    G8RecognitionOperation *operation = [[G8RecognitionOperation alloc] initWithLanguage:@"eng"];
+    
+    // Use the original Tesseract engine mode in performing the recognition
+    // (see G8Constants.h) for other engine mode options
+    operation.tesseract.engineMode = G8OCREngineModeTesseractOnly;
+    
+    // Let Tesseract automatically segment the page into blocks of text
+    // based on its analysis (see G8Constants.h) for other page segmentation
+    // mode options
+    operation.tesseract.pageSegmentationMode = G8PageSegmentationModeAutoOnly;
+    
+    // Optionally limit the time Tesseract should spend performing the
+    // recognition
+    //operation.tesseract.maximumRecognitionTime = 1.0;
+    
+    // Set the delegate for the recognition to be this class
+    // (see `progressImageRecognitionForTesseract` and
+    // `shouldCancelImageRecognitionForTesseract` methods below)
+    operation.delegate = self;
+    
+    // Optionally limit Tesseract's recognition to the following whitelist
+    // and blacklist of characters
+    //operation.tesseract.charWhitelist = @"01234";
+    //operation.tesseract.charBlacklist = @"56789";
+    
+    // Set the image on which Tesseract should perform recognition
+    operation.tesseract.image = image;
+    
+    // Optionally limit the region in the image on which Tesseract should
+    // perform recognition to a rectangle
+    //operation.tesseract.rect = CGRectMake(20, 20, 100, 100);
+    
+    // Specify the function block that should be executed when Tesseract
+    // finishes performing recognition on the image
+    operation.recognitionCompleteBlock = ^(G8Tesseract *tesseract) {
+        // Fetch the recognized text
+        NSString *recognizedText = tesseract.recognizedText;
+        
+        NSLog(@"%@", recognizedText);
+        
+        if (recognizedText.length>50)
+            [self GetDataFromImageString:recognizedText];
+        
+        // Remove the animated progress activity indicator
+        [self.activityIndicator stopAnimating];
+        
+        // Spawn an alert with the recognized text
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Image Scan Result"
+                                                        message:recognizedText
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:@"Rescan",nil];
+        
+        [alert show];
+    };
+    
+    // Display the image to be recognized in the view
+    //self.imageToRecognize.image = operation.tesseract.thresholdedImage;
+    
+    // Finally, add the recognition operation to the queue
+    [self.operationQueue addOperation:operation];
+}
+
+/**
+ *  This function is part of Tesseract's delegate. It will be called
+ *  periodically as the recognition happens so you can observe the progress.
+ *
+ *  @param tesseract The `G8Tesseract` object performing the recognition.
+ */
+- (void)progressImageRecognitionForTesseract:(G8Tesseract *)tesseract {
+    NSLog(@"progress: %lu", (unsigned long)tesseract.progress);
+}
+
+/**
+ *  This function is part of Tesseract's delegate. It will be called
+ *  periodically as the recognition happens so you can cancel the recogntion
+ *  prematurely if necessary.
+ *
+ *  @param tesseract The `G8Tesseract` object performing the recognition.
+ *
+ *  @return Whether or not to cancel the recognition.
+ */
+- (BOOL)shouldCancelImageRecognitionForTesseract:(G8Tesseract *)tesseract {
+    return NO;  // return YES, if you need to cancel recognition prematurely
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    // the user clicked OK
+    if (buttonIndex == 1) {
+        [self OpenCamera];
+    }
+}
+
+
+
+
+-(void)GetDataFromImageString:(NSString*)string{
+    
+    NSMutableArray *PinCodeArray=[[NSMutableArray alloc]init];
+    NSMutableArray *addressArray=[[NSMutableArray alloc]init];
+    NSMutableArray *emailURLArray=[[NSMutableArray alloc]init];
+    phoneNumberArray=[[NSMutableArray alloc]init];
+    
+    NSError *error = nil;
+    NSDataDetector *dataDetector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypePhoneNumber
+                                                                   error:&error];
+    [dataDetector enumerateMatchesInString:string
+                                   options:0
+                                     range:NSMakeRange(0, string.length)
+                                usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop)
+     {
+         NSString *numberWithExtra = result.phoneNumber;
+         NSCharacterSet *toRemove = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+         NSString *trimmed = [[numberWithExtra componentsSeparatedByCharactersInSet:toRemove] componentsJoinedByString:@""];
+         if(trimmed && trimmed.length)
+         {
+             NSLog(@"Phone %@", trimmed);
+             NSString * firstLetter = [trimmed substringToIndex:1];
+             if (![firstLetter isEqualToString:@"+"]) {
+                 trimmed=[NSString stringWithFormat:@"+%@",trimmed];
+             }
+             [phoneNumberArray addObject:trimmed];
+         }
+         else
+         {
+             NSLog(@"No phone number");
+         }
+     }];
+    
+    
+    NSDataDetector * dataDetector1 = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeLink error:nil];
+    [dataDetector1 enumerateMatchesInString:string
+                                    options:0
+                                      range:NSMakeRange(0, string.length)
+                                 usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop)
+     {
+         NSString *numberWithExtra = [result.URL absoluteString];
+         numberWithExtra=[numberWithExtra stringByReplacingOccurrencesOfString:@"mailto:" withString:@""];
+         NSLog(@"email&URL  %@  ", [numberWithExtra stringByRemovingPercentEncoding]);
+         [emailURLArray addObject:[numberWithExtra stringByRemovingPercentEncoding]];
+         
+     }];
+    
+    
+    
+    // NSTextCheckingCityKey  NSTextCheckingTypeSpelling
+    NSDataDetector* detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeAddress error:nil];
+    NSArray* matches = [detector matchesInString:string options:0 range:NSMakeRange(0, string.length)];
+    for(NSTextCheckingResult* match in matches)
+    {
+        if(match.resultType == NSTextCheckingTypeAddress)
+        {
+            NSDictionary* addressComponents = [match addressComponents];
+            NSLog(@"Address Dictionary:%@", addressComponents);
+        }
+    }
+    
+    //Retrieving Numbers in array
+    NSMutableArray* numberArray = [NSMutableArray new];
+    
+    NSString* regexPattern = @"\\d+";
+    NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern:regexPattern options:0 error:nil];
+    
+    NSArray* matches1 = [regex matchesInString:string options:0 range:NSMakeRange(0, string.length)];
+    for( NSTextCheckingResult* match in matches1) {
+        NSString* strNumber = [string substringWithRange:match.range];
+        [numberArray addObject:[NSNumber numberWithInt:strNumber.intValue]];
+    }
+    
+    //Retrieving Pin Code in array and adresses
+    
+    for (NSString *pin in numberArray) {
+        NSString* pinStr=[NSString stringWithFormat:@"%@",pin];
+        NSString *pinRegex = @"^[0-9]{6}$";
+        NSPredicate *pinTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pinRegex];
+        BOOL pinValidates = [pinTest evaluateWithObject:pinStr];
+        if (pinValidates) {
+            [PinCodeArray addObject:pinStr];
+            
+            if (PinCodeArray.count==1) {
+                NSArray *arrayWithTwoStrings = [string componentsSeparatedByString:pinStr];
+                NSString *addrStr=[arrayWithTwoStrings objectAtIndex:0];
+                NSInteger textCount=addrStr.length;
+                if (addrStr.length>50) {
+                    textCount=50;
+                }
+                NSString* addressText=[NSString stringWithFormat:@"%@ %@",[addrStr substringFromIndex:[addrStr length]-textCount],pinStr];
+                [addressArray addObject:addressText];
+            }
+            
+        }
+        
+    }
+    if ([PinCodeArray count]>1) {
+        for (int i=0; i<[PinCodeArray count]-1; i++) {
+            NSRange searchFromRange = [string rangeOfString:[PinCodeArray objectAtIndex:i]];
+            NSRange searchToRange = [string rangeOfString:[PinCodeArray objectAtIndex:i+1]];
+            NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
+            NSString* addressText=[NSString stringWithFormat:@"%@ %@",substring,[PinCodeArray objectAtIndex:i+1]];
+            [addressArray addObject:addressText];
+            
+        }
+        
+    }
+    
+    [G8Tesseract clearCache];
+    
+    NSLog(@"Addresses : %@",addressArray);
+    NSLog(@"Email URL : %@",emailURLArray);
+    NSLog(@"Phone Numbers  : %@",phoneNumberArray);
+    
+    NSRange searchToRange = [string rangeOfString:@"\n"];
+    NSString *nameStr = [string substringWithRange:NSMakeRange(0, searchToRange.location)];
+    self.userNameTxt.text=nameStr;//[string substringToIndex:15];
+    //Designation
+    //Company name
+    [self CompanyNameCheck:string];
+    
+    if ([string containsString:@"PVT."] || [string containsString:@"LTD."] || [string containsString:@"LTD"] ||
+        [string containsString:@"S.r.l."] || [string containsString:@"eurl"] || [string containsString:@"GbR"] ||
+        [string containsString:@"GmbH"] || [string containsString:@"inc"] || [string containsString:@"LLC"] ||
+        [string containsString:@"LLP"] || [string containsString:@"Ltd"] || [string containsString:@"Srl"]||
+        [string containsString:@"Corp"] || [string containsString:@"Ltd."] || [string containsString:@"Inc."] ||
+        [string containsString:@"Co,LTD."]){
+        
+    }
+    
+    if (addressArray.count>0) {
+        self.addressLine1txt.text=[addressArray objectAtIndex:0];
+        if (addressArray.count>1) {
+            self.addressLine2txt.text=[addressArray objectAtIndex:1];
+            if (addressArray.count>2) {
+                self.addressLine3txt.text=[addressArray objectAtIndex:2];
+                if (addressArray.count>3) {
+                    self.addressLine4txt.text=[addressArray objectAtIndex:3];
+                }
+            }
+        }
+    }
+    
+    if (phoneNumberArray.count>0) {
+        self.phoneNumber1txt.text=[phoneNumberArray objectAtIndex:0];
+        if (phoneNumberArray.count>1) {
+            self.phoneNumber2txt.text=[phoneNumberArray objectAtIndex:1];
+            if (phoneNumberArray.count>2) {
+                self.phoneNumber3txt.text=[phoneNumberArray objectAtIndex:2];
+                if (phoneNumberArray.count>3) {
+                    self.phoneNumber4txt.text=[phoneNumberArray objectAtIndex:3];
+                    if (phoneNumberArray.count>4) {
+                        self.phoneNumber5txt.text=[phoneNumberArray objectAtIndex:4];
+                    }
+                }
+            }
+        }
+    }
+    
+    if (emailURLArray.count) {
+        NSInteger index=1000;
+        if ([emailURLArray containsObject:@"www"]) {
+            index = [emailURLArray indexOfObject:@"www"];
+            self.webURLtxt.text=[emailURLArray objectAtIndex:index];
+        }
+        
+        if (index!=1000) {
+            [emailURLArray removeObjectAtIndex:index];
+            if (emailURLArray.count>0){
+                self.emailIdTxt.text=[emailURLArray objectAtIndex:0];
+                if (emailURLArray.count>1){
+                    self.emailId2Txt.text=[emailURLArray objectAtIndex:1];
+                }
+            }
+        }else{
+            self.emailIdTxt.text=[emailURLArray objectAtIndex:0];
+            if (emailURLArray.count>1){
+                self.emailId2Txt.text=[emailURLArray objectAtIndex:1];
+            }
+        }
+        
+    }
+}
+
+-(void)CompanyNameCheck:(NSString*)string{
+    NSString *extentionConmpany;
+    if ([string containsString:@"PVT."]){
+        extentionConmpany=@"PVT.";
+        
+    }else if([string containsString:@"LTD."]){
+        extentionConmpany=@"LTD.";
+    }else if([string containsString:@"LTD"]){
+        extentionConmpany=@"LTD";
+    }else if([string containsString:@"S.r.l."]){
+        extentionConmpany=@"S.r.l.";
+    }else if([string containsString:@"eurl"]){
+        extentionConmpany=@"eurl";
+    }else if([string containsString:@"GbR"]){
+        extentionConmpany=@"GbR";
+    }else if([string containsString:@"GmbH"]){
+        extentionConmpany=@"GmbH";
+    }else if([string containsString:@"inc"]){
+        extentionConmpany=@"inc";
+    }else if([string containsString:@"LLC"]){
+        extentionConmpany=@"LLC";
+    }else if([string containsString:@"LLP"]){
+        extentionConmpany=@"LLP";
+    }else if([string containsString:@"Ltd"]){
+        extentionConmpany=@"Ltd";
+    }else if([string containsString:@"Srl"]){
+        extentionConmpany=@"Srl";
+    }else if([string containsString:@"Corp"]){
+        extentionConmpany=@"Corp";
+    }else if([string containsString:@"Ltd."]){
+        extentionConmpany=@"Ltd.";
+    }else if([string containsString:@"Inc."]){
+        extentionConmpany=@"Inc.";
+    }else if([string containsString:@"Co,LTD."]){
+        extentionConmpany=@"Co,LTD.";
+    }
+    
+    if (extentionConmpany.length) {
+        NSArray *arrayWithTwoStrings = [string componentsSeparatedByString:extentionConmpany];
+        NSArray *arrayWithLineBreak = [[arrayWithTwoStrings objectAtIndex:0] componentsSeparatedByString:@"\n"];
+        self.companyName1Txt.text=[NSString stringWithFormat:@"%@%@",[arrayWithLineBreak lastObject],extentionConmpany];
+        
+    }
+    
+}
+
+
+-(NSString*)PicCodeExist:(NSString*)string{
+    
+    NSString *pinCode;
+    //Retrieving Numbers in array
+    NSMutableArray* numberArray = [NSMutableArray new];
+    
+    NSString* regexPattern = @"\\d+";
+    NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern:regexPattern options:0 error:nil];
+    
+    NSArray* matches1 = [regex matchesInString:string options:0 range:NSMakeRange(0, string.length)];
+    for( NSTextCheckingResult* match in matches1) {
+        NSString* strNumber = [string substringWithRange:match.range];
+        [numberArray addObject:[NSNumber numberWithInt:strNumber.intValue]];
+    }
+    
+    //Retrieving Pin Code in array and adresses
+    
+    for (NSString *pin in numberArray) {
+        NSString* pinStr=[NSString stringWithFormat:@"%@",pin];
+        NSString *pinRegex = @"^[0-9]{6}$";
+        NSPredicate *pinTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pinRegex];
+        BOOL pinValidates = [pinTest evaluateWithObject:pinStr];
+        if (pinValidates) {
+            pinCode=pinStr;
+        }
+        
+    }
+    return pinCode;
+}
+
+-(void)addCardDetails{
+    if ([saveContactFlag isEqualToString:@"YES"]) {
+        [self addContact];
+    }
+    
+    NSString *OfficeAddress;
+    NSString *OfficePin;
+    
+    NSString *FactoryAddress;
+    NSString *FactoryPin;
+    
+    NSString *ResidenceAddress;
+    NSString *ResidencePin;
+    
+    if([addresstype containsObject:addressType1]) {
+        NSInteger index = [addresstype indexOfObject: addressType1];
+        if (index==0) {
+            OfficePin=[self PicCodeExist:self.addressLine1txt.text];
+            if (FactoryPin.length)
+                OfficeAddress=[self.addressLine1txt.text stringByReplacingOccurrencesOfString:OfficePin withString:@""];
+            else
+                OfficeAddress=self.addressLine1txt.text;
+            
+        }else if (index==1){
+            FactoryPin=[self PicCodeExist:self.addressLine2txt.text];
+            if (FactoryPin.length)
+                FactoryAddress=[self.addressLine2txt.text stringByReplacingOccurrencesOfString:FactoryPin withString:@""];
+            else
+                FactoryAddress=self.addressLine2txt.text;
+            
+            
+        }else if (index==2){
+            ResidencePin=[self PicCodeExist:self.addressLine3txt.text];
+            if (ResidencePin.length)
+                ResidenceAddress=[self.addressLine3txt.text stringByReplacingOccurrencesOfString:ResidencePin withString:@""];
+            else
+                ResidenceAddress=self.addressLine3txt.text;
+            
+        }
+    }
+    
+    if([addresstype containsObject:addressType2]) {
+        NSInteger index = [addresstype indexOfObject: addressType2];
+        if (index==0) {
+            OfficePin=[self PicCodeExist:self.addressLine1txt.text];
+            if (FactoryPin.length)
+                OfficeAddress=[self.addressLine1txt.text stringByReplacingOccurrencesOfString:OfficePin withString:@""];
+            else
+                OfficeAddress=self.addressLine1txt.text;
+            
+        }else if (index==1){
+            FactoryPin=[self PicCodeExist:self.addressLine2txt.text];
+            if (FactoryPin.length)
+                FactoryAddress=[self.addressLine2txt.text stringByReplacingOccurrencesOfString:FactoryPin withString:@""];
+            else
+                FactoryAddress=self.addressLine2txt.text;
+            
+            
+        }else if (index==2){
+            ResidencePin=[self PicCodeExist:self.addressLine3txt.text];
+            if (ResidencePin.length)
+                ResidenceAddress=[self.addressLine3txt.text stringByReplacingOccurrencesOfString:ResidencePin withString:@""];
+            else
+                ResidenceAddress=self.addressLine3txt.text;
+            
+        }
+        
+    }
+    
+    if([addresstype containsObject:addressType3]) {
+        NSInteger index = [addresstype indexOfObject: addressType3];
+        if (index==0) {
+            OfficePin=[self PicCodeExist:self.addressLine1txt.text];
+            if (FactoryPin.length)
+                OfficeAddress=[self.addressLine1txt.text stringByReplacingOccurrencesOfString:OfficePin withString:@""];
+            else
+                OfficeAddress=self.addressLine1txt.text;
+            
+        }else if (index==1){
+            FactoryPin=[self PicCodeExist:self.addressLine2txt.text];
+            if (FactoryPin.length)
+                FactoryAddress=[self.addressLine2txt.text stringByReplacingOccurrencesOfString:FactoryPin withString:@""];
+            else
+                FactoryAddress=self.addressLine2txt.text;
+            
+            
+        }else if (index==2){
+            ResidencePin=[self PicCodeExist:self.addressLine3txt.text];
+            if (ResidencePin.length)
+                ResidenceAddress=[self.addressLine3txt.text stringByReplacingOccurrencesOfString:ResidencePin withString:@""];
+            else
+                ResidenceAddress=self.addressLine3txt.text;
+            
+        }
+    }
+    
+    
+    
+    
+    NSString *UserUserID=[NSUSERDEFAULTS objectForKey:@"UserUserID"];
+    NSString *AuthCode=[NSUSERDEFAULTS objectForKey:@"AuthCode"];
+    
+    
+    [[DigiCardModel sharedInstance]show];
+    [[BaseManager sharedInstance]AppCustomerInsUpdt:AuthCode UserID:UserUserID CustomerID:@"" Title:@"" CustomerName:self.userNameTxt.text DOB:@"" Designation:self.designationtxt.text CompanyName:self.companyName1Txt.text Website:self.webURLtxt.text ContactTypeID:ContactTypeID ManagementTypeID:ManagementTypeID ZoneID:ZoneID EmailID:self.emailIdTxt.text EmailID2:self.emailId2Txt.text NumberType1:phoneNumber1 Number1:self.phoneNumber1txt.text NumberType2:phoneNumber2 Number2:self.phoneNumber2txt.text NumberType3:phoneNumber3 Number3:self.phoneNumber3txt.text NumberType4:phoneNumber4 Number4:self.phoneNumber4txt.text NumberType5:phoneNumber5 Number5:self.phoneNumber5txt.text CardFrontImageString:frontImgBase64 CardFrontImageExtension:frontImgName CardBackImageString:backImgBase64 CardBackImageExtension:backImgName Remark:self.remarkTxt.text OfficeAddress:OfficeAddress OfficePin:OfficePin FactoryAddress:FactoryAddress FactoryPin:FactoryPin ResidenceAddress:ResidenceAddress ResidencePin:ResidencePin PrincipleList:PrincipleID BusinessVerticalList:BusinessVerticalID IndustrySegmentList:IndustrySegmentID IndustryTypeList:IndustryTypeID withCallback:^(NSDictionary *response) {
+        NSString *statusValue=[response objectForKey:@"status"];
+        if ([statusValue isEqualToString:@"failed"]) {
+            [[DigiCardModel sharedInstance]HideWaiting];
+            [[DigiCardModel sharedInstance]errorWithTitle:APPNAME detailMessage:[response objectForKey:@"MsgNotification"] view:self.view];
+        }
+        else{
+            [[DigiCardModel sharedInstance]success:APPNAME detailMessage:[response objectForKey:@"MsgNotification"] view:self.view];
+            [self performSelector:@selector(goToCardList) withObject:nil afterDelay:2.00];
+        }
+        [[DigiCardModel sharedInstance]Hide];
+        
+    }];
+}
+
+-(void)goToCardList{
+    [APPDELEGATE SetNavigationBar];
+    [APPDELEGATE.maintab setSelectedIndex:0];
+    [[APPDELEGATE.maintab.viewControllers objectAtIndex:0] popToRootViewControllerAnimated:YES];
+}
+
+
 
 @end

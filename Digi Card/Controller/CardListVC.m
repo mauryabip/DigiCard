@@ -28,15 +28,18 @@
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 120.0;
-    
 }
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
 }
+
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     [self.navigationController setNavigationBarHidden:YES];
+
+ 
     [self AppCustomerList];
 }
 - (void)didReceiveMemoryWarning {
@@ -207,13 +210,56 @@
     NSString *UserUserID=[NSUSERDEFAULTS objectForKey:@"UserUserID"];
     NSString *AuthCode=[NSUSERDEFAULTS objectForKey:@"AuthCode"];
 
+    
+    NSString* BusinessVerticalID;
+    if ([[DigiCardModel sharedInstance].BusinessVerticalIDMasterArray count]==1) {
+        BusinessVerticalID=[[DigiCardModel sharedInstance].BusinessVerticalIDMasterArray valueForKey:@"BusinessVerticalID"];
+    }else{
+        BusinessVerticalID=[[[[DigiCardModel sharedInstance].BusinessVerticalIDMasterArray valueForKey:@"BusinessVerticalID"] valueForKey:@"description"] componentsJoinedByString:@","];
+    }
+    
+    NSString* IndustrySegmentID;
+    if ([[DigiCardModel sharedInstance].IndustrySegmentMasterIDArray count]==1) {
+        IndustrySegmentID=[[DigiCardModel sharedInstance].IndustrySegmentMasterIDArray valueForKey:@"IndustrySegmentID"];
+    }else{
+        IndustrySegmentID=[[[[DigiCardModel sharedInstance].IndustrySegmentMasterIDArray valueForKey:@"IndustrySegmentID" ]valueForKey:@"description"] componentsJoinedByString:@","];
+    }
+    
+    NSString* PrincipleID;
+    if ([[DigiCardModel sharedInstance].PrincipleMasterIDArray count]==1) {
+        PrincipleID=[[DigiCardModel sharedInstance].PrincipleMasterIDArray valueForKey:@"PrincipleID"];
+    }else{
+        PrincipleID=[[[[DigiCardModel sharedInstance].PrincipleMasterIDArray valueForKey:@"PrincipleID" ]valueForKey:@"description"] componentsJoinedByString:@","];
+    }
+
+    NSString* IndustryTypeID;
+    if ([[DigiCardModel sharedInstance].IndustryTypeMasterIDArray count]==1) {
+        IndustryTypeID=[[DigiCardModel sharedInstance].IndustryTypeMasterIDArray valueForKey:@"IndustryTypeID"];
+    }else{
+        IndustryTypeID=[[[[DigiCardModel sharedInstance].IndustryTypeMasterIDArray valueForKey:@"IndustryTypeID" ]valueForKey:@"description"] componentsJoinedByString:@","];
+    }
+
+    NSString* ZoneID;
+    if ([[DigiCardModel sharedInstance].zoneIDArray count]==1) {
+        ZoneID=[[DigiCardModel sharedInstance].zoneIDArray valueForKey:@"ZoneID"];
+    }else{
+        ZoneID=[[[[DigiCardModel sharedInstance].zoneIDArray valueForKey:@"ZoneID" ]valueForKey:@"description"] componentsJoinedByString:@","];
+    }
+
+
+    
     [[DigiCardModel sharedInstance]show];
 
-    [[BaseManager sharedInstance]AppCustomerList:AuthCode UserID:UserUserID CustomerName:@"" PrincipleID:@"0" BusinessVerticalID:@"0" IndustrySegmentID:@"0" IndustryTypeID:@"0" ZoneID:@"0" withCallback:^(NSArray *response) {
+    [[BaseManager sharedInstance]AppCustomerList:AuthCode UserID:UserUserID CustomerName:@"" PrincipleID:PrincipleID BusinessVerticalID:BusinessVerticalID IndustrySegmentID:IndustrySegmentID IndustryTypeID:IndustryTypeID ZoneID:ZoneID withCallback:^(NSArray *response) {
        // [[DigiCardModel sharedInstance]HideWaiting];
         [[DigiCardModel sharedInstance]Hide];
         [DigiCardModel sharedInstance].customerList=@"";
         cardListArray=response;
+        if (cardListArray) {
+            self.tableView.hidden=NO;
+        }else{
+            self.tableView.hidden=YES;
+        }
         [self.tableView reloadData];
         
     }];

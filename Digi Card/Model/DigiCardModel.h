@@ -18,6 +18,13 @@
 @property (strong,nonatomic) NSArray  *IndustryTypeMasterArray;
 @property (strong,nonatomic) NSArray  *IndustrySegmentMasterArray;
 
+
+@property (strong,nonatomic) NSArray  *PrincipleMasterIDArray;
+@property (strong,nonatomic) NSArray  *BusinessVerticalIDMasterArray;
+@property (strong,nonatomic) NSArray  *IndustryTypeMasterIDArray;
+@property (strong,nonatomic) NSArray  *IndustrySegmentMasterIDArray;
+@property (strong,nonatomic) NSArray  *zoneIDArray;
+
 @property (strong,nonatomic) NSString  *customerList;
 
 

@@ -16,6 +16,11 @@
 #define APPNAME @"Digi Card"
 #define APPIMAGEURL @"http://card.nmtronics.in/"
 
+#define NETWORKUNAVILABLE @"It seems that some error in your connection. Please check your network connection and try again."
+//"Some error in your Connection. Please try again."
+
+#define NETWORKAVILABLE @"Connected to network"
+
 
 #define NAVCOLR [UIColor  colorWithRed:1.0f/255.0f green:77.0f/255.0f blue:64.0f/255.0f alpha:1.0f]
 #define NAVSECONDCOLOR [UIColor  colorWithRed:9.0f/255.0f green:150.0f/255.0f blue:136.0f/255.0f alpha:1.0f]

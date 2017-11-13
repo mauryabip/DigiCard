@@ -83,16 +83,63 @@
     
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self resetValue];
+    
+    if (indexPath.row==0) {
+        [DigiCardModel sharedInstance].zoneIDArray=[NSUSERDEFAULTS objectForKey:@"ZoneMaster"];
+    }else if (indexPath.row==1){
+        [DigiCardModel sharedInstance].BusinessVerticalIDMasterArray=[NSUSERDEFAULTS objectForKey:@"BusinessVerticalMaster"];
+    }else if (indexPath.row==2){
+        [DigiCardModel sharedInstance].IndustrySegmentMasterIDArray=[NSUSERDEFAULTS objectForKey:@"IndustrySegmentMaster"];
+    }else if (indexPath.row==3){
+        [DigiCardModel sharedInstance].IndustryTypeMasterIDArray=[NSUSERDEFAULTS objectForKey:@"IndustryTypeMaster"];
+    }else if (indexPath.row==4){
+        [DigiCardModel sharedInstance].PrincipleMasterIDArray=[NSUSERDEFAULTS objectForKey:@"PrincipleMaster"];
+    }
+    
+    
     selectedIndex=indexPath.row;
     [self.tableView reloadData];
 }
 
 - (IBAction)applyAction:(id)sender {
+    if (selectedIndex==1000) {
+        [self resetValue];
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)resetAction:(id)sender {
+    [self resetValue];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+-(void)resetValue{
+    
+    NSDictionary *dictionary = @{
+                                 @"PrincipleID": @{
+                                         @"PrincipleID": @"0"
+                                         },
+                                 @"BusinessVerticalID": @{
+                                         @"BusinessVerticalID": @"0"
+                                         },
+                                 @"IndustryTypeID": @{
+                                         @"IndustryTypeID": @"0"
+                                         },
+                                 @"IndustrySegmentID": @{
+                                         @"IndustrySegmentID": @"0"
+                                         },
+                                 @"ZoneID": @{
+                                         @"ZoneID": @"0"
+                                         },
+                                 };
+    
+    [DigiCardModel sharedInstance].PrincipleMasterIDArray=[dictionary objectForKey:@"PrincipleID"];
+    [DigiCardModel sharedInstance].BusinessVerticalIDMasterArray=[dictionary objectForKey:@"BusinessVerticalID"];
+    [DigiCardModel sharedInstance].IndustryTypeMasterIDArray=[dictionary objectForKey:@"IndustryTypeID"];
+    [DigiCardModel sharedInstance].IndustrySegmentMasterIDArray=[dictionary objectForKey:@"IndustrySegmentID"];
+    [DigiCardModel sharedInstance].zoneIDArray=[dictionary objectForKey:@"ZoneID"];
+}
+
+
 
 /*
 #pragma mark - Navigation
