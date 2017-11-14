@@ -253,8 +253,9 @@
                                     <constraint firstItem="sIY-E2-HUH" firstAttribute="top" secondItem="Lrb-BX-h0v" secondAttribute="top" constant="20" id="gMi-Yj-fvL"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5DS-gz-bV8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-camera-outlined-interface-symbol.png" translatesAutoresizingMaskIntoConstraints="NO" id="5DS-gz-bV8">
                                 <rect key="frame" x="0.0" y="74" width="414" height="150"/>
+                                <color key="backgroundColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="0.40158347315436244" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="UEi-De-WfJ"/>
                                 </constraints>
@@ -2039,7 +2040,6 @@
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tc3-RB-bwg">
                                         <rect key="frame" x="15" y="475" width="384" height="150"/>
-                                        <color key="backgroundColor" red="0.59223790320000003" green="0.71985257059999996" blue="0.87065272179999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="nsz-5u-PFH"/>
                                         </constraints>
@@ -2056,7 +2056,6 @@
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tmF-as-uRC">
                                         <rect key="frame" x="15" y="675" width="384" height="150"/>
-                                        <color key="backgroundColor" red="0.59223790320000003" green="0.71985257059999996" blue="0.87065272179999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="YUX-p6-Tpr"/>
                                         </constraints>
@@ -3131,6 +3130,7 @@
         <image name="lockPassword.png" width="42" height="42"/>
         <image name="loginUser.png" width="42" height="42"/>
         <image name="moreBlock.png" width="21" height="21"/>
+        <image name="photo-camera-outlined-interface-symbol.png" width="42" height="42"/>
         <image name="photo-camera.png" width="28" height="28"/>
         <image name="square.png" width="16" height="16"/>
     </resources>

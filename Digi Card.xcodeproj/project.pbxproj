@@ -72,6 +72,8 @@
 		A53F99F61FAAF3B2000B54BB /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99E31FAAF3B2000B54BB /* UIView+WebCacheOperation.m */; };
 		A53F99F91FAAF489000B54BB /* BaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F99F81FAAF489000B54BB /* BaseManager.m */; };
 		A53F9ABD1FAB282A000B54BB /* Sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A53F9ABC1FAB282A000B54BB /* Sample.jpg */; };
+		A54540E71FBAECB90035908F /* photo-camera-outlined-interface-symbol@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A54540E51FBAECB90035908F /* photo-camera-outlined-interface-symbol@2x.png */; };
+		A54540E81FBAECB90035908F /* photo-camera-outlined-interface-symbol@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A54540E61FBAECB90035908F /* photo-camera-outlined-interface-symbol@3x.png */; };
 		A57E7CEC1FADBC4100D43232 /* DigiCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E7CEB1FADBC4100D43232 /* DigiCardModel.m */; };
 		A57E7CEF1FADC25700D43232 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E7CEE1FADC25700D43232 /* LoginVC.m */; };
 		A57E7CF21FADE6DF00D43232 /* moreBlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A57E7CF01FADE6DF00D43232 /* moreBlock@2x.png */; };
@@ -410,6 +412,8 @@
 		A53F9B5A1FAB2946000B54BB /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		A53F9C9E1FAB2AF0000B54BB /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
 		A53F9C9F1FAB2AF0000B54BB /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		A54540E51FBAECB90035908F /* photo-camera-outlined-interface-symbol@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-camera-outlined-interface-symbol@2x.png"; sourceTree = "<group>"; };
+		A54540E61FBAECB90035908F /* photo-camera-outlined-interface-symbol@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-camera-outlined-interface-symbol@3x.png"; sourceTree = "<group>"; };
 		A57E7CEA1FADBC4100D43232 /* DigiCardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigiCardModel.h; sourceTree = "<group>"; };
 		A57E7CEB1FADBC4100D43232 /* DigiCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigiCardModel.m; sourceTree = "<group>"; };
 		A57E7CED1FADC25700D43232 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
@@ -674,6 +678,8 @@
 		A53F99921FAAF008000B54BB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A54540E51FBAECB90035908F /* photo-camera-outlined-interface-symbol@2x.png */,
+				A54540E61FBAECB90035908F /* photo-camera-outlined-interface-symbol@3x.png */,
 				DCF3BB851FB3A59A0009BA40 /* add@2x.png */,
 				DCF3BB861FB3A59A0009BA40 /* add@3x.png */,
 				DCF3BB7D1FB387630009BA40 /* down-arrow@2x.png */,
@@ -1206,8 +1212,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54540E71FBAECB90035908F /* photo-camera-outlined-interface-symbol@2x.png in Resources */,
 				A523ACB71FB1CF4500A97CAE /* SVProgressHUD.bundle in Resources */,
 				DCF3BB881FB3A59A0009BA40 /* add@3x.png in Resources */,
+				A54540E81FBAECB90035908F /* photo-camera-outlined-interface-symbol@3x.png in Resources */,
 				DCF3BB831FB387630009BA40 /* up-arrow@2x.png in Resources */,
 				DCBA8D5D1FAE56120006BA1F /* previousDisable@2x.png in Resources */,
 				DCF3BB811FB387630009BA40 /* down-arrow@2x.png in Resources */,

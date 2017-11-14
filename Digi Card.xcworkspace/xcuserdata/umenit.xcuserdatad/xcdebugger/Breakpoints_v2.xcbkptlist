@@ -2,4 +2,32 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Digi Card/Model/BaseManager.m"
+            timestampString = "532349614.726157"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "587"
+            endingLineNumber = "587"
+            landmarkName = "-AppCustomerInsUpdt:UserID:CustomerID:Title:CustomerName:DOB:Designation:CompanyName:Website:ContactTypeID:ManagementTypeID:ZoneID:EmailID:EmailID2:NumberType1:Number1:NumberType2:Number2:NumberType3:Number3:NumberType4:Number4:NumberType5:Number5:CardFrontImageString:CardFrontImageExtension:CardBackImageString:CardBackImageExtension:Remark:OfficeAddress:OfficePin:FactoryAddress:FactoryPin:ResidenceAddress:ResidencePin:PrincipleList:BusinessVerticalList:IndustrySegmentList:IndustryTypeList:withCallback:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

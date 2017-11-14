@@ -8,36 +8,55 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>ISO8601DateFormatterValueTransformer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-Digi Card.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>RKValueTransformers.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>RestKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>SOCKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>TesseractOCRiOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 		<key>TransitionKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -48,6 +67,16 @@
 			<true/>
 		</dict>
 		<key>39CC6AEC4B55225AB2372AD9897775A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>43FE2759F8B2B107E05E015F400DD799</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D6ADC2AB736BD45D9AAA58791A69892</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -73,6 +102,21 @@
 			<true/>
 		</dict>
 		<key>BBF39EC626DDEB4954AB88832ACEF757</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD5985F9B89242C3617B8D408B8F436B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D0AD577993B53B51E9FC0379276443B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D79C3B4B4BA1E607CFEC96A5B70342C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

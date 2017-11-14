@@ -81,16 +81,18 @@
     ManagementTypeID=@"";
     ZoneID=@"";
     
-    NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"Sample.jpg"]);
+    frontImgBase64=@"";
+    backImgBase64=@"";
     
-    backImgBase64=frontImgBase64=[imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    backImgName=@"sdd.png";
-    frontImgName=@"dfdf.png";
+//    NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"Sample.jpg"]);
+//    
+//    backImgBase64=frontImgBase64=[imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+  
     
     
     self.operationQueue = [[NSOperationQueue alloc] init];
     
-    [self recognizeImageWithTesseract:[UIImage imageNamed:@"Sample.jpg"]];
+    //[self recognizeImageWithTesseract:[UIImage imageNamed:@"Sample.jpg"]];
     
     _frontCardViewHTConst.constant=50;
     configuration = [FTPopOverMenuConfiguration defaultConfiguration];
@@ -379,6 +381,7 @@
 }
 
 -(void)OpenPopOver:(id)sender {
+    [self.view endEditing:YES];
     configuration.menuRowHeight = 45;
     configuration.menuWidth = 120;
     configuration.textColor = [UIColor blackColor];
@@ -883,14 +886,6 @@
         valid = NO;
         [self.emailIdTxt becomeFirstResponder];
         [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter email id"];
-    }
-    else if ([self.emailIdTxt.text length]>0) {
-        if(![emailTest evaluateWithObject:self.emailIdTxt.text]){
-            valid = NO;
-            [self.emailIdTxt becomeFirstResponder];
-            [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter valid email id"];
-            
-        }
     }else if(([self.webURLtxt.text isEqualToString:@""]&& [self.webURLtxt.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]))
     {
         valid = NO;
@@ -923,6 +918,18 @@
     {
         valid = NO;
         [[DigiCardModel sharedInstance] ViewSlideDown:@"Please select zone"];
+    }else if(([frontImgBase64 isEqualToString:@""]&& [frontImgBase64 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]))
+    {
+        valid = NO;
+        [[DigiCardModel sharedInstance] ViewSlideDown:@"Please add front image of card"];
+    }
+    else if ([self.emailIdTxt.text length]>0) {
+        if(![emailTest evaluateWithObject:self.emailIdTxt.text]){
+            valid = NO;
+            [self.emailIdTxt becomeFirstResponder];
+            [[DigiCardModel sharedInstance] ViewSlideDown:@"Please enter valid email id"];
+            
+        }
     }
     
     
@@ -954,29 +961,11 @@
     NSData *imageData = UIImagePNGRepresentation(chosenImage);
     
     if ([cardSideFlag isEqualToString:@"Front"]) {
+        [[DigiCardModel sharedInstance]show];
         self.frontCardImgView.image=[info objectForKey:UIImagePickerControllerEditedImage];
         frontImgBase64=[imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-        
-        NSURL *refURL = [info valueForKey:UIImagePickerControllerReferenceURL];
-        
-        ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *imageAsset)
-        {
-            ALAssetRepresentation *imageRep = [imageAsset defaultRepresentation];
-            NSLog(@"[imageRep filename] : %@", [imageRep filename]);
-            frontImgName=[imageRep filename];
-            if ([frontImgName length]==0) {
-                NSTimeInterval  today = [[NSDate date] timeIntervalSince1970];
-                NSString *intervalString = [NSString stringWithFormat:@"%f", today];
-                frontImgName=[NSString stringWithFormat:@"ios%@.png",intervalString];
-            }
-            
-            NSLog(@"name   %@",frontImgName);
-        };
-        
-        // get the asset library and fetch the asset based on the ref url
-        ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
-        [assetslibrary assetForURL:refURL resultBlock:resultblock failureBlock:nil];
-        
+        self.frontCardImgView.contentMode = UIViewContentModeScaleToFill;
+        self.frontCardImgView.clipsToBounds = YES;
         [self recognizeImageWithTesseract:chosenImage];
         
     }
@@ -984,29 +973,8 @@
         _frontCardViewHTConst.constant=205;
         self.backCardImgView.image=[info objectForKey:UIImagePickerControllerEditedImage];
         backImgBase64=[imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-        
-        NSURL *refURL = [info valueForKey:UIImagePickerControllerReferenceURL];
-        
-        ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *imageAsset)
-        {
-            ALAssetRepresentation *imageRep = [imageAsset defaultRepresentation];
-            NSLog(@"[imageRep filename] : %@", [imageRep filename]);
-            backImgName=[imageRep filename];
-            if ([backImgName length]==0) {
-                NSTimeInterval  today = [[NSDate date] timeIntervalSince1970];
-                NSString *intervalString = [NSString stringWithFormat:@"%f", today];
-                backImgName=[NSString stringWithFormat:@"ios%@.png",intervalString];
-            }
-            
-            NSLog(@"backImgName   %@",backImgName);
-        };
-        
-        // get the asset library and fetch the asset based on the ref url
-        ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
-        [assetslibrary assetForURL:refURL resultBlock:resultblock failureBlock:nil];
-        
+
     }
-    
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
@@ -1221,14 +1189,14 @@
     
     if (activeField==self.ContactTypeTxt) {
         [self.ContactTypeBtn setTitle:[[pickerArray valueForKey:@"ContactType"]objectAtIndex:0] forState:UIControlStateNormal];
-        ContactTypeID=[[pickerArray valueForKey:@"ContactTypeID"]objectAtIndex:0];
+        ContactTypeID=[NSString stringWithFormat:@"%@",[[pickerArray valueForKey:@"ContactTypeID"]objectAtIndex:0]];
     }else if (activeField==self.managementTypeTxt){
         [self.ManagementTypeBtn setTitle:[[pickerArray valueForKey:@"ManagementType"]objectAtIndex:0] forState:UIControlStateNormal];
-        ManagementTypeID=[[pickerArray valueForKey:@"ManagementTypeID"]objectAtIndex:0];
+        ManagementTypeID=[NSString stringWithFormat:@"%@",[[pickerArray valueForKey:@"ManagementTypeID"]objectAtIndex:0]];
         
     }else if (activeField==self.zoneTxt){
         [self.ZoneTypeBtn setTitle:[[pickerArray valueForKey:@"ZoneName"]objectAtIndex:0] forState:UIControlStateNormal];
-        ZoneID=[[pickerArray valueForKey:@"ZoneID"]objectAtIndex:0];
+        ZoneID=[NSString stringWithFormat:@"%@",[[pickerArray valueForKey:@"ZoneID"]objectAtIndex:0]];
         
     }
     
@@ -1240,14 +1208,14 @@
     
     if (activeField==self.ContactTypeTxt) {
         [self.ContactTypeBtn setTitle:[[pickerArray valueForKey:@"ContactType"]objectAtIndex:row] forState:UIControlStateNormal];
-        ContactTypeID=[[pickerArray valueForKey:@"ContactTypeID"]objectAtIndex:row];
+        ContactTypeID=[NSString stringWithFormat:@"%@",[[pickerArray valueForKey:@"ContactTypeID"]objectAtIndex:row]];
     }else if (activeField==self.managementTypeTxt){
         [self.ManagementTypeBtn setTitle:[[pickerArray valueForKey:@"ManagementType"]objectAtIndex:row] forState:UIControlStateNormal];
-        ManagementTypeID=[[pickerArray valueForKey:@"ManagementTypeID"]objectAtIndex:row];
+        ManagementTypeID=[NSString stringWithFormat:@"%@",[[pickerArray valueForKey:@"ManagementTypeID"]objectAtIndex:row]];
         
     }else if (activeField==self.zoneTxt){
         [self.ZoneTypeBtn setTitle:[[pickerArray valueForKey:@"ZoneName"]objectAtIndex:row] forState:UIControlStateNormal];
-        ZoneID=[[pickerArray valueForKey:@"ZoneID"]objectAtIndex:row];
+        ZoneID=[NSString stringWithFormat:@"%@",[[pickerArray valueForKey:@"ZoneID"]objectAtIndex:row]];
         
     }
     
@@ -1326,6 +1294,7 @@
         // Remove the animated progress activity indicator
         [self.activityIndicator stopAnimating];
         
+        [[DigiCardModel sharedInstance]Hide];
         // Spawn an alert with the recognized text
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Image Scan Result"
                                                         message:recognizedText
@@ -1541,6 +1510,9 @@
         if ([emailURLArray containsObject:@"www"]) {
             index = [emailURLArray indexOfObject:@"www"];
             self.webURLtxt.text=[emailURLArray objectAtIndex:index];
+        }else if ([emailURLArray containsObject:@"http"]){
+            index = [emailURLArray indexOfObject:@"http"];
+            self.webURLtxt.text=[emailURLArray objectAtIndex:index];
         }
         
         if (index!=1000) {
@@ -1643,14 +1615,14 @@
         [self addContact];
     }
     
-    NSString *OfficeAddress;
-    NSString *OfficePin;
+    NSString *OfficeAddress=@"";
+    NSString *OfficePin=@"";
     
-    NSString *FactoryAddress;
-    NSString *FactoryPin;
+    NSString *FactoryAddress=@"";
+    NSString *FactoryPin=@"";
     
-    NSString *ResidenceAddress;
-    NSString *ResidencePin;
+    NSString *ResidenceAddress=@"";
+    NSString *ResidencePin=@"";
     
     if([addresstype containsObject:addressType1]) {
         NSInteger index = [addresstype indexOfObject: addressType1];
@@ -1742,7 +1714,7 @@
     
     
     [[DigiCardModel sharedInstance]show];
-    [[BaseManager sharedInstance]AppCustomerInsUpdt:AuthCode UserID:UserUserID CustomerID:@"" Title:@"" CustomerName:self.userNameTxt.text DOB:@"" Designation:self.designationtxt.text CompanyName:self.companyName1Txt.text Website:self.webURLtxt.text ContactTypeID:ContactTypeID ManagementTypeID:ManagementTypeID ZoneID:ZoneID EmailID:self.emailIdTxt.text EmailID2:self.emailId2Txt.text NumberType1:phoneNumber1 Number1:self.phoneNumber1txt.text NumberType2:phoneNumber2 Number2:self.phoneNumber2txt.text NumberType3:phoneNumber3 Number3:self.phoneNumber3txt.text NumberType4:phoneNumber4 Number4:self.phoneNumber4txt.text NumberType5:phoneNumber5 Number5:self.phoneNumber5txt.text CardFrontImageString:frontImgBase64 CardFrontImageExtension:frontImgName CardBackImageString:backImgBase64 CardBackImageExtension:backImgName Remark:self.remarkTxt.text OfficeAddress:OfficeAddress OfficePin:OfficePin FactoryAddress:FactoryAddress FactoryPin:FactoryPin ResidenceAddress:ResidenceAddress ResidencePin:ResidencePin PrincipleList:PrincipleID BusinessVerticalList:BusinessVerticalID IndustrySegmentList:IndustrySegmentID IndustryTypeList:IndustryTypeID withCallback:^(NSDictionary *response) {
+    [[BaseManager sharedInstance]AppCustomerInsUpdt:AuthCode UserID:UserUserID CustomerID:@"" Title:@"" CustomerName:self.userNameTxt.text DOB:@"" Designation:self.designationtxt.text CompanyName:self.companyName1Txt.text Website:self.webURLtxt.text ContactTypeID:ContactTypeID ManagementTypeID:ManagementTypeID ZoneID:ZoneID EmailID:self.emailIdTxt.text EmailID2:self.emailId2Txt.text NumberType1:phoneNumber1 Number1:self.phoneNumber1txt.text NumberType2:phoneNumber2 Number2:self.phoneNumber2txt.text NumberType3:phoneNumber3 Number3:self.phoneNumber3txt.text NumberType4:phoneNumber4 Number4:self.phoneNumber4txt.text NumberType5:phoneNumber5 Number5:self.phoneNumber5txt.text CardFrontImageString:frontImgBase64 CardFrontImageExtension:@".png" CardBackImageString:backImgBase64 CardBackImageExtension:@".png" Remark:self.remarkTxt.text OfficeAddress:OfficeAddress OfficePin:OfficePin FactoryAddress:FactoryAddress FactoryPin:FactoryPin ResidenceAddress:ResidenceAddress ResidencePin:ResidencePin PrincipleList:PrincipleID BusinessVerticalList:BusinessVerticalID IndustrySegmentList:IndustrySegmentID IndustryTypeList:IndustryTypeID withCallback:^(NSDictionary *response) {
         NSString *statusValue=[response objectForKey:@"status"];
         if ([statusValue isEqualToString:@"failed"]) {
             [[DigiCardModel sharedInstance]HideWaiting];
