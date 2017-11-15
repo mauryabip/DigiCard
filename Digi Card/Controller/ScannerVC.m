@@ -1467,6 +1467,9 @@
     NSString *nameStr = [string substringWithRange:NSMakeRange(0, searchToRange.location)];
     self.userNameTxt.text=nameStr;//[string substringToIndex:15];
     //Designation
+    NSArray *arrayForDesignation = [string componentsSeparatedByString:@"\n"];
+    self.designationtxt.text=[arrayForDesignation objectAtIndex:1];
+    
     //Company name
     [self CompanyNameCheck:string];
     

@@ -28,6 +28,19 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *frontImgViewHTConst;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *backImgViewHTConst;//150
 
+
+@property (strong, nonatomic) IBOutlet UILabel *phoneNo1Lbl;
+@property (strong, nonatomic) IBOutlet UILabel *phoneNo2Lbl;
+@property (strong, nonatomic) IBOutlet UILabel *phoneNo3Lbl;
+@property (strong, nonatomic) IBOutlet UILabel *phoneNo4Lbl;
+@property (strong, nonatomic) IBOutlet UILabel *phoneNo5Lbl;
+@property (strong, nonatomic) IBOutlet UILabel *phoneMobile4Lbl;
+@property (strong, nonatomic) IBOutlet UILabel *phoneMobile5Lbl;
+
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *backImgHtConst;
+@property (strong, nonatomic) IBOutlet UILabel *backImgLbl;
+
+
 @end
 
 @implementation CardDetailsVC
@@ -82,9 +95,31 @@
     self.designationLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Designation"];
     self.companyLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Company"];
     self.emailIdLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"EmailID"];
+    
+    NSString *NumberType=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"NumberType"];
+    if (NumberType.length)
+        self.phoneNo1Lbl.text=[NSString stringWithFormat:@"Phone No (%@)",[[CustomerDetailArray objectAtIndex:0]objectForKey:@"NumberType"]];
+    NSString *NumberType2=NumberType;
+    if (NumberType2.length)
+        self.phoneNo2Lbl.text=[NSString stringWithFormat:@"Phone No (%@)",NumberType2];
+    NSString *NumberType3=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"NumberType3"];
+    if (NumberType3.length)
+        self.phoneNo3Lbl.text=[NSString stringWithFormat:@"Phone No (%@)",NumberType3];
+    NSString *NumberType4=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"NumberType4"];
+    if (NumberType4.length)
+        self.phoneNo1Lbl.text=[NSString stringWithFormat:@"Phone No (%@)",NumberType4];
+    NSString *NumberType5=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"NumberType5"];
+    if (NumberType5.length)
+        self.phoneNo5Lbl.text=[NSString stringWithFormat:@"Phone No (%@)",NumberType5];
+    
     self.phoneWorkLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number"];
-    self.phoneMobileLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number3"];
-    self.phoneMobile2Lbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number4"];
+    self.phoneMobileLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number2"];
+    self.phoneMobile2Lbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number3"];
+    self.phoneMobile4Lbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number4"];
+    self.phoneMobile5Lbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"Number5"];
+
+    
+    
     self.officeAddressLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"OfficeAddress"];
     self.factoryAddressLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"FactoryAddress"];
     self.residentialAddressLbl.text=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"ResidenceAddress"];
@@ -102,6 +137,12 @@
     NSString *path=[NSString stringWithFormat:@"%@%@",APPIMAGEURL,[[CustomerDetailArray objectAtIndex:0]objectForKey:@"CardBackImage"]];
     [self.backImageView sd_setImageWithURL:[NSURL URLWithString:path]
                    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    
+    NSString *backImgServer=[[CustomerDetailArray objectAtIndex:0]objectForKey:@"CardBackImage"];
+    if (backImgServer.length==0) {
+        self.backImgLbl.hidden=YES;
+        self.backImgHtConst.constant=0;
+    }
     
     [[DigiCardModel sharedInstance]Hide];
 

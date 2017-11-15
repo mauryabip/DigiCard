@@ -14,7 +14,7 @@
 #define NSUSERDEFAULTS [NSUserDefaults standardUserDefaults]
 
 #define APPNAME @"Digi Card"
-#define APPIMAGEURL @"http://card.nmtronics.in/"
+#define APPIMAGEURL @"http://cfcsitservices.co.in/card/"
 
 #define NETWORKUNAVILABLE @"It seems that some error in your connection. Please check your network connection and try again."
 //"Some error in your Connection. Please try again."
