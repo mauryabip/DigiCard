@@ -51,7 +51,7 @@
     //    if (isValid){
     //
     //    }
-    //[[DigiCardModel sharedInstance]ShowWaitingLongtime:@""];
+    
     [[DigiCardModel sharedInstance]show];
 
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];

@@ -78,6 +78,7 @@
 		A57E7CEF1FADC25700D43232 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E7CEE1FADC25700D43232 /* LoginVC.m */; };
 		A57E7CF21FADE6DF00D43232 /* moreBlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A57E7CF01FADE6DF00D43232 /* moreBlock@2x.png */; };
 		A57E7CF31FADE6DF00D43232 /* moreBlock@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A57E7CF11FADE6DF00D43232 /* moreBlock@3x.png */; };
+		A5E52DF11FBC167C008F1039 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E52DF01FBC167C008F1039 /* MobileCoreServices.framework */; };
 		DC06359F1FAE1C1A00B05366 /* lockPassword@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC06359D1FAE1C1A00B05366 /* lockPassword@2x.png */; };
 		DC0635A01FAE1C1A00B05366 /* lockPassword@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC06359E1FAE1C1A00B05366 /* lockPassword@3x.png */; };
 		DC9C12CF1FB77D5000D3CC00 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A53F9B5A1FAB2946000B54BB /* libstdc++.6.0.9.tbd */; };
@@ -420,6 +421,7 @@
 		A57E7CEE1FADC25700D43232 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		A57E7CF01FADE6DF00D43232 /* moreBlock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreBlock@2x.png"; sourceTree = "<group>"; };
 		A57E7CF11FADE6DF00D43232 /* moreBlock@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreBlock@3x.png"; sourceTree = "<group>"; };
+		A5E52DF01FBC167C008F1039 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B9C3D9056E70BCB63B428EDC /* Pods-Digi Card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digi Card.release.xcconfig"; path = "Pods/Target Support Files/Pods-Digi Card/Pods-Digi Card.release.xcconfig"; sourceTree = "<group>"; };
 		DC06359D1FAE1C1A00B05366 /* lockPassword@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lockPassword@2x.png"; sourceTree = "<group>"; };
 		DC06359E1FAE1C1A00B05366 /* lockPassword@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lockPassword@3x.png"; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E52DF11FBC167C008F1039 /* MobileCoreServices.framework in Frameworks */,
 				DC9C12CF1FB77D5000D3CC00 /* libstdc++.6.0.9.tbd in Frameworks */,
 				A5366B271FB30989009BA2CB /* Contacts.framework in Frameworks */,
 				A5366B231FB2D94D009BA2CB /* Foundation.framework in Frameworks */,
@@ -1030,6 +1033,7 @@
 		B34D2ECB24948FA894717811 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5E52DF01FBC167C008F1039 /* MobileCoreServices.framework */,
 				A5366B261FB30989009BA2CB /* Contacts.framework */,
 				A5366B221FB2D94D009BA2CB /* Foundation.framework */,
 				A5366B201FB2D945009BA2CB /* UIKit.framework */,

@@ -8,6 +8,7 @@
 
 #import "ScannerVC.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @import Contacts;
 
@@ -956,6 +957,7 @@
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
+    
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     
     NSData *imageData = UIImagePNGRepresentation(chosenImage);
@@ -967,6 +969,7 @@
         self.frontCardImgView.contentMode = UIViewContentModeScaleToFill;
         self.frontCardImgView.clipsToBounds = YES;
         [self recognizeImageWithTesseract:chosenImage];
+        
         
     }
     else{
@@ -1722,13 +1725,21 @@
         }
         else{
             [[DigiCardModel sharedInstance]success:APPNAME detailMessage:[response objectForKey:@"MsgNotification"] view:self.view];
+            [self performSelector:@selector(removeData) withObject:nil afterDelay:0.00];
+
             [self performSelector:@selector(goToCardList) withObject:nil afterDelay:2.00];
         }
         [[DigiCardModel sharedInstance]Hide];
         
     }];
 }
-
+-(void)removeData{
+        [DigiCardModel sharedInstance].BusinessVerticalMasterArray=[[NSArray alloc]init];
+        [DigiCardModel sharedInstance].IndustrySegmentMasterArray=[[NSArray alloc]init];
+        [DigiCardModel sharedInstance].IndustryTypeMasterArray=[[NSArray alloc]init];
+        [DigiCardModel sharedInstance].PrincipleMasterArray=[[NSArray alloc]init];
+    
+}
 -(void)goToCardList{
     [APPDELEGATE SetNavigationBar];
     [APPDELEGATE.maintab setSelectedIndex:0];
