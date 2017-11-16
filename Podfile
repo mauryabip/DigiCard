@@ -7,7 +7,7 @@ target 'Digi Card' do
 
   # Pods for Digi Card
 
-pod 'RestKit', '~> 0.24.0'
+  # pod 'RestKit', '~> 0.24.0'
 pod 'TesseractOCRiOS', :git => 'https://github.com/gali8/Tesseract-OCR-iOS.git'
 
 end

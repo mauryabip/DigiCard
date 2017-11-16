@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '39CC6AEC4B55225AB2372AD9897775A3'
+               BlueprintIdentifier = '8E2142E40CA55E483FD4FFBE739D653D'
                BlueprintName = 'Pods-Digi Card'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-Digi Card.a'>
