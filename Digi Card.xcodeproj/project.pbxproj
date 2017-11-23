@@ -74,6 +74,26 @@
 		A53F9ABD1FAB282A000B54BB /* Sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A53F9ABC1FAB282A000B54BB /* Sample.jpg */; };
 		A54540E71FBAECB90035908F /* photo-camera-outlined-interface-symbol@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A54540E51FBAECB90035908F /* photo-camera-outlined-interface-symbol@2x.png */; };
 		A54540E81FBAECB90035908F /* photo-camera-outlined-interface-symbol@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A54540E61FBAECB90035908F /* photo-camera-outlined-interface-symbol@3x.png */; };
+		A55214041FC6A0E8000F48C1 /* UIImage+AutoLevels.m in Sources */ = {isa = PBXBuildFile; fileRef = A55213F91FC6A0E8000F48C1 /* UIImage+AutoLevels.m */; };
+		A55214051FC6A0E8000F48C1 /* UIImage+Brightness.m in Sources */ = {isa = PBXBuildFile; fileRef = A55213FB1FC6A0E8000F48C1 /* UIImage+Brightness.m */; };
+		A55214061FC6A0E8000F48C1 /* UIImage+Contrast.m in Sources */ = {isa = PBXBuildFile; fileRef = A55213FD1FC6A0E8000F48C1 /* UIImage+Contrast.m */; };
+		A55214071FC6A0E8000F48C1 /* UIImage+FixRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A55213FF1FC6A0E8000F48C1 /* UIImage+FixRotation.m */; };
+		A55214081FC6A0E8000F48C1 /* UIImage+Gaussian.m in Sources */ = {isa = PBXBuildFile; fileRef = A55214011FC6A0E8000F48C1 /* UIImage+Gaussian.m */; };
+		A55214091FC6A0E8000F48C1 /* UIImage+Thumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = A55214031FC6A0E8000F48C1 /* UIImage+Thumbnail.m */; };
+		A561E5EA1FC5582B0085ACB5 /* GKCropBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A561E5D61FC5582B0085ACB5 /* GKCropBorderView.m */; };
+		A561E5EB1FC5582B0085ACB5 /* GKImageCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A561E5D81FC5582B0085ACB5 /* GKImageCropOverlayView.m */; };
+		A561E5EC1FC5582B0085ACB5 /* GKImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = A561E5DA1FC5582B0085ACB5 /* GKImageCropView.m */; };
+		A561E5ED1FC5582B0085ACB5 /* GKImageCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A561E5DC1FC5582B0085ACB5 /* GKImageCropViewController.m */; };
+		A561E5EE1FC5582B0085ACB5 /* GKImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A561E5DE1FC5582B0085ACB5 /* GKImagePicker.m */; };
+		A561E5EF1FC5582B0085ACB5 /* PLCameraSheetButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A561E5E01FC5582B0085ACB5 /* PLCameraSheetButton.png */; };
+		A561E5F01FC5582B0085ACB5 /* PLCameraSheetButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A561E5E11FC5582B0085ACB5 /* PLCameraSheetButton@2x.png */; };
+		A561E5F11FC5582B0085ACB5 /* PLCameraSheetButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = A561E5E21FC5582B0085ACB5 /* PLCameraSheetButtonPressed.png */; };
+		A561E5F21FC5582B0085ACB5 /* PLCameraSheetButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A561E5E31FC5582B0085ACB5 /* PLCameraSheetButtonPressed@2x.png */; };
+		A561E5F31FC5582B0085ACB5 /* PLCameraSheetDoneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A561E5E41FC5582B0085ACB5 /* PLCameraSheetDoneButton.png */; };
+		A561E5F41FC5582B0085ACB5 /* PLCameraSheetDoneButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A561E5E51FC5582B0085ACB5 /* PLCameraSheetDoneButton@2x.png */; };
+		A561E5F51FC5582B0085ACB5 /* PLCameraSheetDoneButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = A561E5E61FC5582B0085ACB5 /* PLCameraSheetDoneButtonPressed.png */; };
+		A561E5F61FC5582B0085ACB5 /* PLCameraSheetDoneButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A561E5E71FC5582B0085ACB5 /* PLCameraSheetDoneButtonPressed@2x.png */; };
+		A561E5F71FC5582B0085ACB5 /* GKResizeableCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A561E5E91FC5582B0085ACB5 /* GKResizeableCropOverlayView.m */; };
 		A57E7CEC1FADBC4100D43232 /* DigiCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E7CEB1FADBC4100D43232 /* DigiCardModel.m */; };
 		A57E7CEF1FADC25700D43232 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E7CEE1FADC25700D43232 /* LoginVC.m */; };
 		A57E7CF21FADE6DF00D43232 /* moreBlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A57E7CF01FADE6DF00D43232 /* moreBlock@2x.png */; };
@@ -415,6 +435,38 @@
 		A53F9C9F1FAB2AF0000B54BB /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		A54540E51FBAECB90035908F /* photo-camera-outlined-interface-symbol@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-camera-outlined-interface-symbol@2x.png"; sourceTree = "<group>"; };
 		A54540E61FBAECB90035908F /* photo-camera-outlined-interface-symbol@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-camera-outlined-interface-symbol@3x.png"; sourceTree = "<group>"; };
+		A55213F81FC6A0E8000F48C1 /* UIImage+AutoLevels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AutoLevels.h"; sourceTree = "<group>"; };
+		A55213F91FC6A0E8000F48C1 /* UIImage+AutoLevels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AutoLevels.m"; sourceTree = "<group>"; };
+		A55213FA1FC6A0E8000F48C1 /* UIImage+Brightness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Brightness.h"; sourceTree = "<group>"; };
+		A55213FB1FC6A0E8000F48C1 /* UIImage+Brightness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Brightness.m"; sourceTree = "<group>"; };
+		A55213FC1FC6A0E8000F48C1 /* UIImage+Contrast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Contrast.h"; sourceTree = "<group>"; };
+		A55213FD1FC6A0E8000F48C1 /* UIImage+Contrast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Contrast.m"; sourceTree = "<group>"; };
+		A55213FE1FC6A0E8000F48C1 /* UIImage+FixRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixRotation.h"; sourceTree = "<group>"; };
+		A55213FF1FC6A0E8000F48C1 /* UIImage+FixRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixRotation.m"; sourceTree = "<group>"; };
+		A55214001FC6A0E8000F48C1 /* UIImage+Gaussian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Gaussian.h"; sourceTree = "<group>"; };
+		A55214011FC6A0E8000F48C1 /* UIImage+Gaussian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Gaussian.m"; sourceTree = "<group>"; };
+		A55214021FC6A0E8000F48C1 /* UIImage+Thumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Thumbnail.h"; sourceTree = "<group>"; };
+		A55214031FC6A0E8000F48C1 /* UIImage+Thumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Thumbnail.m"; sourceTree = "<group>"; };
+		A561E5D51FC5582B0085ACB5 /* GKCropBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCropBorderView.h; sourceTree = "<group>"; };
+		A561E5D61FC5582B0085ACB5 /* GKCropBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKCropBorderView.m; sourceTree = "<group>"; };
+		A561E5D71FC5582B0085ACB5 /* GKImageCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropOverlayView.h; sourceTree = "<group>"; };
+		A561E5D81FC5582B0085ACB5 /* GKImageCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropOverlayView.m; sourceTree = "<group>"; };
+		A561E5D91FC5582B0085ACB5 /* GKImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropView.h; sourceTree = "<group>"; };
+		A561E5DA1FC5582B0085ACB5 /* GKImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropView.m; sourceTree = "<group>"; };
+		A561E5DB1FC5582B0085ACB5 /* GKImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropViewController.h; sourceTree = "<group>"; };
+		A561E5DC1FC5582B0085ACB5 /* GKImageCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropViewController.m; sourceTree = "<group>"; };
+		A561E5DD1FC5582B0085ACB5 /* GKImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImagePicker.h; sourceTree = "<group>"; };
+		A561E5DE1FC5582B0085ACB5 /* GKImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImagePicker.m; sourceTree = "<group>"; };
+		A561E5E01FC5582B0085ACB5 /* PLCameraSheetButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetButton.png; sourceTree = "<group>"; };
+		A561E5E11FC5582B0085ACB5 /* PLCameraSheetButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetButton@2x.png"; sourceTree = "<group>"; };
+		A561E5E21FC5582B0085ACB5 /* PLCameraSheetButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetButtonPressed.png; sourceTree = "<group>"; };
+		A561E5E31FC5582B0085ACB5 /* PLCameraSheetButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetButtonPressed@2x.png"; sourceTree = "<group>"; };
+		A561E5E41FC5582B0085ACB5 /* PLCameraSheetDoneButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetDoneButton.png; sourceTree = "<group>"; };
+		A561E5E51FC5582B0085ACB5 /* PLCameraSheetDoneButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButton@2x.png"; sourceTree = "<group>"; };
+		A561E5E61FC5582B0085ACB5 /* PLCameraSheetDoneButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetDoneButtonPressed.png; sourceTree = "<group>"; };
+		A561E5E71FC5582B0085ACB5 /* PLCameraSheetDoneButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButtonPressed@2x.png"; sourceTree = "<group>"; };
+		A561E5E81FC5582B0085ACB5 /* GKResizeableCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKResizeableCropOverlayView.h; sourceTree = "<group>"; };
+		A561E5E91FC5582B0085ACB5 /* GKResizeableCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKResizeableCropOverlayView.m; sourceTree = "<group>"; };
 		A57E7CEA1FADBC4100D43232 /* DigiCardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigiCardModel.h; sourceTree = "<group>"; };
 		A57E7CEB1FADBC4100D43232 /* DigiCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigiCardModel.m; sourceTree = "<group>"; };
 		A57E7CED1FADC25700D43232 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
@@ -739,6 +791,8 @@
 		A53F99931FAAF008000B54BB /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				A55213F71FC6A0E8000F48C1 /* UIImageAdjust */,
+				A561E5D41FC5582B0085ACB5 /* GKClasses */,
 				DC9C132B1FB88B7400D3CC00 /* DGActivityIndicatorView */,
 				DC9C13741FB88B7400D3CC00 /* YBHud */,
 				A523ACAA1FB1CF4500A97CAE /* SVProgressHUD */,
@@ -1030,6 +1084,60 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		A55213F71FC6A0E8000F48C1 /* UIImageAdjust */ = {
+			isa = PBXGroup;
+			children = (
+				A55213F81FC6A0E8000F48C1 /* UIImage+AutoLevels.h */,
+				A55213F91FC6A0E8000F48C1 /* UIImage+AutoLevels.m */,
+				A55213FA1FC6A0E8000F48C1 /* UIImage+Brightness.h */,
+				A55213FB1FC6A0E8000F48C1 /* UIImage+Brightness.m */,
+				A55213FC1FC6A0E8000F48C1 /* UIImage+Contrast.h */,
+				A55213FD1FC6A0E8000F48C1 /* UIImage+Contrast.m */,
+				A55213FE1FC6A0E8000F48C1 /* UIImage+FixRotation.h */,
+				A55213FF1FC6A0E8000F48C1 /* UIImage+FixRotation.m */,
+				A55214001FC6A0E8000F48C1 /* UIImage+Gaussian.h */,
+				A55214011FC6A0E8000F48C1 /* UIImage+Gaussian.m */,
+				A55214021FC6A0E8000F48C1 /* UIImage+Thumbnail.h */,
+				A55214031FC6A0E8000F48C1 /* UIImage+Thumbnail.m */,
+			);
+			path = UIImageAdjust;
+			sourceTree = "<group>";
+		};
+		A561E5D41FC5582B0085ACB5 /* GKClasses */ = {
+			isa = PBXGroup;
+			children = (
+				A561E5D51FC5582B0085ACB5 /* GKCropBorderView.h */,
+				A561E5D61FC5582B0085ACB5 /* GKCropBorderView.m */,
+				A561E5D71FC5582B0085ACB5 /* GKImageCropOverlayView.h */,
+				A561E5D81FC5582B0085ACB5 /* GKImageCropOverlayView.m */,
+				A561E5D91FC5582B0085ACB5 /* GKImageCropView.h */,
+				A561E5DA1FC5582B0085ACB5 /* GKImageCropView.m */,
+				A561E5DB1FC5582B0085ACB5 /* GKImageCropViewController.h */,
+				A561E5DC1FC5582B0085ACB5 /* GKImageCropViewController.m */,
+				A561E5DD1FC5582B0085ACB5 /* GKImagePicker.h */,
+				A561E5DE1FC5582B0085ACB5 /* GKImagePicker.m */,
+				A561E5DF1FC5582B0085ACB5 /* GKImages */,
+				A561E5E81FC5582B0085ACB5 /* GKResizeableCropOverlayView.h */,
+				A561E5E91FC5582B0085ACB5 /* GKResizeableCropOverlayView.m */,
+			);
+			path = GKClasses;
+			sourceTree = "<group>";
+		};
+		A561E5DF1FC5582B0085ACB5 /* GKImages */ = {
+			isa = PBXGroup;
+			children = (
+				A561E5E01FC5582B0085ACB5 /* PLCameraSheetButton.png */,
+				A561E5E11FC5582B0085ACB5 /* PLCameraSheetButton@2x.png */,
+				A561E5E21FC5582B0085ACB5 /* PLCameraSheetButtonPressed.png */,
+				A561E5E31FC5582B0085ACB5 /* PLCameraSheetButtonPressed@2x.png */,
+				A561E5E41FC5582B0085ACB5 /* PLCameraSheetDoneButton.png */,
+				A561E5E51FC5582B0085ACB5 /* PLCameraSheetDoneButton@2x.png */,
+				A561E5E61FC5582B0085ACB5 /* PLCameraSheetDoneButtonPressed.png */,
+				A561E5E71FC5582B0085ACB5 /* PLCameraSheetDoneButtonPressed@2x.png */,
+			);
+			path = GKImages;
+			sourceTree = "<group>";
+		};
 		B34D2ECB24948FA894717811 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1226,6 +1334,7 @@
 				DC0635A01FAE1C1A00B05366 /* lockPassword@3x.png in Resources */,
 				DCBA8D3C1FAE3CBC0006BA1F /* left-arrow@2x.png in Resources */,
 				A5366BDC1FB326A4009BA2CB /* cam_icon@2x.png in Resources */,
+				A561E5F21FC5582B0085ACB5 /* PLCameraSheetButtonPressed@2x.png in Resources */,
 				DCBA8D581FAE56120006BA1F /* nextDisable@3x.png in Resources */,
 				DCBA8D351FAE3BAF0006BA1F /* loginUser@3x.png in Resources */,
 				DCF3BB791FB3875D0009BA40 /* down-arrow@2x.png in Resources */,
@@ -1234,14 +1343,18 @@
 				DC06359F1FAE1C1A00B05366 /* lockPassword@2x.png in Resources */,
 				DCBA8D661FAF66D70006BA1F /* photo-camera@3x.png in Resources */,
 				DCBA8D3D1FAE3CBC0006BA1F /* left-arrow@3x.png in Resources */,
+				A561E5F41FC5582B0085ACB5 /* PLCameraSheetDoneButton@2x.png in Resources */,
 				A523ACA71FB17B4A00A97CAE /* bglogo.png in Resources */,
 				DCBA8D3B1FAE3CBC0006BA1F /* filter-tool-black-shape@3x.png in Resources */,
 				A5366BE01FB326A4009BA2CB /* pro_icon@2x.png in Resources */,
 				A53F99A51FAAF008000B54BB /* wraing.gif in Resources */,
+				A561E5F61FC5582B0085ACB5 /* PLCameraSheetDoneButtonPressed@2x.png in Resources */,
 				A53F99841FAAEF58000B54BB /* LaunchScreen.storyboard in Resources */,
+				A561E5EF1FC5582B0085ACB5 /* PLCameraSheetButton.png in Resources */,
 				A5366BDF1FB326A4009BA2CB /* card_icon@3x.png in Resources */,
 				DCF3BB871FB3A59A0009BA40 /* add@2x.png in Resources */,
 				A5366BEC1FB342CC009BA2CB /* square@3x.png in Resources */,
+				A561E5F31FC5582B0085ACB5 /* PLCameraSheetDoneButton.png in Resources */,
 				DCBA8D5E1FAE56120006BA1F /* previousDisable@3x.png in Resources */,
 				A53F99811FAAEF58000B54BB /* Assets.xcassets in Resources */,
 				A5366BD41FB3235E009BA2CB /* msg_icon.png in Resources */,
@@ -1258,7 +1371,9 @@
 				DCBA8D5A1FAE56120006BA1F /* nextk@3x.png in Resources */,
 				DCF3BB7C1FB3875D0009BA40 /* up-arrow@3x.png in Resources */,
 				DCBA8D5C1FAE56120006BA1F /* previous@3x.png in Resources */,
+				A561E5F11FC5582B0085ACB5 /* PLCameraSheetButtonPressed.png in Resources */,
 				DCBA8D621FAF630C0006BA1F /* caret-down@3x.png in Resources */,
+				A561E5F01FC5582B0085ACB5 /* PLCameraSheetButton@2x.png in Resources */,
 				A5366BEB1FB342CC009BA2CB /* square@2x.png in Resources */,
 				DCF3BB821FB387630009BA40 /* down-arrow@3x.png in Resources */,
 				A53F997F1FAAEF58000B54BB /* Main.storyboard in Resources */,
@@ -1272,6 +1387,7 @@
 				A53F99A31FAAF008000B54BB /* error.gif in Resources */,
 				A5366BE11FB326A4009BA2CB /* pro_icon@3x.png in Resources */,
 				DCF3BB841FB387630009BA40 /* up-arrow@3x.png in Resources */,
+				A561E5F51FC5582B0085ACB5 /* PLCameraSheetDoneButtonPressed.png in Resources */,
 				A53F99A41FAAF008000B54BB /* success.gif in Resources */,
 				A5366BEA1FB342CC009BA2CB /* checksquare@3x.png in Resources */,
 				DCF3BB7A1FB3875D0009BA40 /* down-arrow@3x.png in Resources */,
@@ -1339,10 +1455,12 @@
 				A53F99F11FAAF3B2000B54BB /* UIImage+GIF.m in Sources */,
 				A53F99EE1FAAF3B2000B54BB /* SDWebImageManager.m in Sources */,
 				DC9C137B1FB88B7400D3CC00 /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
+				A55214041FC6A0E8000F48C1 /* UIImage+AutoLevels.m in Sources */,
 				DC9C13911FB88B7400D3CC00 /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
 				DCBA8D461FAE45EA0006BA1F /* CardListFilterVC.m in Sources */,
 				DC9C13981FB88B7400D3CC00 /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				A53F99F51FAAF3B2000B54BB /* UIImageView+WebCache.m in Sources */,
+				A561E5EB1FC5582B0085ACB5 /* GKImageCropOverlayView.m in Sources */,
 				DC9C13921FB88B7400D3CC00 /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				DC9C137D1FB88B7400D3CC00 /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				DC9C13951FB88B7400D3CC00 /* DGActivityIndicatorTriangleSkewSpinAnimation.m in Sources */,
@@ -1354,14 +1472,18 @@
 				DC9C13871FB88B7400D3CC00 /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				A53F99F21FAAF3B2000B54BB /* UIImage+MultiFormat.m in Sources */,
 				DC9C137F1FB88B7400D3CC00 /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
+				A55214081FC6A0E8000F48C1 /* UIImage+Gaussian.m in Sources */,
 				DC9C13801FB88B7400D3CC00 /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
 				DC9C138C1FB88B7400D3CC00 /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
+				A561E5EE1FC5582B0085ACB5 /* GKImagePicker.m in Sources */,
 				A53F99A61FAAF008000B54BB /* HHAlertView.m in Sources */,
 				A57E7CEC1FADBC4100D43232 /* DigiCardModel.m in Sources */,
 				A53F99AB1FAAF06A000B54BB /* ForgotPasswordVC.m in Sources */,
 				A53F99F61FAAF3B2000B54BB /* UIView+WebCacheOperation.m in Sources */,
 				A53F99E61FAAF3B2000B54BB /* Reachability.m in Sources */,
 				DC9C13931FB88B7400D3CC00 /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
+				A561E5F71FC5582B0085ACB5 /* GKResizeableCropOverlayView.m in Sources */,
+				A55214051FC6A0E8000F48C1 /* UIImage+Brightness.m in Sources */,
 				DC9C137A1FB88B7400D3CC00 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
 				DCBA8D411FAE41200006BA1F /* FTPopOverMenu.m in Sources */,
 				A53F99F31FAAF3B2000B54BB /* UIImage+WebP.m in Sources */,
@@ -1393,19 +1515,25 @@
 				A523ACB61FB1CF4500A97CAE /* SVProgressAnimatedView.m in Sources */,
 				A53F99E41FAAF3B2000B54BB /* MBProgressHUD.m in Sources */,
 				DC9C138A1FB88B7400D3CC00 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
+				A55214071FC6A0E8000F48C1 /* UIImage+FixRotation.m in Sources */,
 				DC9C13991FB88B7400D3CC00 /* DGActivityIndicatorView.m in Sources */,
 				DC9C13901FB88B7400D3CC00 /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
 				A53F99B11FAAF0C4000B54BB /* CardListVC.m in Sources */,
+				A55214061FC6A0E8000F48C1 /* UIImage+Contrast.m in Sources */,
 				DC9C13941FB88B7400D3CC00 /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				A5366BE41FB3412D009BA2CB /* OptionVC.m in Sources */,
 				A53F99AE1FAAF079000B54BB /* ChangePasswordVC.m in Sources */,
+				A561E5EC1FC5582B0085ACB5 /* GKImageCropView.m in Sources */,
+				A55214091FC6A0E8000F48C1 /* UIImage+Thumbnail.m in Sources */,
 				A53F99BA1FAAF113000B54BB /* CardDetailsVC.m in Sources */,
 				DC9C13791FB88B7400D3CC00 /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
 				DC9C138B1FB88B7400D3CC00 /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
 				DC9C13811FB88B7400D3CC00 /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
 				DC9C13831FB88B7400D3CC00 /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
+				A561E5ED1FC5582B0085ACB5 /* GKImageCropViewController.m in Sources */,
 				DC9C13861FB88B7400D3CC00 /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
 				DC9C138F1FB88B7400D3CC00 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
+				A561E5EA1FC5582B0085ACB5 /* GKCropBorderView.m in Sources */,
 				A53F99EC1FAAF3B2000B54BB /* SDWebImageDownloader.m in Sources */,
 				DC9C13851FB88B7400D3CC00 /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				DC9C13961FB88B7400D3CC00 /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,

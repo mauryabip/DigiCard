@@ -9,10 +9,12 @@
 #import "ScannerVC.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "GKImagePicker.h"
+#import "UIImage+Contrast.h"
 
 @import Contacts;
 
-@interface ScannerVC (){
+@interface ScannerVC ()<GKImagePickerDelegate>{
     NSString *cardSideFlag;
     
     NSString *BusinessVerticalID;
@@ -47,6 +49,9 @@
     
     
 }
+@property (nonatomic, strong) GKImagePicker *imagePicker;
+
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
 
@@ -940,21 +945,97 @@
 
 
 -(void)OpenCamera{
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.delegate = self;
-    imagePicker.allowsEditing = YES;
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
-    //[self presentViewController:imagePicker animated:YES completion:nil];
-    [self presentViewController:imagePicker animated:YES completion:^{
-        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
-        imagePicker.topViewController.title =  self.navigationItem.title;
-        imagePicker.navigationBar.translucent = NO;
-        imagePicker.navigationBar.barStyle = UIBarStyleDefault;
-        
-        [imagePicker setNavigationBarHidden:NO animated:NO];
-    }];
+    self.imagePicker = [[GKImagePicker alloc] init];
+    
+    self.imagePicker.cropSize = CGSizeMake(SCREENWIDTH-40, SCREENHEIGHT-100);
+    self.imagePicker.delegate = self;
+    self.imagePicker.resizeableCropArea = YES;
+    
+    [self presentViewController:self.imagePicker.imagePickerController animated:YES completion:nil];
+//    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+//    imagePicker.delegate = self;
+//    imagePicker.allowsEditing = YES;
+//    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    
+//    //[self presentViewController:imagePicker animated:YES completion:nil];
+//    [self presentViewController:imagePicker animated:YES completion:^{
+//        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+//        imagePicker.topViewController.title =  self.navigationItem.title;
+//        imagePicker.navigationBar.translucent = NO;
+//        imagePicker.navigationBar.barStyle = UIBarStyleDefault;
+//        
+//        [imagePicker setNavigationBarHidden:NO animated:NO];
+//    }];
 }
+# pragma mark -
+# pragma mark GKImagePicker Delegate Methods
+
+- (void)imagePicker:(GKImagePicker *)imagePicker pickedImage:(UIImage *)image{
+    UIImage *chosenImage = image;
+    
+    NSData *imageData = UIImagePNGRepresentation(chosenImage);
+    
+    if ([cardSideFlag isEqualToString:@"Front"]) {
+        [[DigiCardModel sharedInstance]show];
+        self.frontCardImgView.image=image;
+      //  self.frontCardImgView.image=chosenImage=[chosenImage imageWithContrast:2.5000 ];
+
+        frontImgBase64=[imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        self.frontCardImgView.contentMode = UIViewContentModeScaleToFill;
+        self.frontCardImgView.clipsToBounds = YES;
+        self.frontCardImgView.backgroundColor=[UIColor clearColor];
+        
+        [self recognizeImageWithTesseract:chosenImage];
+        
+        
+    }
+    else{
+        _frontCardViewHTConst.constant=205;
+        self.backCardImgView.image=image;
+        backImgBase64=[imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        
+    }
+
+    [self hideImagePicker];
+}
+
+- (void)hideImagePicker{
+    
+    
+    [self.imagePicker.imagePickerController dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+# pragma mark -
+# pragma mark UIImagePickerDelegate Methods
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
+    
+    UIImage *chosenImage = image;
+    
+    NSData *imageData = UIImagePNGRepresentation(chosenImage);
+    
+    if ([cardSideFlag isEqualToString:@"Front"]) {
+        [[DigiCardModel sharedInstance]show];
+        self.frontCardImgView.image=image;
+        frontImgBase64=[imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        self.frontCardImgView.contentMode = UIViewContentModeScaleToFill;
+        self.frontCardImgView.clipsToBounds = YES;
+      //  [self recognizeImageWithTesseract:chosenImage];
+        
+        
+    }
+    else{
+        _frontCardViewHTConst.constant=205;
+        self.backCardImgView.image=image;
+        backImgBase64=[imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        
+    }
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     
