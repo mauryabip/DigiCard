@@ -59,7 +59,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setNeedsStatusBarAppearanceUpdate];
-    
     BusinessVerticalID=@"";
     IndustrySegmentID=@"";
     IndustryTypeID=@"";
@@ -968,7 +967,10 @@
         frontImgBase64=[imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
         self.frontCardImgView.contentMode = UIViewContentModeScaleToFill;
         self.frontCardImgView.clipsToBounds = YES;
-        [self recognizeImageWithTesseract:chosenImage];
+        
+        NSString *binaryImageData = [self base64EncodeImage:chosenImage];
+        [self createRequest:binaryImageData];
+       // [self recognizeImageWithTesseract:chosenImage];
         
         
     }
@@ -1345,8 +1347,11 @@
     }
 }
 
-
-
+-(NSString *)extractNumberFromText:(NSString *)text
+{
+    NSCharacterSet *nonDigitCharacterSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    return [[text componentsSeparatedByCharactersInSet:nonDigitCharacterSet] componentsJoinedByString:@""];
+}
 
 -(void)GetDataFromImageString:(NSString*)string{
     
@@ -1438,6 +1443,10 @@
                 if (addrStr.length>50) {
                     textCount=50;
                 }
+                
+//                NSArray* arrayOfAddr = [addrStr componentsSeparatedByString:@"\n"];
+//                NSString* addressText=[NSString stringWithFormat:@"%@ %@",[arrayOfAddr lastObject],pinStr];
+                
                 NSString* addressText=[NSString stringWithFormat:@"%@ %@",[addrStr substringFromIndex:[addrStr length]-textCount],pinStr];
                 [addressArray addObject:addressText];
             }
@@ -1468,7 +1477,14 @@
     self.userNameTxt.text=nameStr;//[string substringToIndex:15];
     //Designation
     NSArray *arrayForDesignation = [string componentsSeparatedByString:@"\n"];
-    self.designationtxt.text=[arrayForDesignation objectAtIndex:1];
+    
+    NSString *numberInText=[self extractNumberFromText:[arrayForDesignation objectAtIndex:1]];
+    if (numberInText.length) {
+        self.designationtxt.text=[arrayForDesignation objectAtIndex:2];
+    }else{
+        self.designationtxt.text=[arrayForDesignation objectAtIndex:1];
+    }
+    
     
     //Company name
     [self CompanyNameCheck:string];
@@ -1512,29 +1528,24 @@
     }
     
     if (emailURLArray.count) {
-        NSInteger index=1000;
-        if ([emailURLArray containsObject:@"www"]) {
-            index = [emailURLArray indexOfObject:@"www"];
-            self.webURLtxt.text=[emailURLArray objectAtIndex:index];
-        }else if ([emailURLArray containsObject:@"http"]){
-            index = [emailURLArray indexOfObject:@"http"];
-            self.webURLtxt.text=[emailURLArray objectAtIndex:index];
+        
+        for (int emailIndex=0; emailIndex<emailURLArray.count; emailIndex++) {
+            NSString *webUrlstr=[emailURLArray objectAtIndex:emailIndex];
+            if ([webUrlstr containsString:@"www."] || [webUrlstr containsString:@"http"]) {
+                if (self.webURLtxt.text.length==0) {
+                    self.webURLtxt.text=webUrlstr;
+                }
+                [emailURLArray removeObjectAtIndex:emailIndex];
+            }
         }
         
-        if (index!=1000) {
-            [emailURLArray removeObjectAtIndex:index];
-            if (emailURLArray.count>0){
-                self.emailIdTxt.text=[emailURLArray objectAtIndex:0];
-                if (emailURLArray.count>1){
-                    self.emailId2Txt.text=[emailURLArray objectAtIndex:1];
-                }
-            }
-        }else{
+        if (emailURLArray.count>0){
             self.emailIdTxt.text=[emailURLArray objectAtIndex:0];
             if (emailURLArray.count>1){
                 self.emailId2Txt.text=[emailURLArray objectAtIndex:1];
             }
         }
+       
         
     }
 }
@@ -1774,7 +1785,7 @@
 
 - (void) createRequest: (NSString*)imageData {
     // Create our request URL
-    
+  //  [self clearAll];
     NSString *urlString = @"https://vision.googleapis.com/v1/images:annotate?key=";
     NSString *API_KEY = @"AIzaSyDEAOyeLf6rEVrHU75I4S_l5Gyuu1Qm1yU";
     
@@ -1814,7 +1825,6 @@
 }
 
 - (void)analyzeResults: (NSData*)dataToParse {
-    
     // Update UI on the main thread
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -1837,10 +1847,32 @@
         } else {
             NSDictionary *labelFullTextAnnotations = [responseData objectForKey:@"fullTextAnnotation"];
             NSLog(@"%@",[labelFullTextAnnotations objectForKey:@"text"]);
+            NSString *recognizedTextStr=[labelFullTextAnnotations objectForKey:@"text"];
+            if (recognizedTextStr.length>50)
+                [self GetDataFromImageString:recognizedTextStr];
+            
+            [[DigiCardModel sharedInstance]Hide];
+            // Spawn an alert with the recognized text
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Image Scan Result"
+                                                            message:recognizedTextStr
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:@"Rescan",nil];
+            
+            [alert show];
         }
     });
     
 }
 
+- (void)clearAll
+{
+    for (UIView *view in [self.view subviews]) {
+        if ([view isKindOfClass:[UITextField class]]) {
+            UITextField *textField = (UITextField *)view;
+            textField.text = @"";
+        }
+    }
+}
 
 @end
